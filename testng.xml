@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+ <suite name="Automationsuite" parallel="false">
+
+<!-- <test name="ChromeTest">-->
+<!--   <parameter name ="browser" value="Chrome"/>-->
+<!--&lt;!&ndash;   <parameter name ="headless" value="false"/>&ndash;&gt;-->
+<!--&lt;!&ndash;   <parameter name ="makeScreenOnSuccess" value="true"/>&ndash;&gt;-->
+<!--&lt;!&ndash;   <parameter name ="screenShotPath" value="C:\screentest/" />&ndash;&gt;-->
+<!--  <classes>-->
+<!--   <class name="test.chromePerform">-->
+<!--    <methods>-->
+<!--     <include name="openPlanifyWebApp" />-->
+<!--    </methods>-->
+<!--   </class>-->
+<!--  </classes>-->
+<!--  </test>-->
+
+ <test name="App">
+  <parameter name ="browser" value="App"/>
+  <!--   <parameter name ="headless" value="false"/>-->
+  <!--   <parameter name ="makeScreenOnSuccess" value="true"/>-->
+  <!--   <parameter name ="screenShotPath" value="C:\screentest/" />-->
+  <classes>
+   <class name="test.tests">
+<!--    <methods>-->
+<!--     <include name="nameRoleSkillsPhotoTest" />-->
+<!--    </methods>-->
+   </class>
+  </classes>
+ </test>
+<!--  <test name="FirefoxTest">-->
+<!--   <parameter name ="browser" value="Firefox"/>-->
+<!--   <parameter name ="headless" value="false"/>-->
+<!--   <parameter name ="makeScreenOnSuccess" value="true"/>-->
+<!--   <parameter name ="screenShotPath" value="C:\screentest/" />-->
+<!--    <classes>-->
+<!--     <class name="test.tests" />-->
+<!--    </classes>-->
+<!--  </test>-->
+<!--<test name="SafariTest">-->
+<!-- <parameter name ="browser" value="Safari"/>-->
+<!--  <parameter name ="headless" value="true"/>-->
+<!-- <parameter name ="makeScreenOnSuccess" value="true"/>-->
+<!-- <parameter name ="screenShotPath" value="/Users/Shared" />-->
+<!--  <classes>-->
+<!--   <class name="com.zilch.test" />-->
+<!--  </classes>-->
+<!-- </test>-->
+
+<!-- <test name="iPhone">-->
+<!--  <parameter name ="browser" value="iPhone"/>-->
+<!--  <parameter name ="headless" value="false"/>-->
+<!--  <parameter name ="makeScreenOnSuccess" value="false"/>-->
+<!--     <parameter name ="screenShotPath" value="/Users/Shared" />-->
+<!--  <classes>-->
+<!--   <class name="com.zilch.test" />-->
+<!--  </classes>-->
+<!-- </test>-->
+
+<!-- <test name="Android">-->
+<!--  <parameter name ="browser" value="Android"/>-->
+<!--  <parameter name ="headless" value="false"/>-->
+<!--  <parameter name ="makeScreenOnSuccess" value="false"/>-->
+<!--  <parameter name ="screenShotPath" value="/Users/Shared" />-->
+<!--  <classes>-->
+<!--   <class name="com.zilch.test"/>-->
+<!--  </classes>-->
+<!-- </test>-->
+
+
+ </suite>
+
+
