@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Command line suite]">
+  <test thread-count="5" verbose="0" name="Command line test(failed)">
+    <classes>
+      <class name="test.chromePerform">
+        <methods>
+          <include name="setup2"/>
+          <include name="openPlanifyWebApp"/>
+        </methods>
+      </class> <!-- test.chromePerform -->
+      <class name="test.tests">
+        <methods>
+          <include name="ProjectsWithMilestonesTimeSwitchOn"/>
+          <include name="discardChangesInProjectsSettingsPopUp"/>
+          <include name="closePrSetPopUp"/>
+          <include name="search"/>
+          <include name="CheckCheckboxOfficeOrg"/>
+          <include name="searchRole"/>
+          <include name="saveChangesInProjectsSettingsPopUp"/>
+          <include name="searchEmployee"/>
+          <include name="ShowUnpostedTimeSwitchOn"/>
+          <include name="myProjectsToggleON"/>
+          <include name="editDefaultHoursInProjectsSettingsPopUp"/>
+          <include name="setup"/>
+          <include name="BillingRatesSwitchOn"/>
+          <include name="clickCancelButtonPrSetPopUp"/>
+          <include name="FiltersTabHideShow"/>
+          <include name="activeProjectsOnlyToggleON"/>
+          <include name="selectOptionFromTeamDropDown"/>
+          <include name="discardChangesInPrSetPopUp"/>
+          <include name="checkIfToogleExistsTest"/>
+          <include name="ClearButton"/>
+          <include name="SelectMethodOptionInPrSettings"/>
+          <include name="openProjectsSettingsPopUp"/>
+        </methods>
+      </class> <!-- test.tests -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [Command line suite] -->
