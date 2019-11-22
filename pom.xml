@@ -11,7 +11,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
           <!--DriverProperties-->
-          <planify.directory>System.getnv("PanifiPath")</planify.directory>
+          <planifi.directory>System.getnv("PanifiPath")</planifi.directory>
     </properties>
     <build>
         <resources>

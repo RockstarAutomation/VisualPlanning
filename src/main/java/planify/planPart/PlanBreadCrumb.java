@@ -12,10 +12,10 @@ public class PlanBreadCrumb extends Plan implements ISettingsCriteriaSidebar, IO
 
     public PlanBreadCrumb(WiniumDriver webDriver) {
         super(webDriver);
-        initElemets();
+        initElements();
     }
 
-    private void initElemets(){
+    private void initElements(){
         PageFactory.initElements(driver, this);
     }
 

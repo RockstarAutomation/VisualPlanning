@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.winium.WiniumDriver;
 import planify.common.CRUD;
 
 import java.awt.*;
@@ -17,15 +18,15 @@ import java.util.concurrent.TimeUnit;
 
 public class TestController extends CRUD {
 
-    TestController(WebDriver driver) {
+    TestController( WiniumDriver webDriver) {
+        super(webDriver);
         initElements(driver);
     }
 
 
     @FindBy(name = "30 St Mary Axe")
     private WebElement clickProject;
-    @FindBy(name = "1")
-    private WebElement maximize;
+
     @FindBy(name = "settings")
     private WebElement wqae;
     @FindBy(name = "TextBox")
@@ -52,8 +53,6 @@ public class TestController extends CRUD {
     private WebElement clickDefaultHours;
     @FindBy(name = "HIDDEN")
     private WebElement hiddenThis;
-    @FindBy(name = "TEAM MANAGER")
-    private WebElement teamManagerButton;
     @FindBy(name = "TextBlock")
     private WebElement togglePresent;
     @FindBy(name = "r")
@@ -110,9 +109,6 @@ public class TestController extends CRUD {
         togglePresent.click();
     }
 
-    protected void clickTeamManagerButton() {
-        teamManagerButton.click();
-    }
 
     protected void clickHiddenThis() {
         hiddenThis.click();
@@ -166,17 +162,10 @@ public class TestController extends CRUD {
         wqae.click();
     }
 
-    protected void clickMaximize() {
-        maximize.click();
-    }
-
     protected void clickClickProject() {
         clickProject.click();
     }
 
-    protected void clickEstimateButton() {
-        clickEstimateButton.click();
-    }
 
     protected void clickSaveButton() {
         saveButton.click();
@@ -374,11 +363,6 @@ public class TestController extends CRUD {
     }
 
 
-    public TestController resolutionMaximize() throws Exception {
-        clickMaximize();
-        return this;
-    }
-
     public TestController inputDataIntoSearch(String value) throws Exception {
         fillingSearchBox(value);
         return this;
@@ -405,23 +389,23 @@ public class TestController extends CRUD {
         return this;
     }
 
-    public TestController showHideFiltersTab() throws Exception {
-        clickEstimateButton();
-        clickPlanButton();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickSpace();
-        clickRight();
-        clickSpace();
-        clickSpace();
-        clickLeft();
-        clickSpace();
-        clickLeft();
-        clickLeft();
-        clickSpace();
-        return this;
-    }
+//    public TestController showHideFiltersTab() throws Exception {
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickSpace();
+//        clickRight();
+//        clickSpace();
+//        clickSpace();
+//        clickLeft();
+//        clickSpace();
+//        clickLeft();
+//        clickLeft();
+//        clickSpace();
+//        return this;
+//    }
 
 
     public TestController switchOnActiveProjects() throws Exception {
@@ -436,16 +420,16 @@ public class TestController extends CRUD {
         return this;
     }
 
-    public TestController projectsSettingsPopUp() throws Exception {
-        clickEstimateButton();
-        clickPlanButton();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickRight();
-        clickSpace();
-        return this;
-    }
+//    public TestController projectsSettingsPopUp() throws Exception {
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickRight();
+//        clickSpace();
+//        return this;
+//    }
 
     public TestController officeOrgCheckboxCheck() throws Exception {
         clickClickOfficeOrganization();
@@ -469,23 +453,23 @@ public class TestController extends CRUD {
         return this;
     }
 
-    public TestController methodDropDownInPrSettingsPopUp() throws Exception {
-        clickEstimateButton();
-        clickPlanButton();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickRight();
-        clickSpace();
-        clickTab();
-        clickTab();
-        clickTab();
-        clickTab();
-        clickTab();
-        clickDown();
-        clickUp();
-        return this;
-    }
+//    public TestController methodDropDownInPrSettingsPopUp() throws Exception {
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickRight();
+//        clickSpace();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickDown();
+//        clickUp();
+//        return this;
+//    }
 
     public TestController switchOnBillingRates() throws Exception {
         clickClickSettings();
@@ -627,48 +611,48 @@ public class TestController extends CRUD {
     }
 
 
-    public TestController defaultHoursEditInPrSet(String value) throws Exception {
-        clickEstimateButton();
-        clickPlanButton();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickRight();
-        clickSpace();
-        clickTab();
-        clickTab();
-        clickTab();
-        clickTab();
-        fillingDefaultHours(value);
-        return this;
-    }
-
-    public TestController saveInPrSet(String value) throws Exception {
-
-
-        clickEstimateButton();
-        clickPlanButton();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickRight();
-        clickSpace();
-        clickTab();
-        clickTab();
-        clickTab();
-        clickTab();
-        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
-        fillingDefaultHours(value);
-        clickTab();
-        clickUp();
-        clickDown();
-        clickTab();
-        clickRight();
-        clickSpace();
-        clickSpace();
-
-        return this;
-    }
+//    public TestController defaultHoursEditInPrSet(String value) throws Exception {
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickRight();
+//        clickSpace();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        fillingDefaultHours(value);
+//        return this;
+//    }
+//
+//    public TestController saveInPrSet(String value) throws Exception {
+//
+//
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickRight();
+//        clickSpace();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+//        fillingDefaultHours(value);
+//        clickTab();
+//        clickUp();
+//        clickDown();
+//        clickTab();
+//        clickRight();
+//        clickSpace();
+//        clickSpace();
+//
+//        return this;
+//    }
 
     public TestController hiddenLabelCheck() throws Exception {
         driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
@@ -836,190 +820,124 @@ public class TestController extends CRUD {
     }
 
 
-    public TestController cancelInPrSet(String value) throws Exception {
-        clickEstimateButton();
-        clickPlanButton();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickRight();
-        clickSpace();
-        clickTab();
-        clickTab();
-        clickTab();
-        clickTab();
-        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
-        fillingDefaultHours(value);
-        clickTab();
-        clickUp();
-        clickDown();
-        clickTab();
-        clickLeft();
-        clickSpace();
-        clickSpace();
-        clickShiftTab();
-        clickShiftTab();
-        clickSpace();
-        clickSpace();
-        return this;
-    }
+//    public TestController cancelInPrSet(String value) throws Exception {
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickRight();
+//        clickSpace();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+//        fillingDefaultHours(value);
+//        clickTab();
+//        clickUp();
+//        clickDown();
+//        clickTab();
+//        clickLeft();
+//        clickSpace();
+//        clickSpace();
+//        clickShiftTab();
+//        clickShiftTab();
+//        clickSpace();
+//        clickSpace();
+//        return this;
+//    }
+//
+//
+//    public TestController closeInPrSet(String value) throws Exception {
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickRight();
+//        clickSpace();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+//        fillingDefaultHours(value);
+//        clickTab();
+//        clickUp();
+//        clickDown();
+//        clickShiftTab();
+//        clickShiftTab();
+//        clickSpace();
+//        clickShiftTab();
+//        clickShiftTab();
+//        clickSpace();
+//        clickSpace();
+//        return this;
+//    }
+//
+//
+//    public TestController cancelWithoutChangesInPrSet() throws Exception {
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickRight();
+//        clickSpace();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickSpace();
+//        return this;
+//    }
+//
+//
+//    public TestController closeWithoutChangesInPrSet() throws Exception {
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickRight();
+//        clickSpace();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickSpace();
+//        return this;
+//    }
+//
+//    public TestController selectFromTeamDropDownInEmpRole() throws Exception {
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickRight();
+//        clickTab();
+//        clickTab();
+//        clickSpace();
+//        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickDown();
+//        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+//        clickDown();
+//        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+//        clickDown();
+//        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+//        return this;
+//    }
 
 
-    public TestController closeInPrSet(String value) throws Exception {
-        clickEstimateButton();
-        clickPlanButton();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickRight();
-        clickSpace();
-        clickTab();
-        clickTab();
-        clickTab();
-        clickTab();
-        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
-        fillingDefaultHours(value);
-        clickTab();
-        clickUp();
-        clickDown();
-        clickShiftTab();
-        clickShiftTab();
-        clickSpace();
-        clickShiftTab();
-        clickShiftTab();
-        clickSpace();
-        clickSpace();
-        return this;
-    }
 
-
-    public TestController cancelWithoutChangesInPrSet() throws Exception {
-        clickEstimateButton();
-        clickPlanButton();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickRight();
-        clickSpace();
-        clickTab();
-        clickTab();
-        clickTab();
-        clickTab();
-        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
-        clickTab();
-        clickTab();
-        clickTab();
-        clickSpace();
-        return this;
-    }
-
-
-    public TestController closeWithoutChangesInPrSet() throws Exception {
-        clickEstimateButton();
-        clickPlanButton();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickRight();
-        clickSpace();
-        clickTab();
-        clickTab();
-        clickTab();
-        clickSpace();
-        return this;
-    }
-
-    public TestController selectFromTeamDropDownInEmpRole() throws Exception {
-        clickEstimateButton();
-        clickPlanButton();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickRight();
-        clickTab();
-        clickTab();
-        clickSpace();
-        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
-        clickTab();
-        clickTab();
-        clickTab();
-        clickDown();
-        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
-        clickDown();
-        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
-        clickDown();
-        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
-        return this;
-    }
-
-
-    public TestController clickTeamManager() throws Exception {
-        WebDriverWait waitHere12 = new WebDriverWait(driver, 5);
-        waitHere12.until(ExpectedConditions.elementToBeClickable(teamManagerButton));
-        clickTeamManager();
-//        Thread.sleep(3000);
-        return this;
-    }
-
-
-    public TestController clickShiftTab() throws Exception {
-        Robot robo = new Robot();
-        robo.keyPress(KeyEvent.VK_SHIFT);
-        robo.keyPress(KeyEvent.VK_TAB);
-        robo.keyRelease(KeyEvent.VK_SHIFT);
-        robo.keyRelease(KeyEvent.VK_TAB);
-//        Thread.sleep(1000);
-        return this;
-    }
-
-
-    public TestController clickTab() throws Exception {
-        Robot robo = new Robot();
-        robo.keyPress(KeyEvent.VK_TAB);
-        robo.keyRelease(KeyEvent.VK_TAB);
-//        Thread.sleep(1000);
-        return this;
-    }
-
-    public TestController clickDown() throws Exception {
-        Robot robo = new Robot();
-        robo.keyPress(KeyEvent.VK_DOWN);
-        robo.keyRelease(java.awt.event.KeyEvent.VK_DOWN);
-//        Thread.sleep(1000);
-        return this;
-    }
-
-    public TestController clickRight() throws Exception {
-        Robot robo = new Robot();
-        robo.keyPress(KeyEvent.VK_RIGHT);
-        robo.keyRelease(KeyEvent.VK_RIGHT);
-//        Thread.sleep(1000);
-        return this;
-    }
-
-    public TestController clickSpace() throws Exception {
-        Robot robo = new Robot();
-        robo.keyPress(KeyEvent.VK_SPACE);
-        robo.keyRelease(KeyEvent.VK_SPACE);
-//        Thread.sleep(1000);
-        return this;
-    }
-
-    public TestController clickLeft() throws Exception {
-        Robot robo = new Robot();
-        robo.keyPress(KeyEvent.VK_LEFT);
-        robo.keyRelease(KeyEvent.VK_LEFT);
-//        Thread.sleep(1000);
-        return this;
-    }
-
-    public TestController clickUp() throws Exception {
-        Robot robo = new Robot();
-        robo.keyPress(KeyEvent.VK_UP);
-        robo.keyRelease(KeyEvent.VK_UP);
-//        Thread.sleep(1000);
-        return this;
-    }
 
 
 }

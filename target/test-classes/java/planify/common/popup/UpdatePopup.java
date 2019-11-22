@@ -2,8 +2,10 @@ package planify.common.popup;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.winium.WiniumDriver;
 import planify.common.CRUD;
 
 public class UpdatePopup extends CRUD {
@@ -13,6 +15,15 @@ public class UpdatePopup extends CRUD {
     private WebElement confirmUpdatePopupButton;
     @FindBy(name = "A new version of VisualPlanning is available. Do you want to download it now?")
     private WebElement updatePopupTitle;
+
+    protected UpdatePopup(WiniumDriver webDriver) {
+        super(webDriver);
+        initElements();
+    }
+
+    private void initElements(){
+        PageFactory.initElements(driver, this);
+    }
 
 
     //functional

@@ -1,6 +1,10 @@
 package planify.planPart.functionalityEstimate;
 
-import planify.common.employeeList.IEmployeeContainer;
+import org.openqa.selenium.winium.WiniumDriver;
+import planify.common.options.employeeList.IEmployeeContainer;
 
 public class EmployeeContainerEstimatePart extends ProjectsContainerEstimatePart implements IEmployeeContainer {
+    public EmployeeContainerEstimatePart(WiniumDriver webDriver) {
+        super(webDriver);
+    }
 }

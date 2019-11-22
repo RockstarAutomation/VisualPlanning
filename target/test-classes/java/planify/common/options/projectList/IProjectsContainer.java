@@ -1,4 +1,4 @@
-package planify.common.projectList;
+package planify.common.options.projectList;
 
 public interface IProjectsContainer {
 }

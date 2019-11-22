@@ -9,6 +9,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.winium.WiniumDriver;
 import planify.common.CRUD;
 
 import java.awt.*;
@@ -17,7 +18,8 @@ import java.util.concurrent.TimeUnit;
 
 public class TestController extends CRUD {
 
-    TestController( ) {
+    TestController( WiniumDriver webDriver) {
+        super(webDriver);
         initElements(driver);
     }
 

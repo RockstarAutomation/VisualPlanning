@@ -1,4 +1,4 @@
-package planify.common.employeeList;
+package planify.common.options.employeeList;
 
 public interface IRoleContainer {
 }

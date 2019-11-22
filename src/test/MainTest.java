@@ -1,24 +1,25 @@
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-import planify.common.CRUD;
 import planify.common.Planifi;
-import planify.common.mainParts.Plan;
+import planify.common.popup.WarningUpdatePopup;
 
-public class MainTest extends  TestRunner{
+public class MainTest extends TestRunner {
 
     private Planifi planifi;
+    private WarningUpdatePopup popup;
 
     @BeforeMethod
     public void setUp() {
-        planifi = new Planifi(driverWinium);
+        popup = new WarningUpdatePopup(driverWinium);
+        planifi = popup.cancelWarningPopup();
     }
 
     @Test
-    public void test(){
+    public void test() {
         planifi
                 .gotoPlanPart()
                 .clickPlanCrudGoToPlan()
-                .
+                .closeApplication();
     }
 
 }

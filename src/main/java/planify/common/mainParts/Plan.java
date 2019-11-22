@@ -1,5 +1,6 @@
 package planify.common.mainParts;
 
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -9,10 +10,6 @@ import planify.planPart.EstimateBreadCrumb;
 import planify.planPart.PlanBreadCrumb;
 
 public class Plan extends Planifi {
-    @FindBy(name = "PLAN")
-    private WebElement planCrud;
-
-    @FindBy(name = "PLAN")
     private WebElement estimateCrud;
 
 
@@ -22,18 +19,20 @@ public class Plan extends Planifi {
         super(webDriver);
     }
 
-    private void initElements(){
-        PageFactory.initElements(driver, this);
+    private WebElement getPlanWebElement(){
+       return driver.findElementByName("PLAN");
+    }
+    private WebElement getEstimateWebElement() {
+        return driver.findElementByName("ESTIMATE");
     }
 
     public PlanBreadCrumb clickPlanCrudGoToPlan() {
-        planCrud.click();
-        driver.findElementByXPath("");
+        getPlanWebElement().click();
         return new PlanBreadCrumb(driver);
     }
 
     protected EstimateBreadCrumb clickPlanCrudGoToEstimate() {
-        planCrud.click();
+        getEstimateWebElement() .click();
         return new EstimateBreadCrumb(driver);
     }
 }
