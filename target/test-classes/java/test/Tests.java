@@ -1,31 +1,41 @@
 package test;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class Tests  extends TestRunner{
+import java.util.ArrayList;
+import java.util.List;
+
+public class Tests  //extends TestRunner{
+{
     protected WebDriver driver;
     private TestController page;
 
-
-//    @BeforeMethod
-//    public void setUp() throws Exception {
-//        DesktopOptions option = new DesktopOptions();
-//        //option.setApplicationPath("C:\\Planifi/VisualPlanning.appref-ms");
-//        option.setApplicationPath("C:\\Users\\User\\AppData\\Roaming\\Microsoft\\Windows" +
-//                "\\Start Menu\\Programs\\VisualPlanning.appref-ms");
-//        // option.setCapability("launchDelay","5");
-//        WiniumDriver driver = new WiniumDriver(new URL("http://localhost:9999"), option);
-//        Thread.sleep(6000);
-//        page = new TestController(driver);
-//    }
-
+    @DataProvider
+    public Object[][] dataProvider(){
+        return new Object[][]{
+                {"dsadas", "dasadas"}
+        };
+    }
 
     @Test
-    public void search() throws Exception {
+    public void test(){
+        List<String> array = new ArrayList<>();
+        array.add("asds1");
+        array.add("as5ds1");
+        array.add("as4ds1");
+        array.add("as3ds1");
+        array.add("asd2s1");
+        for(String variable : array){
+            System.out.println(variable);
+        }
+    }
+    @Test(dataProvider = "dataProvider")
+    public void search(String data) throws Exception {
         page.skipUpgrade();
         page.resolutionMaximize();
-        page.inputDataIntoSearch();
+        page.inputDataIntoSearch(data);
         page.exitApp();
     }
 
@@ -145,52 +155,52 @@ public class Tests  extends TestRunner{
         page.exitApp();
     }
 
-    @Test
-    public void searchEmployee() throws Exception {
+    @Test(dataProvider = "dataProvider")
+    public void searchEmployee(String value, String employee) throws Exception {
         page.skipUpgrade();
         page.resolutionMaximize();
-        page.inputDataIntoEmployeeSearch();
+        page.inputDataIntoEmployeeSearch(value, employee);
         page.exitApp();
     }
 
-    @Test
-    public void searchRole() throws Exception {
+    @Test(dataProvider = "dataProvider")
+    public void searchRole(String value, String role) throws Exception {
         page.skipUpgrade();
         page.resolutionMaximize();
-        page.inputDataIntoRoleSearch();
+        page.inputDataIntoRoleSearch(value, role);
         page.exitApp();
     }
 
-    @Test
-    public void editDefaultHoursInProjectsSettingsPopUp() throws Exception {
+    @Test(dataProvider = "dataProvider")
+    public void editDefaultHoursInProjectsSettingsPopUp(String value) throws Exception {
         page.skipUpgrade();
         page.resolutionMaximize();
-        page.defaultHoursEditInPrSet();
+        page.defaultHoursEditInPrSet(value);
         page.exitApp();
     }
 
-    @Test
-    public void saveChangesInProjectsSettingsPopUp() throws Exception {
+    @Test(dataProvider = "dataProvider")
+    public void saveChangesInProjectsSettingsPopUp(String value) throws Exception {
         page.skipUpgrade();
         page.resolutionMaximize();
-        page.saveInPrSet();
+        page.saveInPrSet(value);
         page.exitApp();
     }
 
 
-    @Test
-    public void discardChangesInProjectsSettingsPopUp() throws Exception {
+    @Test(dataProvider = "dataProvider")
+    public void discardChangesInProjectsSettingsPopUp(String value) throws Exception {
         page.skipUpgrade();
         page.resolutionMaximize();
-        page.cancelInPrSet();
+        page.cancelInPrSet(value);
         page.exitApp();
     }
 
-    @Test
-    public void discardChangesInPrSetPopUp() throws Exception {
+    @Test(dataProvider = "dataProvider")
+    public void discardChangesInPrSetPopUp(String value) throws Exception {
         page.skipUpgrade();
         page.resolutionMaximize();
-        page.closeInPrSet();
+        page.closeInPrSet(value);
         page.exitApp();
     }
 
@@ -250,12 +260,12 @@ public class Tests  extends TestRunner{
         page.exitApp();
     }
 
-    @Test
+    //@Test
     public void generalListOfEmployeeBoxTest() throws Exception {
         page.skipUpgrade();
         page.resolutionMaximize();
         page.clickTeamManager();
-        page.generalListOfEmployeeBox();
+        //page.generalListOfEmployeeBox();
         page.exitApp();
     }
 

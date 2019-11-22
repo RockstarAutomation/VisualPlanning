@@ -3,206 +3,382 @@ package test;
 //import com.sun.org.apache.xpath.internal.operations.Bool;
 //import com.sun.org.apache.xpath.internal.operations.Bool;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import planify.common.CRUD;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import java.util.concurrent.TimeUnit;
 
-public class TestController {
-    private WebDriver driver;
+public class TestController extends CRUD {
 
-    TestController(WebDriver driverNew) {
-        this.driver = driverNew;
+    TestController( ) {
+        initElements(driver);
     }
 
-    @FindBy(name = "Skip")
-    private Button skipUpgradeButton;
-    @FindBy(name = "OK")
-    private Button confirmUpgradeButton;
-    @FindBy(name = "ESTIMATE")
-    private Button clickEstimateButton;
-    @FindBy(name = "PLAN")
-    private Button clickPlanButton;
-    @FindBy(name = "30 St Mary Axe")
-    private By clickProject = By.name("30 St Mary Axe");
-    @FindBy(name = "1")
-    private By maximize = By.name("1");
-    @FindBy(name = "Settings")
-    private By wqae = By.name("Settings");
-    @FindBy(name = "TextBox")
-    private By clickSearchBox = By.className("TextBox");
-    @FindBy(name = "ROLE")
-    private By clickRoleTab = By.name("ROLE");
-    @FindBy(name = "EMPLOYEE")
-    private By clickEmployeeTab = By.name("EMPLOYEE");
-    @FindBy(name = "Settings")
-    private By clickSettings = By.name("Settings");
-    @FindBy(name = "Office/Organization")
-    private By clickOfficeOrganization = By.name("Office/Organization");
-    @FindBy(name = "Consolidation")
-    private By clickConsolidation = By.name("Consolidation");
-    @FindBy(name = "CLEAR")
-    private By clickClear = By.name("CLEAR");
-    @FindBy(name = "Project Manager")
-    private By clickProjectManager = By.name("Project Manager");
-    @FindBy(name = "Project Type")
-    private By clickProjectType = By.name("Project Type");
-    @FindBy(name = "PIC")
-    private By clickPic = By.name("PIC");
-    @FindBy(name = "DEFAULT HOURS")
-    private By clickDefaultHours = By.name("DEFAULT HOURS");
-    @FindBy(name = "HIDDEN")
-    private By hiddenThis = By.name("HIDDEN");
-    @FindBy(name = "TEAM MANAGER")
-    private By teamManagerButton = By.name("TEAM MANAGER");
-    @FindBy(name = "TextBlock")
-    private By togglePresent = By.className("TextBlock");
-    @FindBy(name = "r")
-    private Button exitButton;
-    @FindBy(name = "CANCEL")
-    private Button cancelButtonManager;
-    @FindBy(name = "ComboBox")
-    private By comboBoxManager = By.name("ComboBox");
-    @FindBy(name = "SAVE")
-    private Button saveButton;
-    @FindBy(name = "TEAM NAME")
-    private By teamName = By.name("TEAM NAME");
-    @FindBy(name = "ADD FAVORITE TEAM")
-    private By favoriteTeam;
 
+    @FindBy(name = "30 St Mary Axe")
+    private WebElement clickProject;
+
+    @FindBy(name = "settings")
+    private WebElement wqae;
+    @FindBy(name = "TextBox")
+    private WebElement clickSearchBox;
+    @FindBy(name = "ROLE")
+    private WebElement clickRoleTab;
+    @FindBy(name = "EMPLOYEE")
+    private WebElement clickEmployeeTab;
+    @FindBy(name = "ISettingsCriteriaSidebar")
+    private WebElement clickSettings;
+    @FindBy(name = "Office/Organization")
+    private WebElement clickOfficeOrganization;
+    @FindBy(name = "Consolidation")
+    private WebElement clickConsolidation;
+    @FindBy(name = "CLEAR")
+    private WebElement clickClear;
+    @FindBy(name = "Project Manager")
+    private WebElement clickProjectManager;
+    @FindBy(name = "Project Type")
+    private WebElement clickProjectType;
+    @FindBy(name = "PIC")
+    private WebElement clickPic;
+    @FindBy(name = "DEFAULT HOURS")
+    private WebElement clickDefaultHours;
+    @FindBy(name = "HIDDEN")
+    private WebElement hiddenThis;
+    @FindBy(name = "TextBlock")
+    private WebElement togglePresent;
+    @FindBy(name = "r")
+    private WebElement exitButton;
+    @FindBy(name = "CANCEL")
+    private WebElement cancelButtonManager;
+    @FindBy(name = "ComboBox")
+    private WebElement comboBoxManager;
+    @FindBy(name = "SAVE")
+    private WebElement saveButton;
+    @FindBy(name = "TEAM NAME")
+    private WebElement teamName;
+    @FindBy(name = "ADD FAVORITE TEAM")
+    private WebElement favoriteTeam;
+
+    public void initElements(WebDriver driver) {
+        PageFactory.initElements(driver, this);
+    }
+
+    private WebElement getActiveElement() {
+        return driver.switchTo().activeElement();
+    }
 
     //Functional
-    protected void clickSkipUpgradeButton() {
+
+
+    public void clickSomewhere() {
+        getActiveElement().click();
     }
 
+
+
     protected void clickFavoriteTeam() {
-        //favoriteTeam.click();
+        favoriteTeam.click();
     }
 
     protected void clickTeamName() {
+        teamName.click();
     }
 
     protected void clickComboBoxManager() {
+        comboBoxManager.click();
     }
 
     protected void clickCancelButtonManager() {
+        cancelButtonManager.click();
     }
 
     protected void clickExitButton() {
+        exitButton.click();
     }
 
     protected void clickTogglePresent() {
+        togglePresent.click();
     }
 
-    protected void clickTeamManagerButton() {
-    }
 
     protected void clickHiddenThis() {
+        hiddenThis.click();
     }
 
-    protected void clickVlickDefaultHours() {
+    protected void clickClickDefaultHours() {
+        clickDefaultHours.click();
     }
 
     protected void clickClickPic() {
+        clickPic.click();
     }
 
     protected void clickClickProjectType() {
+        clickProjectType.click();
     }
 
     protected void clickClickProjectManager() {
+        clickProjectManager.click();
     }
 
     protected void clickClickClear() {
+        clickClear.click();
     }
 
     protected void clickClickConsolidation() {
+        clickConsolidation.click();
     }
 
     protected void clickClickOfficeOrganization() {
+        clickOfficeOrganization.click();
     }
 
     protected void clickClickSettings() {
+        clickSettings.click();
     }
 
     protected void clickClickEmployeeTab() {
+        clickEmployeeTab.click();
     }
 
     protected void clickClickRoleTab() {
+        clickRoleTab.click();
     }
 
     protected void clickClickSearchBox() {
+        clickSearchBox.click();
     }
 
     protected void clickWqae() {
-    }
-
-    protected void clickMaximize() {
+        wqae.click();
     }
 
     protected void clickClickProject() {
+        clickProject.click();
     }
 
-    protected void clickClickEstimateButton() {
+
+    protected void clickSaveButton() {
+        saveButton.click();
     }
 
-    protected void click() {
+    protected void clickRoleTab() {
+        clickRoleTab.click();
     }
 
-    protected void click() {
+
+
+
+    protected void clearFavoriteTeam() {
+        favoriteTeam.click();
     }
 
+
+
+    //    protected void clickTeamName() {
+//        teamName.click();
+//    }
+//
+//    protected void clickComboBoxManager() {
+//        comboBoxManager.click();
+//    }
+//
+//    protected void clickCancelButtonManager() {
+//        cancelButtonManager.click();
+//    }
+//
+//    protected void clickExitButton() {
+//        exitButton.click();
+//    }
+//
+//    protected void clickTogglePresent() {
+//        togglePresent.click();
+//    }
+//
+//    protected void clickTeamManagerButton() {
+//        teamManagerButton.click();
+//    }
+//
+//    protected void clickHiddenThis() {
+//        hiddenThis.click();
+//    }
+//
+    protected void clearClickDefaultHours() {
+        clickDefaultHours.clear();
+    }
+
+    //
+//    protected void clickClickPic() {
+//        clickPic.click();
+//    }
+//
+//    protected void clickClickProjectType() {
+//        clickProjectType.click();
+//    }
+//
+//    protected void clickClickProjectManager() {
+//        clickProjectManager.click();
+//    }
+//
+//    protected void clickClickClear() {
+//        clickClear.click();
+//    }
+//
+//    protected void clickClickConsolidation() {
+//        clickConsolidation.click();
+//    }
+//
+//    protected void clickClickOfficeOrganization() {
+//        clickOfficeOrganization.click();
+//    }
+//
+//    protected void clickClickSettings() {
+//        clickSettings.click();
+//    }
+//
+    protected void clearClickEmployeeTab() {
+        clickEmployeeTab.clear();
+    }
+
+    //
+    protected void clearRoleTab() {
+        clickRoleTab.clear();
+    }
+
+    //
+    protected void clearClickSearchBox() {
+        clickSearchBox.clear();
+    }
+//
+//    protected void clickWqae() {
+//        wqae.click();
+//    }
+//
+//    protected void clickMaximize() {
+//        maximize.click();
+//    }
+//
+//    protected void clickClickProject() {
+//        clickProject.click();
+//    }
+//
+//    protected void clickEstimateButton() {
+//        clickEstimateButton.click();
+//    }
+//
+//    protected void clickSaveButton() {
+//        saveButton.click();
+//    }
+//
+//    protected void clickRoleTab() {
+//        clickRoleTab.click();
+//    }
+//
+//    protected void clickPlanButton() {
+//        clickPlanButton.click();
+//    }
+
+    //set
+    protected void setClickSearchBox(String value) {
+        clickSearchBox.sendKeys(value);
+    }
+
+    protected void setClickEmployeeTab(String value) {
+        clickEmployeeTab.sendKeys(value);
+    }
+
+    protected void setRoleTab(String value) {
+        clickRoleTab.sendKeys(value);
+    }
+
+    protected void setClickDefaultHours(String value) {
+        clickDefaultHours.sendKeys(value);
+    }
+
+    //Check if displayed
+
+    public boolean checkIfHiddenThis() {
+        return hiddenThis.isDisplayed();
+    }
+
+    public boolean checkIfTeamNameIsDisplayed() {
+        return teamName.isDisplayed();
+    }
+
+    public boolean checkIfCancelButtonManagerIsDisplayed() {
+        return cancelButtonManager.isDisplayed();
+    }
+
+    public boolean checkIfExitButtonIsDisplayed() {
+        return exitButton.isDisplayed();
+    }
+
+    public boolean checkIfTogglePresentIsDisplayed() {
+        return togglePresent.isDisplayed();
+    }
+
+    public boolean checkIfRandomElementDisplayed() {
+        return togglePresent.isDisplayed();
+    }
     //Business Logic
 
-    public TestController skipUpgrade() throws Exception {
-
-        try {
-            WebDriverWait waitHere11 = new WebDriverWait(driver, 5);
-            waitHere11.until(ExpectedConditions.elementToBeClickable(skipUpgradeButton));
-            driver.findElement(skipUpgradeButton).click();
-            driver.findElement(confirmUpgradeButton).click();
-        } catch (Exception e) {
-
-        }
-        return this;
+    public void fillingDefaultHours(String value) {
+        clickClickDefaultHours();
+        clearClickDefaultHours();
+        setClickDefaultHours(value);
     }
+
+    public void fillingRoleTab(String value) {
+        clickRoleTab();
+        clearRoleTab();
+        setRoleTab(value);
+    }
+
+    public void fillingSearchBox(String value) {
+        clickClickSearchBox();
+        clearClickSearchBox();
+        setClickSearchBox(value);
+    }
+
+    public void fillingEmployeeTab(String value) {
+        clickClickEmployeeTab();
+        clearClickEmployeeTab();
+        setClickEmployeeTab(value);
+    }
+
 
     public TestController exitApp() throws Exception {
         Thread.sleep(2000);
-        driver.findElement(exitButton).click();
+        clickExitButton();
         return this;
     }
 
 
-    public TestController resolutionMaximize() throws Exception {
-        driver.findElement(maximize).click();
+    public TestController inputDataIntoSearch(String value) throws Exception {
+        fillingSearchBox(value);
         return this;
     }
 
-    public TestController inputDataIntoSearch() throws Exception {
-        driver.findElement(clickSearchBox).click();
-        driver.findElement(clickSearchBox).sendKeys("0000.065.00");
-        return this;
-    }
-
-    public TestController showProjectDetails() throws Exception {
-        driver.findElement(clickSearchBox).click();
-        driver.findElement(clickSearchBox).sendKeys("0000.011.00");
-        driver.findElement(clickProject).click();
+    public TestController showProjectDetails(String value) throws Exception {
+        fillingSearchBox(value);
+        clickClickProject();
         return this;
     }
 
 
     public TestController switchOnMyProjects() throws Exception {
-        driver.findElement(clickSettings).click();
+        clickClickSettings();
         Thread.sleep(3000);
         WebDriverWait waitHere11 = new WebDriverWait(driver, 5);
         waitHere11.until(ExpectedConditions.elementToBeClickable(clickClear));
-        driver.findElement(clickClear).click();
+        clickClickClear();
         Robot robo = new Robot();
         robo.keyPress(java.awt.event.KeyEvent.VK_LEFT);
         robo.keyRelease(java.awt.event.KeyEvent.VK_LEFT);
@@ -211,51 +387,51 @@ public class TestController {
         return this;
     }
 
-    public TestController showHideFiltersTab() throws Exception {
-        driver.findElement(clickEstimateButton).click();
-        driver.findElement(clickPlanButton).click();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickSpace();
-        clickRight();
-        clickSpace();
-        clickSpace();
-        clickLeft();
-        clickSpace();
-        clickLeft();
-        clickLeft();
-        clickSpace();
-        return this;
-    }
+//    public TestController showHideFiltersTab() throws Exception {
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickSpace();
+//        clickRight();
+//        clickSpace();
+//        clickSpace();
+//        clickLeft();
+//        clickSpace();
+//        clickLeft();
+//        clickLeft();
+//        clickSpace();
+//        return this;
+//    }
 
 
     public TestController switchOnActiveProjects() throws Exception {
-        driver.findElement(clickSettings).click();
+        clickClickSettings();
         Thread.sleep(3000);
         WebDriverWait waitHere11 = new WebDriverWait(driver, 5);
         waitHere11.until(ExpectedConditions.elementToBeClickable(clickClear));
-        driver.findElement(clickClear).click();
+        clickClickClear();
         clickLeft();
         clickDown();
         clickSpace();
         return this;
     }
 
-    public TestController projectsSettingsPopUp() throws Exception {
-        driver.findElement(clickEstimateButton).click();
-        driver.findElement(clickPlanButton).click();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickRight();
-        clickSpace();
-        return this;
-    }
+//    public TestController projectsSettingsPopUp() throws Exception {
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickRight();
+//        clickSpace();
+//        return this;
+//    }
 
     public TestController officeOrgCheckboxCheck() throws Exception {
-        driver.findElement(clickOfficeOrganization).click();
-        driver.findElement(clickConsolidation).click();
+        clickClickOfficeOrganization();
+        clickClickConsolidation();
         clickDown();
         clickSpace();
         clickRight();
@@ -275,30 +451,30 @@ public class TestController {
         return this;
     }
 
-    public TestController methodDropDownInPrSettingsPopUp() throws Exception {
-        driver.findElement(clickEstimateButton).click();
-        driver.findElement(clickPlanButton).click();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickRight();
-        clickSpace();
-        clickTab();
-        clickTab();
-        clickTab();
-        clickTab();
-        clickTab();
-        clickDown();
-        clickUp();
-        return this;
-    }
+//    public TestController methodDropDownInPrSettingsPopUp() throws Exception {
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickRight();
+//        clickSpace();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickDown();
+//        clickUp();
+//        return this;
+//    }
 
     public TestController switchOnBillingRates() throws Exception {
-        driver.findElement(clickSettings).click();
+        clickClickSettings();
         Thread.sleep(3000);
         WebDriverWait waitHere11 = new WebDriverWait(driver, 5);
         waitHere11.until(ExpectedConditions.elementToBeClickable(clickClear));
-        driver.findElement(clickClear).click();
+        clickClickClear();
         clickLeft();
         clickDown();
         clickDown();
@@ -308,11 +484,11 @@ public class TestController {
     }
 
     public TestController switchOnShowUnpostedTime() throws Exception {
-        driver.findElement(clickSettings).click();
-        Thread.sleep(3000);
+        clickClickSettings();
+//driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
         WebDriverWait waitHere11 = new WebDriverWait(driver, 5);
         waitHere11.until(ExpectedConditions.elementToBeClickable(clickClear));
-        driver.findElement(clickClear).click();
+        clickClickClear();
         clickLeft();
         clickDown();
         clickDown();
@@ -322,11 +498,11 @@ public class TestController {
 
 
     public TestController switchOnProjectsWithMilestones() throws Exception {
-        driver.findElement(clickSettings).click();
+        clickClickSettings();
         Thread.sleep(3000);
         WebDriverWait waitHere11 = new WebDriverWait(driver, 5);
         waitHere11.until(ExpectedConditions.elementToBeClickable(clickClear));
-        driver.findElement(clickClear).click();
+        clickClickClear();
         clickLeft();
         clickDown();
         clickDown();
@@ -338,7 +514,7 @@ public class TestController {
 
 
     public TestController projectManagerCheckboxCheck() throws Exception {
-        driver.findElement(clickProjectManager).click();
+        clickClickProjectManager();
         clickDown();
         clickTab();
         clickSpace();
@@ -350,7 +526,7 @@ public class TestController {
     }
 
     public TestController projectTypeCheckboxCheck() throws Exception {
-        driver.findElement(clickProjectType).click();
+        clickClickProjectManager();
         clickDown();
         clickTab();
         clickSpace();
@@ -362,7 +538,7 @@ public class TestController {
     }
 
     public TestController picCheckboxCheck() throws Exception {
-        driver.findElement(clickPic).click();
+        clickClickPic();
         clickDown();
         clickTab();
         clickSpace();
@@ -375,37 +551,36 @@ public class TestController {
 
 
     public TestController clearOnFiltersTab() throws Exception {
-        driver.findElement(clickOfficeOrganization).click();
-        driver.findElement(clickConsolidation).click();
+        clickClickOfficeOrganization();
+        clickClickConsolidation();
         clickDown();
         clickSpace();
-        driver.findElement(clickProjectType).click();
-        clickDown();
-        clickTab();
-        clickSpace();
-        driver.findElement(clickProjectManager).click();
+        clickClickProjectType();
         clickDown();
         clickTab();
         clickSpace();
-        driver.findElement(clickProjectManager).click();
-        driver.findElement(clickPic).click();
+        clickClickProjectManager();
         clickDown();
         clickTab();
         clickSpace();
-        driver.findElement(clickSettings).click();
-        driver.findElement(clickClear).click();
-        Thread.sleep(5000);
-        driver.findElement(clickProjectManager).click();
-        driver.findElement(clickProjectType).click();
+        clickClickProjectManager();
+        clickClickPic();
+        clickDown();
+        clickTab();
+        clickSpace();
+        clickClickSettings();
+        clickClickClear();
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+        clickClickProjectManager();
+        clickClickProjectType();
         return this;
     }
 
 
-    public TestController inputDataIntoEmployeeSearch() throws Exception {
-        driver.findElement(clickSearchBox).click();
-        driver.findElement(clickSearchBox).sendKeys("0000.011.00");
-        driver.findElement(clickProject).click();
-        Thread.sleep(6000);
+    public TestController inputDataIntoEmployeeSearch(String value, String employee) throws Exception {
+        fillingSearchBox(value);
+        clickClickProject();
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
         clickTab();
         clickRight();
         clickRight();
@@ -413,77 +588,74 @@ public class TestController {
         clickTab();
         clickTab();
         clickTab();
-        driver.findElement(clickEmployeeTab).sendKeys("Abbot");
-
+        fillingEmployeeTab(employee);
 
         return this;
     }
 
 
-    public TestController inputDataIntoRoleSearch() throws Exception {
-        driver.findElement(clickSearchBox).click();
-        driver.findElement(clickSearchBox).sendKeys("0000.011.00");
-        driver.findElement(clickProject).click();
-        Thread.sleep(6000);
+    public TestController inputDataIntoRoleSearch(String value, String role) throws Exception {
+        fillingSearchBox(value);
+        clickClickProject();
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
         clickTab();
         clickRight();
         clickRight();
         clickRight();
         clickLeft();
         clickTab();
-        driver.findElement(clickRoleTab).sendKeys("Job");
+        fillingRoleTab(role);
         return this;
     }
 
 
-    public TestController defaultHoursEditInPrSet() throws Exception {
-        driver.findElement(clickEstimateButton).click();
-        driver.findElement(clickPlanButton).click();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickRight();
-        clickSpace();
-        clickTab();
-        clickTab();
-        clickTab();
-        clickTab();
-        driver.findElement(clickDefaultHours).sendKeys("100");
-        return this;
-    }
-
-    public TestController saveInPrSet() throws Exception {
-
-
-        driver.findElement(clickEstimateButton).click();
-        driver.findElement(clickPlanButton).click();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickRight();
-        clickSpace();
-        clickTab();
-        clickTab();
-        clickTab();
-        clickTab();
-        Thread.sleep(1000);
-        driver.findElement(clickDefaultHours).sendKeys("100");
-        clickTab();
-        clickUp();
-        clickDown();
-        clickTab();
-        clickRight();
-        clickSpace();
-        clickSpace();
-
-        return this;
-    }
+//    public TestController defaultHoursEditInPrSet(String value) throws Exception {
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickRight();
+//        clickSpace();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        fillingDefaultHours(value);
+//        return this;
+//    }
+//
+//    public TestController saveInPrSet(String value) throws Exception {
+//
+//
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickRight();
+//        clickSpace();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+//        fillingDefaultHours(value);
+//        clickTab();
+//        clickUp();
+//        clickDown();
+//        clickTab();
+//        clickRight();
+//        clickSpace();
+//        clickSpace();
+//
+//        return this;
+//    }
 
     public TestController hiddenLabelCheck() throws Exception {
-        Boolean hirt = driver.findElement(hiddenThis).isDisplayed();
-        Thread.sleep(1000);
-        if (hirt) {
-            System.out.println(hirt);
+        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+        if (checkIfHiddenThis()) {
+            System.out.println(checkIfHiddenThis());
         } else {
             throw new Exception("Hidden label is not displayed MPP-2688");
         }
@@ -492,7 +664,7 @@ public class TestController {
 
     public TestController saveButtonExist() throws Exception {
         try {
-            driver.findElement(saveButton).click();
+            clickSaveButton();
         } catch (Exception e) {
             throw new Exception("Save button is not displayed MPP-590");
         }
@@ -508,10 +680,8 @@ public class TestController {
         clickTab();
         clickTab();
         clickTab();
-        WebElement focusedele = driver.switchTo().activeElement();
-        focusedele.click();
-        Boolean isPresent = driver.findElement(teamName).isDisplayed();
-        if (isPresent) {
+        clickSomewhere();
+        if (checkIfTeamNameIsDisplayed()) {
 
         } else {
             throw new Exception("Save button is not displayed MPP-589");
@@ -521,7 +691,6 @@ public class TestController {
 
 
     public TestController favoriteTeamTitle() throws Exception {
-
         clickTab();
         clickTab();
         clickTab();
@@ -532,35 +701,33 @@ public class TestController {
         clickTab();
         WebElement focusedele = driver.switchTo().activeElement();
         focusedele.click();
-        Boolean isPresent = driver.findElement(favoriteTeam).isDisplayed();
-        if (isPresent) {
-
+        if (checkIfTeamNameIsDisplayed()) {
         } else {
             throw new Exception("Save button is not displayed MPP-588");
         }
         return this;
     }
 
-
-    public TestController generalListOfEmployeeBox() throws Exception {
-        driver.findElement(clickSearchBox).click();
-        clickTab();
-        WebElement focusedele = driver.switchTo().activeElement();
-        Thread.sleep(2000);
-        focusedele.click();
-        Boolean focusDisplay = focusedele.isDisplayed();
-        if (focusDisplay) {
-            System.out.println(focusedele);
-        } else {
-            throw new Exception("List of employee is not displayed MPP-617");
-        }
-        return this;
-    }
+//TODO
+//    public TestController generalListOfEmployeeBox() throws Exception {
+//        clickClickSearchBox();
+//        clickTab();
+//        WebElement focusedele = driver.switchTo().activeElement();
+//        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+//        focusedele.click();
+//        Boolean focusDisplay = focusedele.isDisplayed();
+//        if (focusDisplay) {
+//            System.out.println(focusedele);
+//        } else {
+//            throw new Exception("List of employee is not displayed MPP-617");
+//        }
+//        return this;
+//    }
 
 
     public TestController closePopupButton() throws Exception {
         try {
-            driver.findElement(cancelButtonManager).click();
+            clickCancelButtonManager();
         } catch (Exception e) {
             throw new Exception("Cancel button is not clickable MPP-599");
         }
@@ -569,7 +736,7 @@ public class TestController {
 
     public TestController closeExitPopupButton() throws Exception {
         try {
-            driver.findElement(exitButton).click();
+            clickExitButton();
         } catch (Exception e) {
             throw new Exception("Cancel button is not clickable MPP-598");
         }
@@ -578,8 +745,7 @@ public class TestController {
     }
 
     public TestController doesCloseExist() throws Exception {
-        Boolean isThere = driver.findElement(cancelButtonManager).isDisplayed();
-        if (isThere) {
+        if (checkIfCancelButtonManagerIsDisplayed()) {
 
         } else {
             throw new Exception("Cancel button is not clickable MPP-591");
@@ -589,8 +755,7 @@ public class TestController {
 
     public TestController doesExitExist() throws Exception {
 
-        Boolean isThere = driver.findElement(exitButton).isDisplayed();
-        if (isThere) {
+        if (checkIfExitButtonIsDisplayed()) {
 
         } else {
             throw new Exception("Cancel button is not clickable MPP-591");
@@ -601,9 +766,8 @@ public class TestController {
 
 
     public TestController checkIfToogleExists() throws Exception {
-        Boolean hirt = driver.findElement(togglePresent).isDisplayed();
-        if (hirt) {
-            System.out.println(hirt);
+        if (checkIfTogglePresentIsDisplayed()) {
+            System.out.println(checkIfTogglePresentIsDisplayed());
         } else {
             throw new Exception("Toggle is not displayed MPP-2689");
         }
@@ -618,10 +782,9 @@ public class TestController {
         clickTab();
         clickTab();
         clickTab();
-        WebElement focusedele = driver.switchTo().activeElement();
-        Boolean focusedElemPresent = focusedele.isDisplayed();
-        if (focusedElemPresent) {
-            System.out.println(focusedElemPresent);
+
+        if (checkIfRandomElementDisplayed()) {
+            System.out.println(checkIfRandomElementDisplayed());
         } else {
             throw new Exception("DropDown is not   present - MPP-624");
         }
@@ -636,7 +799,7 @@ public class TestController {
         clickTab();
         WebElement focusedele = driver.switchTo().activeElement();
         focusedele.click();
-        driver.findElement(exitButton).click();
+        clickExitButton();
         return this;
     }
 
@@ -647,199 +810,132 @@ public class TestController {
         clickTab();
         clickTab();
         clickTab();
-        WebElement focusedele = driver.switchTo().activeElement();
-        focusedele.click();
+        clickSomewhere();
         WebDriverWait waitHere12 = new WebDriverWait(driver, 5);
         waitHere12.until(ExpectedConditions.elementToBeClickable(cancelButtonManager));
-        driver.findElement(cancelButtonManager).click();
+        clickCancelButtonManager();
         return this;
     }
 
 
-    public TestController cancelInPrSet() throws Exception {
-        driver.findElement(clickEstimateButton).click();
-        driver.findElement(clickPlanButton).click();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickRight();
-        clickSpace();
-        clickTab();
-        clickTab();
-        clickTab();
-        clickTab();
-        Thread.sleep(1000);
-        driver.findElement(clickDefaultHours).sendKeys("100");
-        clickTab();
-        clickUp();
-        clickDown();
-        clickTab();
-        clickLeft();
-        clickSpace();
-        clickSpace();
-        clickShiftTab();
-        clickShiftTab();
-        clickSpace();
-        clickSpace();
-        return this;
-    }
+//    public TestController cancelInPrSet(String value) throws Exception {
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickRight();
+//        clickSpace();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+//        fillingDefaultHours(value);
+//        clickTab();
+//        clickUp();
+//        clickDown();
+//        clickTab();
+//        clickLeft();
+//        clickSpace();
+//        clickSpace();
+//        clickShiftTab();
+//        clickShiftTab();
+//        clickSpace();
+//        clickSpace();
+//        return this;
+//    }
+//
+//
+//    public TestController closeInPrSet(String value) throws Exception {
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickRight();
+//        clickSpace();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+//        fillingDefaultHours(value);
+//        clickTab();
+//        clickUp();
+//        clickDown();
+//        clickShiftTab();
+//        clickShiftTab();
+//        clickSpace();
+//        clickShiftTab();
+//        clickShiftTab();
+//        clickSpace();
+//        clickSpace();
+//        return this;
+//    }
+//
+//
+//    public TestController cancelWithoutChangesInPrSet() throws Exception {
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickRight();
+//        clickSpace();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickSpace();
+//        return this;
+//    }
+//
+//
+//    public TestController closeWithoutChangesInPrSet() throws Exception {
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickRight();
+//        clickSpace();
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickSpace();
+//        return this;
+//    }
+//
+//    public TestController selectFromTeamDropDownInEmpRole() throws Exception {
+//        clickEstimateButton();
+//        clickPlanButton();
+//        clickDown();
+//        clickSpace();
+//        clickRight();
+//        clickRight();
+//        clickTab();
+//        clickTab();
+//        clickSpace();
+//        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+//        clickTab();
+//        clickTab();
+//        clickTab();
+//        clickDown();
+//        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+//        clickDown();
+//        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+//        clickDown();
+//        driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
+//        return this;
+//    }
 
 
-    public TestController closeInPrSet() throws Exception {
-        driver.findElement(clickEstimateButton).click();
-        driver.findElement(clickPlanButton).click();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickRight();
-        clickSpace();
-        clickTab();
-        clickTab();
-        clickTab();
-        clickTab();
-        Thread.sleep(1000);
-        driver.findElement(clickDefaultHours).sendKeys("100");
-        clickTab();
-        clickUp();
-        clickDown();
-        clickShiftTab();
-        clickShiftTab();
-        clickSpace();
-        clickShiftTab();
-        clickShiftTab();
-        clickSpace();
-        clickSpace();
-        return this;
-    }
 
-
-    public TestController cancelWithoutChangesInPrSet() throws Exception {
-        driver.findElement(clickEstimateButton).click();
-        driver.findElement(clickPlanButton).click();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickRight();
-        clickSpace();
-        clickTab();
-        clickTab();
-        clickTab();
-        clickTab();
-        Thread.sleep(1000);
-        clickTab();
-        clickTab();
-        clickTab();
-        clickSpace();
-        return this;
-    }
-
-
-    public TestController closeWithoutChangesInPrSet() throws Exception {
-        driver.findElement(clickEstimateButton).click();
-        driver.findElement(clickPlanButton).click();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickRight();
-        clickSpace();
-        clickTab();
-        clickTab();
-        clickTab();
-        clickSpace();
-        return this;
-    }
-
-    public TestController selectFromTeamDropDownInEmpRole() throws Exception {
-        driver.findElement(clickEstimateButton).click();
-        driver.findElement(clickPlanButton).click();
-        clickDown();
-        clickSpace();
-        clickRight();
-        clickRight();
-        clickTab();
-        clickTab();
-        clickSpace();
-        Thread.sleep(6000);
-        clickTab();
-        clickTab();
-        clickTab();
-        clickDown();
-        Thread.sleep(2000);
-        clickDown();
-        Thread.sleep(2000);
-        clickDown();
-        Thread.sleep(2000);
-        return this;
-    }
-
-
-    public TestController clickTeamManager() throws Exception {
-        WebDriverWait waitHere12 = new WebDriverWait(driver, 5);
-        waitHere12.until(ExpectedConditions.elementToBeClickable(teamManagerButton));
-        driver.findElement(teamManagerButton).click();
-        Thread.sleep(3000);
-        return this;
-    }
-
-
-    public TestController clickShiftTab() throws Exception {
-        Robot robo = new Robot();
-        robo.keyPress(KeyEvent.VK_SHIFT);
-        robo.keyPress(KeyEvent.VK_TAB);
-        robo.keyRelease(KeyEvent.VK_SHIFT);
-        robo.keyRelease(KeyEvent.VK_TAB);
-        Thread.sleep(1000);
-        return this;
-    }
-
-
-    public TestController clickTab() throws Exception {
-        Robot robo = new Robot();
-        robo.keyPress(KeyEvent.VK_TAB);
-        robo.keyRelease(KeyEvent.VK_TAB);
-        Thread.sleep(1000);
-        return this;
-    }
-
-    public TestController clickDown() throws Exception {
-        Robot robo = new Robot();
-        robo.keyPress(KeyEvent.VK_DOWN);
-        robo.keyRelease(java.awt.event.KeyEvent.VK_DOWN);
-        Thread.sleep(1000);
-        return this;
-    }
-
-    public TestController clickRight() throws Exception {
-        Robot robo = new Robot();
-        robo.keyPress(KeyEvent.VK_RIGHT);
-        robo.keyRelease(KeyEvent.VK_RIGHT);
-        Thread.sleep(1000);
-        return this;
-    }
-
-    public TestController clickSpace() throws Exception {
-        Robot robo = new Robot();
-        robo.keyPress(KeyEvent.VK_SPACE);
-        robo.keyRelease(KeyEvent.VK_SPACE);
-        Thread.sleep(1000);
-        return this;
-    }
-
-    public TestController clickLeft() throws Exception {
-        Robot robo = new Robot();
-        robo.keyPress(KeyEvent.VK_LEFT);
-        robo.keyRelease(KeyEvent.VK_LEFT);
-        Thread.sleep(1000);
-        return this;
-    }
-
-    public TestController clickUp() throws Exception {
-        Robot robo = new Robot();
-        robo.keyPress(KeyEvent.VK_UP);
-        robo.keyRelease(KeyEvent.VK_UP);
-        Thread.sleep(1000);
-        return this;
-    }
 
 
 }
