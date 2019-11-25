@@ -1,5 +1,6 @@
 package planify.common;
 
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.winium.WiniumDriver;
 import planify.common.CRUD;
 import planify.common.mainParts.Forecast;
@@ -21,5 +22,13 @@ public class Planifi extends CRUD {
 
     public Manage gotoManagePart(){
         return new Manage(driver);
+    }
+
+    public WebElement getWebClearSetting(){
+        return driver.findElementByName("CLEAR");
+    }
+
+    public WebElement getWebApplySetting(){
+        return driver.findElementByName("APPLY");
     }
 }

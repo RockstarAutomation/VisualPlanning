@@ -18,8 +18,22 @@ public class MainTest extends TestRunner {
     public void test() {
         planifi
                 .gotoPlanPart()
-                .clickPlanCrudGoToPlan()
-                .closeApplication();
+                .clickPlanCrudGoToPlan();
+    }
+
+    @Test
+    public void gotoEstimationByXpath() {
+        planifi
+                .gotoPlanPart()
+                .clickPlanCrudGoToEstimate();
+
+    }
+
+    @Test
+    public void maximazeTest(){
+        planifi.gotoPlanPart()
+                .maximazeWindowApplication()
+                .minimazeWindowApplication();
     }
 
 }

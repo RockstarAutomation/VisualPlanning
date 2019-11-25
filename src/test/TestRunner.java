@@ -86,12 +86,15 @@ public void checkIfDriverIsClosed(){
 
     }
 
-    @AfterTest
+    @AfterTest(alwaysRun = true)
     public void tearDown(){
+        page.closeApplication();
         service.stop();
+
     }
     //@AfterMethod
     public void killWiniumDriver(){
         shell.destroy();
+
     }
 }

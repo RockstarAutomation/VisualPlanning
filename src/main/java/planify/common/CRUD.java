@@ -1,15 +1,9 @@
 package planify.common;
 
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.CacheLookup;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.winium.WiniumDriver;
 import planify.common.popup.ConfigurationPopup;
-import test.TestController;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;
@@ -18,38 +12,58 @@ public abstract class CRUD {
     protected WiniumDriver driver;
     private Boolean winState = true;
 
-    @FindBy(name = "1")
-    @CacheLookup
-    private WebElement changeSizeOfWindow;
-
-    @FindBy(name = "help")
-    @CacheLookup
+    private WebElement maximazeSizeOfWindow;
+    private WebElement mainimazeSizeOfWindow;
     private WebElement helpLink;
-
-    @FindBy(name = "WINDOWS-7M766IE\\User")
-    @CacheLookup
     private WebElement processConfig;
+    protected WebElement closeApplication;
+    private WebElement visualPlanning ;
+    private By exitButton = By.name("r");
+
 
     protected CRUD(WiniumDriver webDriver){
         this.driver = webDriver;
-        initElements();
     }
 
     private void initElements(){
-        PageFactory.initElements(driver, this);
+        maximazeSizeOfWindow = driver.findElementByXPath("//Button[@name='1']");
+        closeApplication = driver.findElementByXPath("//[@name = 'r']");
     }
 
-    public void closeApplication(){}
 
-    public CRUD miximazeWindowApplication(){
-        changeSizeOfWindow.click();
+    private WebElement getWebMaximazeSizeOfWindow(){
+        //return driver.findElementByXPath("//*[@name='1']");
+        return driver.findElementByName("1");
+    }
+
+    private WebElement getWebMinimazeSizeOfWindow(){
+        //return driver.findElementByXPath("//*[@name='1']");
+        return driver.findElementByName("2");
+    }
+
+    private WebElement getWebCloseApplication(){
+        return driver.findElementByName("r");
+    }
+
+    public void closeApplication(){
+        //visualPlanning = driver.findElementByXPath("/*[@name='Visual Planning']");
+        //*[@name='Visual Planning']/*[@name = 'r']
+        //HwndWrapper[DefaultDomain;;74c5f445-942d-45af-a0a4-5087916da51d]
+        //closeApplication = driver.findElementByXPath("/*[@AutomationId = 'VisualPlanningUnity']");
+        //driver.findElement(By.xpath("/*[@AutomationId = 'VisualPlanningUnity']//*[@name='r']")).click();
+        //driver.findElement(exitButton).click();
+        getWebCloseApplication().click();
+    }
+
+    public CRUD maximazeWindowApplication(){
+        getWebMaximazeSizeOfWindow().click();
         winState = false;
         return this;
     }
 //TODO custom exception
     public CRUD minimazeWindowApplication(){
         if(winState.equals(false)) {
-            changeSizeOfWindow.click();
+            getWebMinimazeSizeOfWindow().click();
         }
         else{
             throw new RuntimeException("The application has already deployed");
@@ -72,6 +86,17 @@ public abstract class CRUD {
         robo.keyPress(KeyEvent.VK_TAB);
         robo.keyRelease(KeyEvent.VK_SHIFT);
         robo.keyRelease(KeyEvent.VK_TAB);
+        return this;
+    }
+
+    public CRUD closeApp(){
+        try {
+            Robot robo = new Robot();
+            robo.keyPress(KeyEvent.VK_ALT);
+            robo.keyPress(KeyEvent.VK_F4);
+        } catch (AWTException e) {
+            e.printStackTrace();
+        }
         return this;
     }
 

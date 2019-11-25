@@ -22,4 +22,8 @@ public class Forecast extends Planifi {
     protected void clickForecastCrud() {
         forecastCrud.click();
     }
+    private WebElement getApplyWebElement(){
+        return driver.findElementByName("APPLY");
+    }
+
 }
