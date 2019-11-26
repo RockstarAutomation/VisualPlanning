@@ -1,64 +1,70 @@
 package planify.planPart;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.winium.WiniumDriver;
 import planify.common.Planifi;
+import planify.common.data.ProjectsComponentsPlanPart;
+import planify.common.data.ProjectsContainerPlanPart;
 import planify.common.mainParts.Plan;
 import planify.common.sidebar.*;
 
-public class PlanBreadCrumb extends Plan implements ISettingsCriteriaSidebar, IOfficeOrganizationCriteriaSidebar,
-        IProjectTypeCriteriaSidebar, IProjectManagerCriteriaSidebar, IPICCriteriaSidebar, ISupervisorCriteriaSidebar {
+import java.util.ArrayList;
+import java.util.List;
 
+public class PlanBreadCrumb extends Plan {
+    private List<ProjectsComponentsPlanPart> listOfProjects;
 
     public PlanBreadCrumb(WiniumDriver webDriver) {
         super(webDriver);
         initElements();
     }
 
-    private void initElements(){
-        PageFactory.initElements(driver, this);
+    private WebElement getWebProjectPart() {
+        return driver.findElementByName("PROJECTS");
+    }
+
+    private WebElement getSearchFieldProjectsPartWeb() {
+        return getWebProjectPart().findElement(By.className("TextBox"));
     }
 
 
-    @Override
-    public PlanBreadCrumb clickClearSetting() {
-        getWebClearSetting().click();
+    private void initElements() {
+        listOfProjects= new ArrayList<>();
+        for(WebElement current : getWebProjectPart().findElements(By.name("VisualPlanning.KeyValueVm"))){
+            listOfProjects.add(new ProjectsComponentsPlanPart(current ));
+        }
+    }
+
+    public ProjectsContainerPlanPart listWithProjects(){
+        return new ProjectsContainerPlanPart(listOfProjects);
+    }
+
+    private void clickSearchFieldProjectsPart() {
+        getSearchFieldProjectsPartWeb().click();
+    }
+
+    private void clearSearchFieldProjectsPart() {
+        getSearchFieldProjectsPartWeb().clear();
+    }
+
+
+    private void setSearchFieldProjectsPart(String value) {
+        getSearchFieldProjectsPartWeb().sendKeys(value);
+    }
+
+    //
+    public PlanBreadCrumb fillSearchField(String value) {
+        clickSearchFieldProjectsPart();
+        clearSearchFieldProjectsPart();
+        setSearchFieldProjectsPart(value);
         return new PlanBreadCrumb(driver);
     }
 
-    @Override
-    public Planifi clickApplySettings() {
-        return null;
+    public WebElement getProjectByName(String name){
+        return driver.findElementByName("PROJECTS").findElement(By.name("VisualPlanning.KeyValueVm")).findElement(By.name(name));
     }
 
-    @Override
-    public Planifi clickMyProjects() {
-        return null;
-    }
 
-    @Override
-    public Planifi clickActiveProjectsOnly() {
-        return null;
-    }
-
-    @Override
-    public Planifi clickShowUnpostedTime(WebElement element, WiniumDriver driver) {
-        return null;
-    }
-
-    @Override
-    public Planifi clickBillingRates(WebElement element, WiniumDriver driver) {
-        return null;
-    }
-
-    @Override
-    public Planifi clickProjectsWithMilestones(WebElement element, WiniumDriver driver) {
-        return null;
-    }
-
-    @Override
-    public Planifi clickSettings(WebElement element, WiniumDriver driver) {
-        return null;
-    }
 }

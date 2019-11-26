@@ -9,7 +9,7 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 
 public abstract class CRUD {
-    protected WiniumDriver driver;
+    protected static WiniumDriver driver;
     private Boolean winState = true;
 
     private WebElement maximazeSizeOfWindow;
@@ -50,9 +50,9 @@ public abstract class CRUD {
         //*[@name='Visual Planning']/*[@name = 'r']
         //HwndWrapper[DefaultDomain;;74c5f445-942d-45af-a0a4-5087916da51d]
         //closeApplication = driver.findElementByXPath("/*[@AutomationId = 'VisualPlanningUnity']");
-        driver.findElement(By.xpath("/*[@AutomationId = 'VisualPlanningUnity']//*[@name='r']")).click();
+        //driver.findElement(By.xpath("/*[@AutomationId = 'VisualPlanningUnity']//*[@name='r']")).click();
         //driver.findElement(exitButton).click();
-        //getWebCloseApplication().click();
+        getWebCloseApplication().click();
     }
 
     public CRUD maximazeWindowApplication(){
@@ -119,6 +119,13 @@ public abstract class CRUD {
         Robot robo = new Robot();
         robo.keyPress(KeyEvent.VK_RIGHT);
         robo.keyRelease(KeyEvent.VK_RIGHT);
+        return this;
+    }
+
+    public CRUD clickEnter() throws Exception {
+        Robot robo = new Robot();
+        robo.keyPress(KeyEvent.VK_ENTER);
+        robo.keyRelease(KeyEvent.VK_ENTER);
         return this;
     }
 

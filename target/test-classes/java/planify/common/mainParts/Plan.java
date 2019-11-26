@@ -13,15 +13,15 @@ import planify.planPart.PlanBreadCrumb;
 public class Plan extends Planifi {
     private WebElement estimateCrud;
 
-
-
-
     public Plan(WiniumDriver webDriver) {
         super(webDriver);
     }
 
     private WebElement getPlanWebElement(){
        return driver.findElementByName("PLAN");
+    }
+    private WebElement getApplyWebElement(){
+        return driver.findElementByName("APPLY");
     }
     private WebElement getEstimateWebElement() {
         return driver.findElementByName("ESTIMATE");
@@ -45,4 +45,5 @@ public class Plan extends Planifi {
         getXpathEstimateWebElement() .click();
         return new EstimateBreadCrumb(driver);
     }
+
 }

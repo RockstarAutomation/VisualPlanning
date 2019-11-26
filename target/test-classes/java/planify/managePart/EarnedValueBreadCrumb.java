@@ -8,8 +8,7 @@ import planify.common.sidebar.IPICCriteriaSidebar;
 import planify.common.sidebar.IProjectManagerCriteriaSidebar;
 import planify.common.sidebar.ISettingsCriteriaSidebar;
 
-public class EarnedValueBreadCrumb extends Manage implements ISettingsCriteriaSidebar, IOfficeOrganizationCriteriaSidebar,
-        IProjectManagerCriteriaSidebar, IPICCriteriaSidebar{
+public class EarnedValueBreadCrumb extends Manage{
     public EarnedValueBreadCrumb(WiniumDriver webDriver) {
         super(webDriver);
     }

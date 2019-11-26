@@ -22,5 +22,8 @@ public class Manage extends Planifi {
     protected void clickManageCrud() {
         manageCrud.click();
     }
+    private WebElement getApplyWebElement(){
+        return driver.findElementByName("APPLY");
+    }
 
 }
