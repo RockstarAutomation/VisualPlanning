@@ -12,8 +12,8 @@ public class ProjectsComponentsPlanPart {
         this.element = winiumElement;
     }
 
-    public String getElementAttribute(String attribute){
-        return element.getAttribute(attribute);
+    public String getElementNameAttribute(){
+        return element.findElement(By.className("TextBlock")).getAttribute("Name");
     }
 
 

@@ -1,41 +1,50 @@
 package planify.common.data;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectsContainerPlanPart {
+    private File file = new File("C:\\Users\\User\\PlanifiPr\\output\\output.txt");
+    private BufferedWriter writer;
 
-
-    private WebElement projectPartWeb;
-    private WebElement searchFieldProjectsPart;
     private List<ProjectsComponentsPlanPart> listOfProjects;
 
-    public ProjectsContainerPlanPart(List<ProjectsComponentsPlanPart> list){
+    public ProjectsContainerPlanPart(List<ProjectsComponentsPlanPart> list) {
         this.listOfProjects = list;
     }
 
-    private List<ProjectsComponentsPlanPart> getList(){
+    private List<ProjectsComponentsPlanPart> getList() {
         return listOfProjects;
     }
 
-
     //Business logic
 
-    public Boolean checkIfThereIsProjectByAttribute(String projectAttribute, String value) throws IOException {
-        ProjectsComponentsPlanPart componentsPlanPart = null;
-        for(ProjectsComponentsPlanPart element : getList()){
-            if(element.getElementAttribute(projectAttribute).equals(value))
-                return true;
+    public Boolean checkIfThereIsProjectByAttribute(String value) throws IOException {
+        {
+            try {
+                writer = new BufferedWriter(new FileWriter(file));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        throw new RuntimeException("There is not any matches");
+        Boolean flag = null;
+        writer.write(listOfProjects.size());
+        for (ProjectsComponentsPlanPart element : getList()) {
+            writer.write(element.toString());
+            if (element.getElementNameAttribute().equals(value)) {
+                flag = true;
+                return true;
+            }
+        }
+        if (flag == null)
+            throw new RuntimeException("There are not any projects with this name");
 //        listOfProjects.addAll(getWebProjectPart().findElements(By.name("VisualPlanning.KeyValueVm")));
+        return flag;
     }
 
 //    public String checkIfThereIsProjectByName(String projectName) throws IOException {

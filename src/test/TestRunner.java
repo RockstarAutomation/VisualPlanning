@@ -10,6 +10,7 @@ import planify.common.Planifi;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.*;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
@@ -57,7 +58,7 @@ public void checkIfDriverIsClosed(){
 //    }
 
 
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void runWiniumDriver(){
         options = new DesktopOptions(); //Instantiate Winium Desktop Options
         options.setApplicationPath(PLANIFI_PATH);
@@ -96,5 +97,13 @@ public void checkIfDriverIsClosed(){
     public void killWiniumDriver(){
         shell.destroy();
 
+    }
+
+    public void initDB(String query ) throws ClassNotFoundException, SQLException {
+        String dbUrl = "jdbc:mysql://incoding.biz/SERVER/MSSQL2014 (SQL Server 12.0.2000 - SERVER/Administrator)";
+        Class.forName("com.mysql.jdbc.Driver");
+        Connection con = DriverManager.getConnection (dbUrl,"Administrator", "Incoding,1");
+        Statement stmt = con.createStatement();
+        ResultSet rs = stmt.executeQuery(query);
     }
 }

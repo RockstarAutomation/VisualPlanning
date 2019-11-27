@@ -6,8 +6,9 @@ import planify.common.CRUD;
 import planify.common.mainParts.Forecast;
 import planify.common.mainParts.Manage;
 import planify.common.mainParts.Plan;
+import planify.common.options.details.DetailsBar;
+import planify.common.sidebar.Sidebar;
 
-import static planify.common.sidebar.Sidebar.clickSettingsDropDown;
 
 public class Planifi extends CRUD {
     public Planifi(WiniumDriver webDriver) {
@@ -35,6 +36,10 @@ public class Planifi extends CRUD {
         //return driver.findElementByXPath("//*[@Name='APPLY']");
     }
 
+    public Sidebar gotoSidebar(){
+        return new Sidebar(driver);
+    }
+
     public Planifi clearOptionsFilter(){
         //getWebClearSetting().click();
         try {
@@ -47,13 +52,17 @@ public class Planifi extends CRUD {
 
     public Planifi applyOptionsFilter(){
         //getWebApplySetting().click();
-        clickSettingsDropDown();
+        gotoSidebar().clickSettingsDropDown();
         try {
             clickRight().clickRight().clickRight().clickEnter();
         } catch (Exception e) {
             e.printStackTrace();
         }
         return new Planifi(driver);
+    }
+
+    public DetailsBar gotoDetailsBar(){
+        return new DetailsBar(driver);
     }
 
 

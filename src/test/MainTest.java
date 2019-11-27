@@ -44,7 +44,7 @@ public class MainTest extends TestRunner {
     }
 
     @Test
-    public void maximazeTest(){
+    public void maximazeTest() {
         planifi.gotoPlanPart()
                 .maximazeWindowApplication()
                 .minimazeWindowApplication();
@@ -52,9 +52,10 @@ public class MainTest extends TestRunner {
 
     @Test
     public void chooseOption() throws IOException {
-    planifi.gotoPlanPart()
-            .clickPlanCrudGoToPlan();
-        clickOfficeOrganizationDropDown();
+        planifi.gotoPlanPart()
+                .clickPlanCrudGoToPlan()
+                .gotoSidebar()
+                .clickOfficeOrganizationDropDown();
         //setOptionSidebar(NAME_FOR_OFFICE_ORGANIZATION_LIST, "CSS LLC");
         try {
             Thread.sleep(5000);
@@ -78,27 +79,30 @@ public class MainTest extends TestRunner {
         File file = new File("C:\\Users\\User\\PlanifiPr\\output\\output.txt");
         BufferedWriter bf = new BufferedWriter(new FileWriter(file));
         planifi.gotoPlanPart()
-                .clickPlanCrudGoToPlan()
-                .fillSearchField("0000.001.00");
+                .gotoSidebar()
+        .clickSettingsDropDown()
+        .clickOnFirstToggle()
+        .clickOnSecondToggle();
         WebElement element = driverWinium.findElementByName("PROJECTS");
-        List<WebElement> elements = element.findElements(By.name("VisualPlanning.KeyValueVm"));
-        List<String> nameAtt = new ArrayList<>();
+        List<WebElement> elements = element.findElements(By.className("ListBoxItem"));
+        //List<String> nameAtt = new ArrayList<>();
         //WebElement lol = element.findElement(By.name("VisualPlanning.KeyValueVm")).findElement(By.name("0000.001.00"));
-       // for(WebElement current : elements)
-            //if(current.findElement(By.name("0000.001.00")).getAttribute("Name").equals("0000.001.00")){
-         //     if(current.findElement(By.name("")).getAttribute("Name") != null){
-           //     bf.write(current.findElement(By.name("\\.")).getAttribute("Name") );
-            //}
+         for(WebElement current : elements){
+        //if(current.findElement(By.name("0000.001.00")).getAttribute("Name").equals("0000.001.00")){
+              //if(current.findElement(By.name("Gajahav Ijdihakt")).getAttribute("Name") == "Gajahav Ijdihakt")
+
+             bf.write(current.findElement(By.className("TextBlock")).getAttribute("Name") );
+        //}
 //        for (int i = 1; i<elements.size();i++){
 //            nameAtt.add(elements.get(i).getAttribute("Name"));
 //        }
 //        for(String lol : nameAtt) {
 //            bf.write(lol);
 //            Assert.assertNotEquals(lol, "0000.001.00");
-//        }
+        }
         bf.close();
         //else element = null;
-       //Assert.assertEquals(lol.getAttribute("Name"), "0000.001.00");
+        //Assert.assertEquals(lol.getAttribute("Name"), "0000.001.00");
         //Assert.assertNull(element);
         //Assert.assertEquals(element.findElement(By.name("0000.001.00")).getAttribute("Name"), "0000.001.00");
         //Assert.assertEquals(nameAtt.size(), 1);
