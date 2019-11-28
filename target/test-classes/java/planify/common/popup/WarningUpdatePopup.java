@@ -35,8 +35,13 @@ public class WarningUpdatePopup extends CRUD {
 
     public Planifi cancelWarningPopup(){
 //        driver.manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
-        new WebDriverWait(driver, 5)
-                .until(ExpectedConditions.elementToBeClickable(getWebOkButton()));
+//        new WebDriverWait(driver, 5)
+//                .until(ExpectedConditions.elementToBeClickable(getWebOkButton()));
+//        try {
+//            Thread.sleep(3000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         getWebOkButton().click();
         return new Planifi(driver);
     }

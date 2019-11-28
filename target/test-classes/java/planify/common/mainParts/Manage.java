@@ -1,29 +1,65 @@
 package planify.common.mainParts;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.winium.WiniumDriver;
 import planify.common.Planifi;
+import planify.managePart.*;
 
 public class Manage extends Planifi {
-    @FindBy(name = "MANAGE")
-    private WebElement manageCrud;
 
     public Manage(WiniumDriver webDriver) {
         super(webDriver);
-        initElements();
     }
 
-    private void initElements(){
-        PageFactory.initElements(driver, this);
+    //Page object
+
+    private WebElement getWebProjectStaffingCrud() {
+        return driver.findElement(By.name("Project Staffing"));
     }
 
-    protected void clickManageCrud() {
-        manageCrud.click();
-    }
-    private WebElement getApplyWebElement(){
-        return driver.findElementByName("APPLY");
+    private WebElement getWebEarnedValueCrud() {
+        return driver.findElement(By.name("Earned Value"));
     }
 
+    private WebElement getWebRevenueCrud() {
+        return driver.findElement(By.name("Revenue"));
+    }
+
+    private WebElement getWebBillingProjectionCrud() {
+        return driver.findElement(By.name("Billing Projection"));
+    }
+
+    private WebElement getWebAssignmentsCrud() {
+        return driver.findElement(By.name("Assignments"));
+    }
+
+
+    //Functionality
+
+    //Business logic
+
+    public AssignmentsBreadCrumb gotoAssignmentsBreadCrumb(){
+        getWebAssignmentsCrud().click();
+        return new AssignmentsBreadCrumb(driver);
+    }
+
+    public ProjectStaffingBreadCrumb gotoProjectStaffingBreadCrumb(){
+        getWebProjectStaffingCrud().click();
+        return new ProjectStaffingBreadCrumb(driver);
+    }
+    public EarnedValueBreadCrumb gotoEarnedValueBreadCrumb(){
+        getWebEarnedValueCrud().click();
+        return new EarnedValueBreadCrumb(driver);
+    }
+    public RevenueBreadCrumb gotoRevenueBreadCrumb(){
+        getWebRevenueCrud().click();
+        return new RevenueBreadCrumb(driver);
+    }
+    public BillingProjectionBreadCrumb gotoBillingProjectionBreadCrumb(){
+        getWebBillingProjectionCrud().click();
+        return new BillingProjectionBreadCrumb(driver);
+    }
 }

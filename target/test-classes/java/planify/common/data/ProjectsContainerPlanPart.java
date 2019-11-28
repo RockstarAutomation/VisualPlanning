@@ -38,7 +38,7 @@ public class ProjectsContainerPlanPart {
             writer.write(element.toString());
             if (element.getElementNameAttribute().equals(value)) {
                 flag = true;
-                return true;
+                return flag;
             }
         }
         if (flag == null)

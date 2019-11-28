@@ -8,6 +8,7 @@ import planify.common.data.EmployeeComponentsPlanPart;
 import planify.common.data.ProjectsComponentsPlanPart;
 import planify.common.data.ProjectsContainerPlanPart;
 import planify.common.mainParts.Plan;
+import planify.common.popup.SettingsPopup;
 import planify.planPart.functionalityEstimate.DetailsEstimateOptionsBar;
 
 import java.util.ArrayList;
@@ -33,25 +34,16 @@ public class PlanBreadCrumb extends Plan {
                 //Projects tab
     //PageObject
 
-    private WebElement getWebEmployeeTab(){
-        return driver.findElement(By.name("EMPLOYEE / ROLE"));
-    }
-
-    private WebElement getWebHideEmployeeRoleTabButton(){
-        //return getWebEmployeeTab().findElement(By.name("EMPLOYEE / ROLE"));
-        return getWebEmployeeTab().findElement(By.id("ExpanderButton"));
-    }
-
-    private WebElement getWebOpenEmployeeRoleTabButton(){
-        return getWebHideEmployeeRoleTabButton().findElement(By.className("Text"));
-    }
-
     private WebElement getWebProjectPart() {
         return driver.findElementByName("PROJECTS");
     }
 
     private WebElement getSearchFieldProjectsPartWeb() {
         return getWebProjectPart().findElement(By.className("TextBox"));
+    }
+
+    private WebElement getWebSettingsPopupButton(){
+        return getWebProjectPart().findElement(By.className("Image"));
     }
 
     private WebElement getWebHideProjectsTabButton(){
@@ -77,6 +69,12 @@ public class PlanBreadCrumb extends Plan {
     }
 
     //BusinessLogic
+
+    public SettingsPopup clickSettingsPopupButton(){
+        getWebSettingsPopupButton().click();
+        return  new SettingsPopup(driver);
+    }
+
     public ProjectsContainerPlanPart listWithProjects(){
         return new ProjectsContainerPlanPart(listOfProjects);
     }
@@ -126,7 +124,21 @@ public class PlanBreadCrumb extends Plan {
         return new PlanBreadCrumb(driver);
     }
 
-    //Employee tab
+                                    //Employee tab
+
+    //PageObject
+    private WebElement getWebEmployeeTab(){
+        return driver.findElement(By.name("EMPLOYEE / ROLE"));
+    }
+
+    private WebElement getWebHideEmployeeRoleTabButton(){
+        //return getWebEmployeeTab().findElement(By.name("EMPLOYEE / ROLE"));
+        return getWebEmployeeTab().findElement(By.id("ExpanderButton"));
+    }
+
+    private WebElement getWebOpenEmployeeRoleTabButton(){
+        return getWebHideEmployeeRoleTabButton().findElement(By.className("Text"));
+    }
 
     //Functionality
 

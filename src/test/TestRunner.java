@@ -1,20 +1,22 @@
-import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.winium.DesktopOptions;
 import org.openqa.selenium.winium.WiniumDriver;
 import org.openqa.selenium.winium.WiniumDriverService;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
 import planify.common.Planifi;
 
 import java.io.File;
 import java.io.IOException;
 import java.sql.*;
-import java.util.Properties;
-import java.util.concurrent.TimeUnit;
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class TestRunner {
+    //DB
+    private String connectionURL = "jdbc:mysql://localhost:1433/SHW7";
+    private List<String> listSQLResult;
+
 
     private String WINIUM_DRIVER_URL = "http://localhost:9999";
     private String DRIVER_PATH = "C:\\Users\\User\\PlanifiPr\\driver";
@@ -93,17 +95,15 @@ public void checkIfDriverIsClosed(){
         service.stop();
 
     }
-    //@AfterMethod
-    public void killWiniumDriver(){
-        shell.destroy();
 
-    }
-
-    public void initDB(String query ) throws ClassNotFoundException, SQLException {
-        String dbUrl = "jdbc:mysql://incoding.biz/SERVER/MSSQL2014 (SQL Server 12.0.2000 - SERVER/Administrator)";
-        Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection (dbUrl,"Administrator", "Incoding,1");
-        Statement stmt = con.createStatement();
-        ResultSet rs = stmt.executeQuery(query);
+    public List<String> initDB(String query ) throws SQLException{
+        listSQLResult = new ArrayList<>();
+        try( Connection con = DriverManager.getConnection (connectionURL,"planifi", "Incoding,1")){
+            Statement stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next())
+                listSQLResult.add(rs.getString(1));
+        }
+        return listSQLResult;
     }
 }

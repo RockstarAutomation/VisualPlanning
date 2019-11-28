@@ -1,23 +1,21 @@
 import org.testng.Assert;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import planify.common.Planifi;
 import planify.common.popup.WarningUpdatePopup;
 import planify.planPart.PlanBreadCrumb;
 
 import java.io.IOException;
 
-public class PlanifiAutomation extends TestRunner {
+public class PlanTest extends TestRunner {
 
     private Planifi planifi;
     private WarningUpdatePopup popup;
 
     @BeforeMethod
     public void setUp() {
-//        popup = new WarningUpdatePopup(driverWinium);
-//        planifi = popup.cancelWarningPopup();
-        planifi = new Planifi(driverWinium);
+        popup = new WarningUpdatePopup(driverWinium);
+        planifi = popup.cancelWarningPopup();
+        // planifi = new Planifi(driverWinium);
     }
 
     @DataProvider
@@ -85,7 +83,7 @@ public class PlanifiAutomation extends TestRunner {
      * Check if clicking on ‘Hide’ button in 'Filters', 'Projects', and 'Employee' tab cause them to collapse and expand
      */
     @Test
-    public void testMPP527(){
+    public void testMPP527() {
         planifi.gotoPlanPart()
                 .clickPlanCrudGoToPlan()
                 .gotoSidebar()
@@ -101,41 +99,75 @@ public class PlanifiAutomation extends TestRunner {
         //TODO assert
     }
 
+    /**
+     * Check if 'Settings’ pop up opens by clicking on 'Settings' icon in 'Project' tab
+     */
+    @Test
+    public void testMPP536() {
+        planifi.gotoPlanPart()
+                .clickPlanCrudGoToPlan()
+                .clickSettingsPopupButton()
+                .closeSettingsPopup();
+    }
+
+
+    /**
+     * Verify if ‘Office/Organization’ checkboxes are checkabale in 'Filters' tab
+     */
+    @Test
+    public void testMPP552() throws Exception {
+        planifi.gotoPlanPart()
+                .clickPlanCrudGoToPlan()
+                .gotoSidebar()
+                .selectAllOfficeOrganizationCheckBoxes();
+    }
+
+    /**
+     * Verify if dropdowns works appropriately in ‘Office/Organization’ block in 'Filters' tab
+     */
+    @Test
+    public void testMPP553() {
+        planifi.gotoPlanPart()
+                .clickPlanCrudGoToPlan()
+                .gotoSidebar()
+                .clickOfficeOrganizationDropDown()
+                .openAllDropdownsOfficeOrganization();
+    }
+
     @DataProvider
-    public Object[][] projectsNameProvider() {
+    public Object[][] methodProvider() {
         return new Object[][]{
-                {"The White House"}
+                {"Total", "Weekly"}
         };
     }
 
     /**
-     * Check if ‘Active Projects Only’ On/Off switches toggle exists and works appropriately in 'Filters' tab
-     * @param projectName
+     * Check possibility to select an option from 'Default Method' drop down in 'Settings' pop up
      */
-    @Test(dataProvider = "projectsNameProvider")
-    public void testMPP549(String projectName)  {
-        //Preconditions
+    @Test(dataProvider = "methodProvider")
+    public void testMPP562(String methodName, String weekly) {
         planifi.gotoPlanPart()
                 .clickPlanCrudGoToPlan()
-                .gotoSidebar()
-                .clickSettingsDropDown()
-                //.clickOnFirstToggle()
-                .clickOffFirstToggle()
-                .clickOnSecondToggle()
-                .applyOptionsFilter();
-        //test
-        Boolean flag = null;
-        try {
-            flag = planifi.gotoPlanPart()
-                    .clickPlanCrudGoToPlan()
-                    .listWithProjects()
-                    .checkIfThereIsProjectByAttribute(projectName);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+                .clickSettingsPopupButton()
+                .changeDefaultMethodSettingPopup(methodName)
+                .saveChangesSettingsPopup()
+                //after test
+                .gotoPlanPart()
+                .clickPlanCrudGoToPlan()
+                .clickSettingsPopupButton()
+                .changeDefaultMethodSettingPopup(weekly)
+                .saveChangesSettingsPopup();
 
-        Assert.assertTrue(flag, "The test with only active project failed");
     }
+
+    /**
+     * Check if ‘Projects with Milestones’ On/Off switches toggle exists and work appropriately in 'Filters' tab
+     */
+    @Test
+    public void testMPP3310(){
+
+    }
+
 
 
 }

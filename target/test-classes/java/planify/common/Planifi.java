@@ -1,5 +1,6 @@
 package planify.common;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.winium.WiniumDriver;
 import planify.common.CRUD;
@@ -15,32 +16,41 @@ public class Planifi extends CRUD {
         super(webDriver);
     }
 
-    public Plan gotoPlanPart(){
+    //Page object
+
+    private WebElement getWebPlanPart(){
+        return driver.findElement(By.name("PLAN"));
+    }
+
+    private WebElement getWebForecastPart(){
+        return driver.findElement(By.name("FORECAST"));
+    }
+
+    private WebElement getWebManagePart(){
+        return driver.findElement(By.name("MANAGE"));
+    }
+
+    //Business logic
+    public Plan gotoPlanPart() {
+        getWebPlanPart().click();
         return new Plan(driver);
     }
 
-    public Forecast gotoForecastPart(){
+    public Forecast gotoForecastPart() {
+        getWebForecastPart().click();
         return new Forecast(driver);
     }
 
-    public Manage gotoManagePart(){
+    public Manage gotoManagePart() {
+        getWebManagePart().click();
         return new Manage(driver);
     }
 
-    private WebElement getWebClearSetting(){
-        return driver.findElementByName("CLEAR");
-    }
-
-    private WebElement getWebApplySetting(){
-        return driver.findElementByName("APPLY");
-        //return driver.findElementByXPath("//*[@Name='APPLY']");
-    }
-
-    public Sidebar gotoSidebar(){
+    public Sidebar gotoSidebar() {
         return new Sidebar(driver);
     }
 
-    public Planifi clearOptionsFilter(){
+    public Planifi clearOptionsFilter() {
         //getWebClearSetting().click();
         try {
             clickRight().clickRight().clickEnter();
@@ -50,7 +60,7 @@ public class Planifi extends CRUD {
         return new Planifi(driver);
     }
 
-    public Planifi applyOptionsFilter(){
+    public Planifi applyOptionsFilter() {
         //getWebApplySetting().click();
         gotoSidebar().clickSettingsDropDown();
         try {
@@ -61,7 +71,7 @@ public class Planifi extends CRUD {
         return new Planifi(driver);
     }
 
-    public DetailsBar gotoDetailsBar(){
+    public DetailsBar gotoDetailsBar() {
         return new DetailsBar(driver);
     }
 

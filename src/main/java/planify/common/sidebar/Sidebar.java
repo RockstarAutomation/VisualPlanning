@@ -9,6 +9,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.WatchEvent;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -76,6 +77,14 @@ public class Sidebar extends Planifi {
         return getWebMainGroup().findElement(By.name("Office/Organization"));
     }
 
+    private WebElement getWebOfficeOrganizationDropDownElements() {
+        return getWebMainGroup().findElement(By.className("TreeView"));
+    }
+
+    private WebElement getWebFirstOfficeOrganizationCheckBox() {
+        return getWebOfficeOrganizationDropDownElements().findElement(By.className("CheckBox"));
+    }
+
     private WebElement getWebSettingsDropDown() {
         return getWebMainGroup().findElement(By.name("Settings"));
     }
@@ -100,6 +109,10 @@ public class Sidebar extends Planifi {
     private WebElement getWebOpenSidebar() {
         return getWebHideSidebarButton().findElement(By.id("HeaderContent"));
         //return getWebMainGroup().findElement(By.name("FILTERS"));
+    }
+
+    private WebElement getWebOfficeOrganizationFirstFilterDropdown() {
+        return getWebOfficeOrganizationDropDownElements().findElement(By.id("Expander"));
     }
 
 
@@ -249,8 +262,9 @@ public class Sidebar extends Planifi {
         getWebProjectTypeDropDown().click();
     }
 
-    public void clickOfficeOrganizationDropDown() {
+    public Sidebar clickOfficeOrganizationDropDown() {
         getWebOfficeOrganizationDropDown().click();
+        return new Sidebar(driver);
     }
 
     public Sidebar clickSettingsDropDown() {
@@ -287,14 +301,67 @@ public class Sidebar extends Planifi {
         }
     }
 
-    ///../following-sibling:*[@ClassName='CheckBox']
-    public static void setOptionByName() {
-        // driver.findElementByXPath("//*[@ClassName='TreeView']/*[@Name='VisualPlanning.Operations.Node']/*[1][@Name='CSS LLC']/../following-sibling::*[@ClassName='CheckBox']")
-        // driver.findElementByXPath("[@Name='CSS LLC']/../following-sibling::*[@ClassName='CheckBox']").click();
-    }
-
     public static void setFirstCheckBox() {
         driver.findElementByClassName("CheckBox").click();
+    }
+
+    public Sidebar clickOnFirstCheckBoxOfficeOrganization() {
+        clickOfficeOrganizationDropDown();
+        getWebFirstOfficeOrganizationCheckBox().click();
+        return new Sidebar(driver);
+    }
+
+    public Sidebar selectAllOfficeOrganizationCheckBoxes() {
+        try {
+            clickOnFirstCheckBoxOfficeOrganization()
+                    .clickDown()
+                    .clickDown()
+                    .clickSpace()
+                    .clickDown()
+                    .clickDown()
+                    .clickSpace()
+                    .clickDown()
+                    .clickDown()
+                    .clickSpace()
+                    .clickDown()
+                    .clickDown()
+                    .clickSpace()
+                    .clickDown()
+                    .clickDown()
+                    .clickSpace()
+                    .clickDown()
+                    .clickDown()
+                    .clickSpace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new Sidebar(driver);
+    }
+
+    public Sidebar openFirstDropdownOfficeOrganization() {
+        getWebOfficeOrganizationFirstFilterDropdown().click();
+        return new Sidebar(driver);
+    }
+
+    public Sidebar openAllDropdownsOfficeOrganization() {
+        openFirstDropdownOfficeOrganization();
+        try {
+            clickDown();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        //for(WebElement element : getWebOfficeOrganizationDropDown().findElements(By.id("Expander"))){
+        for (int i = 0; i < 110; i++) {
+            try {
+                clickDown()
+                        .clickRight()
+//                        .clickRight()
+                        .clickRight();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return new Sidebar(driver);
     }
 
 
