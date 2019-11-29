@@ -3,13 +3,12 @@ package planify.planPart;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.winium.WiniumDriver;
-import planify.common.Planifi;
 import planify.common.data.EmployeeComponentsPlanPart;
+import planify.common.data.EmployeeContainerPlanPart;
 import planify.common.data.ProjectsComponentsPlanPart;
 import planify.common.data.ProjectsContainerPlanPart;
 import planify.common.mainParts.Plan;
 import planify.common.popup.SettingsPopup;
-import planify.planPart.functionalityEstimate.DetailsEstimateOptionsBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,15 +22,15 @@ public class PlanBreadCrumb extends Plan {
         initElements();
     }
 
-//.findElements(By.className("TextBlock"))
+    //.findElements(By.className("TextBlock"))
     private void initElements() {
-        listOfProjects= new ArrayList<>();
-        for(WebElement current : getWebProjectPart().findElements(By.className("ListBoxItem"))){
+        listOfProjects = new ArrayList<>();
+        for (WebElement current : getWebProjectPart().findElements(By.className("ListBoxItem"))) {
             listOfProjects.add(new ProjectsComponentsPlanPart(current));
         }
     }
 
-                //Projects tab
+    //Projects tab
     //PageObject
 
     private WebElement getWebProjectPart() {
@@ -42,15 +41,15 @@ public class PlanBreadCrumb extends Plan {
         return getWebProjectPart().findElement(By.className("TextBox"));
     }
 
-    private WebElement getWebSettingsPopupButton(){
+    private WebElement getWebSettingsPopupButton() {
         return getWebProjectPart().findElement(By.className("Image"));
     }
 
-    private WebElement getWebHideProjectsTabButton(){
+    private WebElement getWebHideProjectsTabButton() {
         return getWebProjectPart().findElement(By.id("ExpanderButton"));///button[@Name='PROJECTS']
     }
 
-    private WebElement getWebOpenProjectsTabButton(){
+    private WebElement getWebOpenProjectsTabButton() {
         return getWebHideProjectsTabButton().findElement(By.className("Text"));
     }
     //Functionality
@@ -70,12 +69,12 @@ public class PlanBreadCrumb extends Plan {
 
     //BusinessLogic
 
-    public SettingsPopup clickSettingsPopupButton(){
+    public SettingsPopup clickSettingsPopupButton() {
         getWebSettingsPopupButton().click();
-        return  new SettingsPopup(driver);
+        return new SettingsPopup(driver);
     }
 
-    public ProjectsContainerPlanPart listWithProjects(){
+    public ProjectsContainerPlanPart listWithProjects() {
         return new ProjectsContainerPlanPart(listOfProjects);
     }
 
@@ -87,29 +86,38 @@ public class PlanBreadCrumb extends Plan {
         return new PlanBreadCrumb(driver);
     }
 
-    public WebElement getProjectByName(String name){
-        return driver.findElementByName("PROJECTS").findElement(By.name("VisualPlanning.KeyValueVm")).findElement(By.name(name));
+    public WebElement getProjectByName(String name) {
+        return getWebProjectPart()
+                .findElement(By.className("ListView"))
+                .findElement(By.name("VisualPlanning.KeyValueVm"))
+                .findElement(By.className("TextBlock"))
+                .findElement(By.name(name));
     }
 
-    public DetailsEstimateOptionsBar clickOnSomeProject(String name){
+    public Boolean checkIfThereIsAProjectByName(String name) {
+        return getProjectByName(name).isDisplayed();
+    }
+
+    public PlanBreadCrumb clickOnSomeProject(String name) {
+        listOfEmployees = new ArrayList<>();
         getProjectByName(name).click();
         try {
-            Thread.sleep(3000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        for(WebElement current: driver.findElementByName("EMPLOYEE / ROLE").findElement(By.className("ListView"))
-        .findElements(By.name("VisualPlanning.GetEmployeeVisualsQueryResponse"))){
+        return new PlanBreadCrumb(driver);
+    }
+
+    public EmployeeContainerPlanPart getListOfEmployees() {
+        for (WebElement current : getWebListOfEmployee()
+                .findElements(By.name("VisualPlanning.GetEmployeeVisualsQueryResponse"))) {
             listOfEmployees.add(new EmployeeComponentsPlanPart(current, driver));
         }
-        return new DetailsEstimateOptionsBar(driver);
+        return new EmployeeContainerPlanPart(listOfEmployees);
     }
 
-    public List<EmployeeComponentsPlanPart> getListOfEmployees(){
-        return listOfEmployees;
-    }
-
-    public PlanBreadCrumb hideProjectsTab(){
+    public PlanBreadCrumb hideProjectsTab() {
         getWebHideProjectsTabButton().click();
         try {
             Thread.sleep(5000);
@@ -119,32 +127,76 @@ public class PlanBreadCrumb extends Plan {
         return new PlanBreadCrumb(driver);
     }
 
-    public PlanBreadCrumb openProjectsTab(){
+    public PlanBreadCrumb openProjectsTab() {
         getWebOpenProjectsTabButton().click();
         return new PlanBreadCrumb(driver);
     }
 
-                                    //Employee tab
+    //Employee tab
 
     //PageObject
-    private WebElement getWebEmployeeTab(){
+    private WebElement getWebEmployeeTab() {
         return driver.findElement(By.name("EMPLOYEE / ROLE"));
     }
 
-    private WebElement getWebHideEmployeeRoleTabButton(){
+    private WebElement getWebListOfEmployee() {
+        return getWebEmployeeTab().findElement(By.className("ListView"));
+    }
+
+    private WebElement getWebEmployeeByName(String name) {
+        return getWebListOfEmployee().findElement(By.className("ListBoxItem"))
+                .findElement(By.name(name));
+    }
+
+    private WebElement getWebHideEmployeeRoleTabButton() {
         //return getWebEmployeeTab().findElement(By.name("EMPLOYEE / ROLE"));
         return getWebEmployeeTab().findElement(By.id("ExpanderButton"));
     }
 
-    private WebElement getWebOpenEmployeeRoleTabButton(){
+    private WebElement getWebOpenEmployeeRoleTabButton() {
         return getWebHideEmployeeRoleTabButton().findElement(By.className("Text"));
+    }
+
+    private WebElement getWebEmployeeSearchField() {
+        return getWebEmployeeTab().findElement(By.className("TextBox"));
     }
 
     //Functionality
 
+    public Boolean checkIfThereAnEmployeeByNameAndClick(String name) {
+        getWebEmployeeByName(name).click();
+        return getWebEmployeeByName(name).isEnabled();
+    }
+
+    private void clickOnEmployeeSearchField() {
+        getWebEmployeeSearchField().click();
+    }
+
+
+    private void clearOnEmployeeSearchField() {
+        getWebEmployeeSearchField().clear();
+    }
+
+
+    private void setEmployeeSearchField(String employee) {
+        getWebEmployeeSearchField().sendKeys(employee);
+    }
+
     //Business Logic
 
-    public PlanBreadCrumb hideEmployeeRoleTab(){
+    public PlanBreadCrumb searchEmployee(String employee) {
+        clickOnEmployeeSearchField();
+        clearOnEmployeeSearchField();
+        setEmployeeSearchField(employee);
+        try {
+            clickEnter();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new PlanBreadCrumb(driver);
+    }
+
+    public PlanBreadCrumb hideEmployeeRoleTab() {
         getWebHideEmployeeRoleTabButton().click();
         try {
             Thread.sleep(5000);
@@ -155,13 +207,10 @@ public class PlanBreadCrumb extends Plan {
     }
 
 
-    public PlanBreadCrumb openEmployeeRoleTab(){
+    public PlanBreadCrumb openEmployeeRoleTab() {
         getWebOpenEmployeeRoleTabButton().click();
         return new PlanBreadCrumb(driver);
     }
-
-
-
 
 
 }

@@ -254,12 +254,24 @@ public class Sidebar extends Planifi {
         getWebPICDropDown().click();
     }
 
+    public boolean checkIfPICDropDownIsClickable() {
+        return getWebPICDropDown().isEnabled();
+    }
+
     public void clickProjectManagerDropDown() {
         getWebProjectManagerDropDown().click();
     }
 
+    public boolean checkIfProjectManagerDropDownIsClickable() {
+        return getWebProjectManagerDropDown().isEnabled();
+    }
+
     public void clickProjectTypeDropDown() {
         getWebProjectTypeDropDown().click();
+    }
+
+    public boolean checkIfProjectTypeDropDownIsClickable() {
+        return getWebProjectTypeDropDown().isEnabled();
     }
 
     public Sidebar clickOfficeOrganizationDropDown() {
@@ -313,25 +325,13 @@ public class Sidebar extends Planifi {
 
     public Sidebar selectAllOfficeOrganizationCheckBoxes() {
         try {
-            clickOnFirstCheckBoxOfficeOrganization()
-                    .clickDown()
-                    .clickDown()
-                    .clickSpace()
-                    .clickDown()
-                    .clickDown()
-                    .clickSpace()
-                    .clickDown()
-                    .clickDown()
-                    .clickSpace()
-                    .clickDown()
-                    .clickDown()
-                    .clickSpace()
-                    .clickDown()
-                    .clickDown()
-                    .clickSpace()
-                    .clickDown()
-                    .clickDown()
-                    .clickSpace();
+            clickOnFirstCheckBoxOfficeOrganization();
+            for (int i = 1; i <= 6; i++) {
+                clickDown()
+                        .clickDown()
+                        .clickSpace()
+                ;
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

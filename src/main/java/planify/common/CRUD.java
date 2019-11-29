@@ -18,7 +18,6 @@ public abstract class CRUD {
     private WebElement processConfig;
     protected WebElement closeApplication;
     private WebElement visualPlanning ;
-    private By exitButton = By.name("r");
 
 
     protected CRUD(WiniumDriver webDriver){

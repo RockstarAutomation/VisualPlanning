@@ -10,6 +10,7 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -80,32 +81,26 @@ public class MainTest extends TestRunner {
         BufferedWriter bf = new BufferedWriter(new FileWriter(file));
         planifi.gotoPlanPart()
                 .gotoSidebar()
-        .clickSettingsDropDown()
-        .clickOnFirstToggle()
-        .clickOnSecondToggle();
+                .clickSettingsDropDown()
+                .clickOnFirstToggle()
+                .clickOnSecondToggle();
         WebElement element = driverWinium.findElementByName("PROJECTS");
         List<WebElement> elements = element.findElements(By.className("ListBoxItem"));
-        //List<String> nameAtt = new ArrayList<>();
-        //WebElement lol = element.findElement(By.name("VisualPlanning.KeyValueVm")).findElement(By.name("0000.001.00"));
-         for(WebElement current : elements){
-        //if(current.findElement(By.name("0000.001.00")).getAttribute("Name").equals("0000.001.00")){
-              //if(current.findElement(By.name("Gajahav Ijdihakt")).getAttribute("Name") == "Gajahav Ijdihakt")
+        for (WebElement current : elements) {
+            bf.write(current.findElement(By.className("TextBlock")).getAttribute("Name"));
 
-             bf.write(current.findElement(By.className("TextBlock")).getAttribute("Name") );
-        //}
-//        for (int i = 1; i<elements.size();i++){
-//            nameAtt.add(elements.get(i).getAttribute("Name"));
-//        }
-//        for(String lol : nameAtt) {
-//            bf.write(lol);
-//            Assert.assertNotEquals(lol, "0000.001.00");
+            bf.close();
+
         }
-        bf.close();
-        //else element = null;
-        //Assert.assertEquals(lol.getAttribute("Name"), "0000.001.00");
-        //Assert.assertNull(element);
-        //Assert.assertEquals(element.findElement(By.name("0000.001.00")).getAttribute("Name"), "0000.001.00");
-        //Assert.assertEquals(nameAtt.size(), 1);
     }
 
-}
+        @Test
+         public void testBD() throws SQLException {
+            String preCondition = "UPDATE Pr\n" +
+                    "set status = 'I' \n" +
+                    "where wbs1 ='0000.011.00'";
+            ArrayList<String> list = (ArrayList<String>) databaseInit(preCondition);
+            Assert.assertEquals(list.size(), 4, "massage");
+        }
+    }
+

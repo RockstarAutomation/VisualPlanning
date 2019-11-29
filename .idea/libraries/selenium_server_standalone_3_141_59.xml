@@ -2,6 +2,7 @@
   <library name="selenium-server-standalone-3.141.59">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/driver/selenium-server-standalone-3.141.59.jar!/" />
+      <root url="jar://C:/jmeter/sqljdbc_7.4/enu/mssql-jdbc-7.4.1.jre12.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

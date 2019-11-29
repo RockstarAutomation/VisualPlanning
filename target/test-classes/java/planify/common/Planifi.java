@@ -51,7 +51,7 @@ public class Planifi extends CRUD {
     }
 
     public Planifi clearOptionsFilter() {
-        //getWebClearSetting().click();
+        gotoSidebar().clickSettingsDropDown();
         try {
             clickRight().clickRight().clickEnter();
         } catch (Exception e) {
