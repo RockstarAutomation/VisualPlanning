@@ -4,7 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.winium.WiniumDriver;
 import planify.common.Planifi;
-import planify.common.sidebar.Sidebar;
 import planify.planPart.PlanBreadCrumb;
 
 public class SettingsPopup extends Planifi {
@@ -44,17 +43,17 @@ public class SettingsPopup extends Planifi {
 
     //functionality
 
-    private void clickOnDefualtHoursFeild() {
+    private void clickOnDefaultHoursField() {
         getWebDefaultHoursField().click();
     }
 
 
-    private void clearOnDefualtHoursFeild() {
+    private void clearOnDefaultHoursField() {
         getWebDefaultHoursField().clear();
     }
 
 
-    private void setDefualtHoursFeild(String hours) {
+    private void setDefaultHoursField(String hours) {
         getWebDefaultHoursField().sendKeys(hours);
     }
 
@@ -75,9 +74,9 @@ public class SettingsPopup extends Planifi {
     }
 
     public SettingsPopup changeDefaultHoursSettingPopup(String hours){
-        clickOnDefualtHoursFeild();
-        clearOnDefualtHoursFeild();
-        setDefualtHoursFeild(hours);
+        clickOnDefaultHoursField();
+        clearOnDefaultHoursField();
+        setDefaultHoursField(hours);
         return new SettingsPopup(driver);
     }
 

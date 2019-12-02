@@ -105,6 +105,7 @@ public class MainTest extends TestRunner {
 
         @Test
     public void employeeTest(){
+
         planifi.gotoPlanPart()
                 .clickPlanCrudGoToPlan()
                 .clickOnSomeProject("Gajahav Ijdihakt");

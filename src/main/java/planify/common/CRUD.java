@@ -149,6 +149,13 @@ public abstract class CRUD {
         return this;
     }
 
+    public static void waitFiveSeconds(){
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 
