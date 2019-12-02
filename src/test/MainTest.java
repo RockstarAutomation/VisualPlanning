@@ -102,5 +102,18 @@ public class MainTest extends TestRunner {
             ArrayList<String> list = (ArrayList<String>) databaseInit(preCondition);
             Assert.assertEquals(list.size(), 4, "massage");
         }
+
+        @Test
+    public void employeeTest(){
+        planifi.gotoPlanPart()
+                .clickPlanCrudGoToPlan()
+                .clickOnSomeProject("Gajahav Ijdihakt");
+                //.getListOfEmployees()
+                //.getEmplyeeByName("Abbott, Susan");
+        WebElement  element = driverWinium.findElement(By.name("EMPLOYEE / ROLE"));
+            element = element.findElement(By.className("ListView"));
+            element = element.findElement(By.className("ListBoxItem")).findElement(By.name("Abbott,  Susan"));
+            element.click();
+        }
     }
 

@@ -253,7 +253,7 @@ public class PlanTest extends TestRunner {
     @DataProvider
     public Object[][] stuffProvider() {
         return new Object[][]{
-                {"Gajahav Ijdihakt", "Abbot", "Abbot, Susan"}
+                {"Gajahav Ijdihakt", "Abbot", "Abbott,  Susan"}
         };
     }
 

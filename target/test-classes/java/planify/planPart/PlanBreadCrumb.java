@@ -25,8 +25,14 @@ public class PlanBreadCrumb extends Plan {
     //.findElements(By.className("TextBlock"))
     private void initElements() {
         listOfProjects = new ArrayList<>();
+        listOfEmployees = new ArrayList<>();
+
         for (WebElement current : getWebProjectPart().findElements(By.className("ListBoxItem"))) {
             listOfProjects.add(new ProjectsComponentsPlanPart(current));
+        }
+        for (WebElement current : getWebListOfEmployee()
+                .findElements(By.name("VisualPlanning.GetEmployeeVisualsQueryResponse"))) {
+            listOfEmployees.add(new EmployeeComponentsPlanPart(current, driver));
         }
     }
 
@@ -97,9 +103,8 @@ public class PlanBreadCrumb extends Plan {
     public Boolean checkIfThereIsAProjectByName(String name) {
         return getProjectByName(name).isDisplayed();
     }
-
+//TODO initialization of employee list in place, where it would not missed
     public PlanBreadCrumb clickOnSomeProject(String name) {
-        listOfEmployees = new ArrayList<>();
         getProjectByName(name).click();
         try {
             Thread.sleep(5000);
@@ -110,10 +115,6 @@ public class PlanBreadCrumb extends Plan {
     }
 
     public EmployeeContainerPlanPart getListOfEmployees() {
-        for (WebElement current : getWebListOfEmployee()
-                .findElements(By.name("VisualPlanning.GetEmployeeVisualsQueryResponse"))) {
-            listOfEmployees.add(new EmployeeComponentsPlanPart(current, driver));
-        }
         return new EmployeeContainerPlanPart(listOfEmployees);
     }
 
@@ -158,7 +159,7 @@ public class PlanBreadCrumb extends Plan {
     }
 
     private WebElement getWebEmployeeSearchField() {
-        return getWebEmployeeTab().findElement(By.className("TextBox"));
+        return getWebEmployeeTab().findElement(By.className("TextBox")).findElement(By.className("ScrollViewer"));
     }
 
     //Functionality
