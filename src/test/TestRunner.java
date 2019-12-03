@@ -1,4 +1,11 @@
-import jdk.javadoc.internal.tool.Main;
+
+//import jdk.javadoc.internal.tool.Main;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.winium.DesktopOptions;
 import org.openqa.selenium.winium.WiniumDriver;
 import org.openqa.selenium.winium.WiniumDriverService;
@@ -13,6 +20,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import static planify.common.CRUD.waitFiveSeconds;
 
@@ -33,6 +41,7 @@ public abstract class TestRunner {
     private WiniumDriverService service;
     private String PLANIFI_PATH;
     private Properties properties;
+    private WebDriver driver;
 
     static WiniumDriver driverWinium;
 
@@ -40,7 +49,7 @@ public abstract class TestRunner {
     public void checkIfDriverIsClosed() {
         properties = new Properties();
         try {
-            properties.load(Main.class.getResourceAsStream("/pom.properties"));
+            properties.load(System.class.getResourceAsStream("/pom.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -117,4 +126,20 @@ public abstract class TestRunner {
         }
         return listSQLResult;
     }
+
+//    public void planifiDownload(){
+//        System.setProperty("webdriver.chrome.driver",
+//                "C:\\Users\\User\\PlanifiPr\\driver\\chromedriver.exe");
+//        ChromeOptions options = new ChromeOptions();
+//        driver = new ChromeDriver(options);
+//        driver.manage().window().maximize();
+//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//        driver.get(properties.getProperty("planifi.download.url"));
+//        driver.manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
+//        (new WebDriverWait(driver, 5)).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Download')]")));
+//        driver.findElement(By.xpath("//a[contains(text(),'Download')]")).click();
+//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//    }
+
+
 }

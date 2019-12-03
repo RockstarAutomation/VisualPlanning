@@ -3,10 +3,20 @@
   <component name="ChangeListManager">
     <list default="true" id="009a4be9-8a8e-4849-b457-5794b7b528ee" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planify/common/CRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/planify/common/CRUD.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/planify/common/popup/SettingsPopup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/planify/common/popup/SettingsPopup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/MainTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/planify/common/CRUD.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/planify/common/CRUD.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/planify/common/popup/SettingsPopup.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/planify/common/popup/SettingsPopup.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/MainTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MainTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/planify/common/CRUD.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/java/planify/common/CRUD.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/planify/common/popup/SettingsPopup.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/java/planify/common/popup/SettingsPopup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/test/CHANGELOG" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/java/test/CHANGELOG" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/test/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/java/test/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/test/NOTICE" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/java/test/NOTICE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/resources/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/resources/pom.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -17,37 +27,64 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/test/TestRunner.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1529">
-                  <caret line="111" column="83" selection-start-line="111" selection-start-column="83" selection-end-line="111" selection-end-column="83" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/test/resources/pom.properties">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="170">
-                  <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/TestRunner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="501">
+              <caret line="63" column="9" lean-forward="true" selection-start-line="60" selection-start-column="8" selection-end-line="63" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/PlanifiInstall.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="267">
+              <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#332#333#0" expanded="true" />
+                <element signature="e#381#382#0" expanded="true" />
+                <element signature="e#691#692#0" expanded="true" />
+                <element signature="e#727#728#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/planify/common/InstallPlanifi.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="352">
+              <caret line="23" selection-start-line="23" selection-end-line="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#328#329#0" expanded="true" />
+                <element signature="e#400#401#0" expanded="true" />
+                <element signature="e#447#448#0" expanded="true" />
+                <element signature="e#523#524#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/test/InstallTestRunner.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="536">
+              <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -65,6 +102,7 @@
       <find>clickTeamMan</find>
       <find>clicktab();</find>
       <find>clickTeamMana</find>
+      <find>wini</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -73,11 +111,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/planify/planPart/functionalityPlan/DetailsPlanOptionsBar.java" />
-        <option value="$PROJECT_DIR$/src/main/java/planify/planPart/functionalityEstimate/ScheduleListingEstimateOptionsBar.java" />
-        <option value="$PROJECT_DIR$/src/main/java/planify/planPart/functionalityPlan/SummaryPlanOptionBar.java" />
-        <option value="$PROJECT_DIR$/src/main/java/planify/planPart/functionalityEstimate/SummaryEstimateOptionBar.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/pom.properties" />
         <option value="$PROJECT_DIR$/src/main/java/planify/common/sidebar/IClientCriteriaSidebar.java" />
         <option value="$PROJECT_DIR$/src/main/java/planify/common/sidebar/ISupervisorCriteriaSidebar.java" />
         <option value="$PROJECT_DIR$/src/main/java/planify/common/sidebar/IPICCriteriaSidebar.java" />
@@ -119,11 +152,16 @@
         <option value="$PROJECT_DIR$/src/main/java/planify/planPart/PlanBreadCrumb.java" />
         <option value="$PROJECT_DIR$/src/test/PlanTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/planify/common/popup/SettingsPopup.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/test/MainTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/planify/common/CRUD.java" />
-        <option value="$PROJECT_DIR$/src/test/resources/pom.properties" />
+        <option value="$PROJECT_DIR$/src/test/MainTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/SmokeTests.java" />
+        <option value="$PROJECT_DIR$/src/main/java/planify/InstallPlanifi.java" />
+        <option value="$PROJECT_DIR$/src/main/java/planify/common/InstallPlanifi.java" />
         <option value="$PROJECT_DIR$/src/test/TestRunner.java" />
+        <option value="$PROJECT_DIR$/src/test/resources/pom.properties" />
+        <option value="$PROJECT_DIR$/src/test/PlanifiInstall.java" />
+        <option value="$PROJECT_DIR$/src/test/InstallTestRunner.java" />
       </list>
     </option>
   </component>
@@ -159,8 +197,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -210,36 +246,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="planify" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PlanifiPr" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="planify" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="orderTable" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PlanifiPr" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="planify" type="462c0819:PsiDirectoryNode" />
-              <item name="common" type="462c0819:PsiDirectoryNode" />
-              <item name="popup" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="test" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PlanifiPr" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="planify" type="462c0819:PsiDirectoryNode" />
               <item name="planPart" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -248,14 +254,23 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="test" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PlanifiPr" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575302901870" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1575392426471" />
     <property name="last_opened_file_path" value="C:/jmeter/sqljdbc_7.4/enu/mssql-jdbc-7.4.1.jre12.jar!/" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -282,24 +297,12 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.PlanTest.testMPP535">
-    <configuration name="PlanTest.testMPP3311" type="TestNG" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="TestNG.PlanifiInstall.testMPP497">
+    <configuration name="MainTest.employeeTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="planifi" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PlanTest" />
-      <option name="METHOD_NAME" value="testMPP3311" />
-      <option name="TEST_OBJECT" value="METHOD" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlanTest.testMPP528" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="planifi" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PlanTest" />
-      <option name="METHOD_NAME" value="testMPP528" />
+      <option name="MAIN_CLASS_NAME" value="MainTest" />
+      <option name="METHOD_NAME" value="employeeTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -319,11 +322,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlanTest.testMPP557" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="PlanTest.testMPP627" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="planifi" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="PlanTest" />
-      <option name="METHOD_NAME" value="testMPP557" />
+      <option name="METHOD_NAME" value="testMPP627" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -331,11 +334,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlanTest.testMPP627" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="PlanifiInstall.test" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="planifi" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PlanTest" />
-      <option name="METHOD_NAME" value="testMPP627" />
+      <option name="MAIN_CLASS_NAME" value="PlanifiInstall" />
+      <option name="METHOD_NAME" value="test" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PlanifiInstall.testMPP497" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="planifi" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PlanifiInstall" />
+      <option name="METHOD_NAME" value="testMPP497" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -403,11 +418,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.PlanifiInstall.testMPP497" />
+        <item itemvalue="TestNG.PlanifiInstall.test" />
+        <item itemvalue="TestNG.MainTest.employeeTest" />
         <item itemvalue="TestNG.PlanTest.testMPP535" />
         <item itemvalue="TestNG.PlanTest.testMPP627" />
-        <item itemvalue="TestNG.PlanTest.testMPP528" />
-        <item itemvalue="TestNG.PlanTest.testMPP3311" />
-        <item itemvalue="TestNG.PlanTest.testMPP557" />
       </list>
     </recent_temporary>
   </component>
@@ -425,35 +440,35 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PlanTest_testMPP3311 - 2019.12.02 at 12h 28m 15s.xml">
-      <configuration name="PlanTest.testMPP3311" configurationId="TestNG" />
+    <history-entry file="PlanifiInstall_test - 2019.12.03 at 18h 43m 30s.xml">
+      <configuration name="PlanifiInstall.test" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="PlanTest_testMPP3311 - 2019.12.02 at 12h 28m 58s.xml">
-      <configuration name="PlanTest.testMPP3311" configurationId="TestNG" />
+    <history-entry file="PlanifiInstall_testMPP497 - 2019.12.03 at 18h 44m 23s.xml">
+      <configuration name="PlanifiInstall.testMPP497" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="PlanTest_testMPP3311 - 2019.12.02 at 12h 30m 36s.xml">
-      <configuration name="PlanTest.testMPP3311" configurationId="TestNG" />
+    <history-entry file="PlanifiInstall_testMPP497 - 2019.12.03 at 18h 46m 12s.xml">
+      <configuration name="PlanifiInstall.testMPP497" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="PlanTest_testMPP3311 - 2019.12.02 at 12h 47m 23s.xml">
-      <configuration name="PlanTest.testMPP3311" configurationId="TestNG" />
+    <history-entry file="PlanifiInstall_testMPP497 - 2019.12.03 at 18h 49m 06s.xml">
+      <configuration name="PlanifiInstall.testMPP497" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="PlanTest_testMPP627 - 2019.12.02 at 12h 47m 57s.xml">
-      <configuration name="PlanTest.testMPP627" configurationId="TestNG" />
+    <history-entry file="PlanifiInstall_testMPP497 - 2019.12.03 at 18h 49m 57s.xml">
+      <configuration name="PlanifiInstall.testMPP497" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="PlanTest_testMPP627 - 2019.12.02 at 12h 48m 59s.xml">
-      <configuration name="PlanTest.testMPP627" configurationId="TestNG" />
+    <history-entry file="PlanifiInstall_testMPP497 - 2019.12.03 at 18h 51m 16s.xml">
+      <configuration name="PlanifiInstall.testMPP497" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="PlanTest_testMPP528 - 2019.12.02 at 12h 49m 21s.xml">
-      <configuration name="PlanTest.testMPP528" configurationId="TestNG" />
+    <history-entry file="PlanifiInstall_testMPP497 - 2019.12.03 at 18h 52m 56s.xml">
+      <configuration name="PlanifiInstall.testMPP497" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="PlanTest_testMPP627 - 2019.12.02 at 12h 50m 53s.xml">
-      <configuration name="PlanTest.testMPP627" configurationId="TestNG" />
+    <history-entry file="PlanifiInstall_testMPP497 - 2019.12.03 at 18h 57m 37s.xml">
+      <configuration name="PlanifiInstall.testMPP497" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="PlanTest_testMPP627 - 2019.12.02 at 12h 51m 48s.xml">
-      <configuration name="PlanTest.testMPP627" configurationId="TestNG" />
+    <history-entry file="PlanifiInstall_testMPP497 - 2019.12.03 at 18h 59m 02s.xml">
+      <configuration name="PlanifiInstall.testMPP497" configurationId="TestNG" />
     </history-entry>
-    <history-entry file="PlanTest_testMPP535 - 2019.12.02 at 13h 40m 40s.xml">
-      <configuration name="PlanTest.testMPP535" configurationId="TestNG" />
+    <history-entry file="PlanifiInstall_testMPP497 - 2019.12.03 at 19h 00m 45s.xml">
+      <configuration name="PlanifiInstall.testMPP497" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="TodoView">
@@ -469,7 +484,7 @@
     <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2553305" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26332623" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -478,7 +493,7 @@
       <window_info id="Capture Tool" order="6" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.28602383" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.36403033" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3954496" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -496,34 +511,6 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Theme Preview" order="7" />
     </layout>
-    <layout-to-restore>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24466951" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Designer" order="2" />
-      <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info id="Image Layers" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Capture Tool" order="6" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49946696" weight="0.36078006" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" visible="true" weight="0.3997833" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50053304" side_tool="true" weight="0.5915493" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.32936078" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Maven" order="3" weight="0.32995737" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="right" id="Palette" order="5" />
-      <window_info anchor="right" id="Capture Analysis" order="6" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-    </layout-to-restore>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -554,42 +541,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/planify/planPart/functionalityPlan/DetailsPlanOptionsBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/planify/common/options/details/DetailsBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="74" selection-start-line="27" selection-start-column="74" selection-end-line="27" selection-end-column="74" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#285#286#0" expanded="true" />
-            <element signature="e#317#318#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/planify/planPart/functionalityPlan/ProjectPhasePlanOptionsBar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/planify/common/popup/ConfigurationPopup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="33" selection-start-line="2" selection-start-column="33" selection-end-line="2" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/planify/common/popup/WarningUpdatePopup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -685,13 +636,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
           <caret line="363" selection-start-line="363" selection-end-line="363" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/SuiteRunnerWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
         </state>
       </provider>
     </entry>
@@ -942,16 +886,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/PlanTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="266" column="82" selection-start-line="266" selection-start-column="82" selection-end-line="266" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/planify/common/data/EmployeeContainerPlanPart.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="425">
@@ -1021,16 +955,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/MainTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/DBTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="382">
@@ -1055,15 +979,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="30" column="23" selection-start-line="30" selection-start-column="23" selection-end-line="30" selection-end-column="23" />
+        <state relative-caret-position="586">
+          <caret line="150" column="28" selection-start-line="150" selection-start-column="28" selection-end-line="150" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/TestRunner.java">
+    <entry file="file://$PROJECT_DIR$/src/test/MainTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1529">
-          <caret line="111" column="83" selection-start-line="111" selection-start-column="83" selection-end-line="111" selection-end-column="83" />
+        <state relative-caret-position="-1352">
+          <caret line="7" column="47" selection-start-line="7" selection-start-column="47" selection-end-line="7" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/PlanTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="8" selection-end-line="19" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/SmokeTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="5" selection-start-line="5" selection-start-column="24" selection-end-line="19" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1072,8 +1013,63 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/resources/pom.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="119">
+          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/testng/testng/6.14.3/testng-6.14.3-sources.jar!/org/testng/SuiteRunnerWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/planify/common/InstallPlanifi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#400#401#0" expanded="true" />
+            <element signature="e#447#448#0" expanded="true" />
+            <element signature="e#523#524#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/PlanifiInstall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="21" column="18" selection-start-line="21" selection-start-column="18" selection-end-line="21" selection-end-column="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#332#333#0" expanded="true" />
+            <element signature="e#381#382#0" expanded="true" />
+            <element signature="e#691#692#0" expanded="true" />
+            <element signature="e#727#728#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/TestRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="501">
+          <caret line="63" column="9" lean-forward="true" selection-start-line="60" selection-start-column="8" selection-end-line="63" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/InstallTestRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="57" column="16" selection-start-line="57" selection-start-column="16" selection-end-line="57" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

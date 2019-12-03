@@ -1,5 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -13,9 +14,9 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-import static planify.common.sidebar.Sidebar.*;
+import static planify.common.sidebar.Sidebar.setFirstCheckBox;
+import static planify.common.sidebar.Sidebar.waitFiveSeconds;
 
 public class MainTest extends TestRunner {
 
@@ -109,12 +110,23 @@ public class MainTest extends TestRunner {
         planifi.gotoPlanPart()
                 .clickPlanCrudGoToPlan()
                 .clickOnSomeProject("Gajahav Ijdihakt");
+        waitFiveSeconds();
                 //.getListOfEmployees()
                 //.getEmplyeeByName("Abbott, Susan");
         WebElement  element = driverWinium.findElement(By.name("EMPLOYEE / ROLE"));
             element = element.findElement(By.className("ListView"));
             element = element.findElement(By.className("ListBoxItem")).findElement(By.name("Abbott,  Susan"));
-            element.click();
+            WebElement moveTo = driverWinium.findElement(By.id("UserControl"));
+            moveTo = moveTo.findElement(By.name("DISCIPLINE"));
+            //element.click();
+            Actions mouseHover = new Actions(driverWinium);
+            //mouseHover.click(element).perform();
+           // mouseHover.moveToElement(moveTo).perform();
+            mouseHover.dragAndDrop(element, moveTo).build().perform();
+            //mouseHover.clickAndHold(element).moveToElement(moveTo).perform();
+            //mouseHover.clickAndHold(element).release().moveToElement(moveTo).perform();
+//            mouseHover.moveToElement(moveTo).release().build().perform();
+            waitFiveSeconds();
         }
     }
 
