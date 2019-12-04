@@ -8,7 +8,9 @@ import planify.common.data.EmployeeContainerPlanPart;
 import planify.common.data.ProjectsComponentsPlanPart;
 import planify.common.data.ProjectsContainerPlanPart;
 import planify.common.mainParts.Plan;
+import planify.common.options.details.DetailsBar;
 import planify.common.popup.SettingsPopup;
+import planify.planPart.functionalityPlan.DetailsPlanOptionsBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -74,6 +76,9 @@ public class PlanBreadCrumb extends Plan {
     }
 
     //BusinessLogic
+    public DetailsBar gotoDetailsBar(){
+        return new DetailsBar(driver);
+    }
 
     public SettingsPopup clickSettingsPopupButton() {
         getWebSettingsPopupButton().click();
@@ -92,7 +97,7 @@ public class PlanBreadCrumb extends Plan {
         return new PlanBreadCrumb(driver);
     }
 
-    public WebElement getProjectByName(String name) {
+    private WebElement getProjectByName(String name) {
         return getWebProjectPart()
                 .findElement(By.className("ListView"))
                 .findElement(By.name("VisualPlanning.KeyValueVm"))
@@ -103,7 +108,6 @@ public class PlanBreadCrumb extends Plan {
     public Boolean checkIfThereIsAProjectByName(String name) {
         return getProjectByName(name).isDisplayed();
     }
-//TODO initialization of employee list in place, where it would not missed
     public PlanBreadCrumb clickOnSomeProject(String name) {
         getProjectByName(name).click();
         try {
@@ -114,9 +118,7 @@ public class PlanBreadCrumb extends Plan {
         return new PlanBreadCrumb(driver);
     }
 
-    public EmployeeContainerPlanPart getListOfEmployees() {
-        return new EmployeeContainerPlanPart(listOfEmployees);
-    }
+
 
     public PlanBreadCrumb hideProjectsTab() {
         getWebHideProjectsTabButton().click();
@@ -171,6 +173,9 @@ public class PlanBreadCrumb extends Plan {
 
     private void clickOnEmployeeSearchField() {
         getWebEmployeeSearchField().click();
+    }
+    public EmployeeContainerPlanPart getListOfEmployees() {
+        return new EmployeeContainerPlanPart(listOfEmployees);
     }
 
 

@@ -13,30 +13,80 @@ public class DetailsBar extends Planifi {
     }
 //    PageObjects
 
-    private WebElement getMainPathForDetailsElements(){
- //       return driver.findElementByXPath("//*[@AutomationId = 'UserControl']");
+    private WebElement getMainPathForDetailsElements() {
         return driver.findElementByClassName("KanbanPlanning");
     }
 
-    private WebElement getWebDetailsPart(){
-       // return getMainPathForDetailsElements().findElement(By.xpath("Pane[@ClassName = 'ScrollViewer']"));
+    private WebElement getWebDetailsTitle() {
+        return getWebDetailsPart().findElement(By.name("DETAILS"));
+    }
+
+    private WebElement getWebDetailsPart() {
         return getMainPathForDetailsElements().findElement(By.className("ScrollViewer"));
     }
 
-    private WebElement getWebSummaryExtendButton(){
-        //return getWebDetailsPart().findElement(By.xpath("[@AutomationId = 'tglBtn_Summary']"));
+    private WebElement getWebDetailsExtendButton() {
         return getWebDetailsPart().findElement(By.name("SHOW OTHER DETAILS"));
+    }
+
+    private WebElement getWebSummaryExpand() {
+        return getWebDetailsPart().findElement(By.id("tglBtn_Summary"));
+    }
+
+    private WebElement getWebScheduleListingExpand() {
+        return getWebDetailsPart().findElement(By.id("tglBtn_ScheduleListing"));
+    }
+
+    private WebElement getWebSettingsToggleButton() {
+        return getWebDetailsPart().findElement(By.id("SettingToggleButton"));
+    }
+
+    private WebElement getWebViewAllPhasesButton() {
+        return getWebDetailsPart().findElement(By.name("View all phases"));
+    }
+
+    private WebElement getWebScaleComboBox() {
+        return getWebDetailsPart().findElement(By.id("Scale"));
+    }
+
+    private WebElement getWebSummaryProjectName(String projectName){
+        return getWebDetailsPart().findElement(By.name(projectName));
     }
 
     //Functionality
 
-    public void clickOnSummaryExtendButton(){
-        try {
-            Thread.sleep(10000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-        getWebSummaryExtendButton().click();
+    public void clickOnSummaryExtendButton() {
+        getWebSummaryExpand().click();
     }
+
+    public void clickOnScaleComboBox() {
+        getWebScaleComboBox().click();
+    }
+
+    public void clickOnViewAllPhasesButton() {
+        getWebViewAllPhasesButton().click();
+    }
+
+    public void clickOnSettingsToggleButton() {
+        getWebSettingsToggleButton().click();
+    }
+
+    public void clickOnScheduleListingExpand() {
+        getWebScheduleListingExpand().click();
+    }
+
+    public void clickOnDetailsExtendButton() {
+        getWebDetailsExtendButton().click();
+    }
+
+    public boolean checkIfDetailsTitleIsDisplayed() {
+        return getWebDetailsTitle().isDisplayed();
+    }
+
+    public boolean checkIfProjectRealedInformationIsDisplayed(String projectName){
+        return getWebSummaryProjectName("("+projectName+")").isDisplayed();
+    }
+
+    //Business logic
 
 }

@@ -2,10 +2,9 @@ package planify.forecastPart.functionalityEmployeeSchedule;
 
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.winium.WiniumDriver;
-import planify.common.options.manageOptions.IDataBar;
 import planify.managePart.BillingProjectionBreadCrumb;
 
-public class EmployeeScheduleManipulation extends BillingProjectionBreadCrumb  implements IDataBar {
+public class EmployeeScheduleManipulation extends BillingProjectionBreadCrumb   {
     public EmployeeScheduleManipulation(WiniumDriver webDriver) {
         super(webDriver);
         initElements();

@@ -27,7 +27,6 @@ import static planify.common.CRUD.waitFiveSeconds;
 public abstract class InstallTestRunner {
     private String DRIVER_PATH;
     private String WINIUM_DRIVER_PATH;
-    private Planifi page;
     private File file;
     private DesktopOptions options;
     private WiniumDriverService service;
@@ -35,7 +34,7 @@ public abstract class InstallTestRunner {
     private Properties properties;
     WebDriver driver;
 
-    static WiniumDriver winiumDriver;
+//    static WiniumDriver winiumDriver;
 
     @BeforeClass
     public void checkIfDriverIsClosed() {
@@ -55,7 +54,8 @@ public abstract class InstallTestRunner {
         }
     }
 
-    public void runWiniumDriver() {
+    public WiniumDriver runWiniumDriver() {
+        WiniumDriver driver;
         options = new DesktopOptions();
         options.setApplicationPath(PLANIFI_INSTALL_PATH);
         service = new WiniumDriverService.Builder()
@@ -70,22 +70,17 @@ public abstract class InstallTestRunner {
             System.out.println("Exception while starting WINIUM service");
             e.printStackTrace();
         }
-        winiumDriver = new WiniumDriver(service, options);
-        waitFiveSeconds();
+        driver = new WiniumDriver(service, options);
+        return driver;
     }
 
     @AfterTest(alwaysRun = true)
     public void tearDown() {
-        page.closeApplication();
         service.stop();
 
     }
-    //@AfterClass
-    public void killDriver(){
-        driver.close();
-    }
 
-    public InstallPlanifi planifiDownload() {
+    public void planifiDownload() {
         System.setProperty("webdriver.chrome.driver",
                 DRIVER_PATH);
         ChromeOptions options = new ChromeOptions();
@@ -107,8 +102,10 @@ public abstract class InstallTestRunner {
         (new WebDriverWait(driver, 5)).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Download')]")));
         driver.findElement(By.xpath("//a[contains(text(),'Download')]")).click();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        waitFiveSeconds();
         driver.close();
-        return new InstallPlanifi(winiumDriver);
+        driver.quit();
+        //return new InstallPlanifi(runWiniumDriver());
     }
 
 

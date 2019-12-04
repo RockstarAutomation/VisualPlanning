@@ -45,12 +45,6 @@ public abstract class CRUD {
     }
 
     public void closeApplication(){
-        //visualPlanning = driver.findElementByXPath("/*[@name='Visual Planning']");
-        //*[@name='Visual Planning']/*[@name = 'r']
-        //HwndWrapper[DefaultDomain;;74c5f445-942d-45af-a0a4-5087916da51d]
-        //closeApplication = driver.findElementByXPath("/*[@AutomationId = 'VisualPlanningUnity']");
-        //driver.findElement(By.xpath("/*[@AutomationId = 'VisualPlanningUnity']//*[@name='r']")).click();
-        //driver.findElement(exitButton).click();
         getWebCloseApplication().click();
     }
 
@@ -157,6 +151,21 @@ public abstract class CRUD {
         }
     }
 
+    public static void waitOneMinute(){
+        try {
+            Thread.sleep(60000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void waitThreeMinute(){
+        try {
+            Thread.sleep(180000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 
 }

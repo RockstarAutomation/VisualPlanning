@@ -33,11 +33,11 @@ public class PlanTest extends TestRunner {
      * @throws IOException
      */
     @Test(dataProvider = "stringProvider")
-    public void testMPP534(String projectAttribute, String value) {
+    public void testMPP534(String projectAttribute, String value) throws IOException {
         PlanBreadCrumb planBreadCrumb = planifi.gotoPlanPart()
                 .clickPlanCrudGoToPlan()
                 .fillSearchField(value);
-        Assert.assertEquals(planBreadCrumb.getProjectByName(value).getAttribute(projectAttribute), value,
+        Assert.assertEquals(planBreadCrumb.listWithProjects().checkIfThereIsProjectByAttribute(projectAttribute), value,
                 "There is not any matches");
     }
 

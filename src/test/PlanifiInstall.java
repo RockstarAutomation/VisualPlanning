@@ -1,37 +1,42 @@
-import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 import planify.common.InstallPlanifi;
-import planify.common.Planifi;
-import planify.common.popup.WarningUpdatePopup;
-
-import java.util.Properties;
 
 import static planify.common.CRUD.waitFiveSeconds;
+import static planify.common.CRUD.waitThreeMinute;
 
 public class PlanifiInstall extends InstallTestRunner {
     private InstallPlanifi installPlanifi;
-    @BeforeMethod
+
+
+    /**
+     * The method downloads a Planifi installer @BeforeClass
+     */
+    @BeforeClass
     public void setUp() {
-        installPlanifi = planifiDownload();
+        planifiDownload();
     }
 
+    /**
+     * The method prepare Winium driver and run the installer @BeforeTest
+     */
+    @BeforeTest
+    public void runWinium(){
+        waitFiveSeconds();
+        installPlanifi = new InstallPlanifi(runWiniumDriver());
+    }
+
+    /**
+     *[Win 10] Verify possibility to install the 'Visual Planning' application
+     */
     @Test
     public void testMPP497() {
-
-        runWiniumDriver();
         waitFiveSeconds();
-        waitFiveSeconds();
-        waitFiveSeconds();
-    installPlanifi.clickOnInstallButton()
-            .gotoPlanPart()
-            .clickPlanCrudGoToPlan()
-            .applyOptionsFilter();
-    }
-
-    @Test
-    public void test(){
-        System.out.println("asldflnas");
+        installPlanifi.clickOnInstallButton();
+        waitThreeMinute();
+        installPlanifi.closeApplication();
     }
 
 }

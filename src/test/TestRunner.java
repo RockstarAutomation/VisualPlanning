@@ -13,6 +13,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import planify.common.Planifi;
+import planify.common.mainParts.Plan;
 
 import java.io.File;
 import java.io.IOException;
@@ -49,7 +50,7 @@ public abstract class TestRunner {
     public void checkIfDriverIsClosed() {
         properties = new Properties();
         try {
-            properties.load(System.class.getResourceAsStream("/pom.properties"));
+            properties.load(Planifi.class.getResourceAsStream("/pom.properties"));
         } catch (IOException e) {
             e.printStackTrace();
         }

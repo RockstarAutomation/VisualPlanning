@@ -30,6 +30,12 @@ public class Planifi extends CRUD {
         return driver.findElement(By.name("MANAGE"));
     }
 
+
+    //Functionality
+    public boolean checkIfEstimateBreadCrumbIsVisible(){
+        return  driver.findElementByName("ESTIMATE").isDisplayed();
+    }
+
     //Business logic
     public Plan gotoPlanPart() {
         getWebPlanPart().click();

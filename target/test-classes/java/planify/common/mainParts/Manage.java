@@ -39,6 +39,26 @@ public class Manage extends Planifi {
 
     //Functionality
 
+    public boolean checkIfProjectStaffingIsDisplayed(){
+        return getWebProjectStaffingCrud().isDisplayed();
+    }
+
+    public boolean checkIfAssignmentsIsDisplayed(){
+        return getWebAssignmentsCrud().isDisplayed();
+    }
+
+    public boolean checkIfBillingProjectionIsDisplayed(){
+        return getWebBillingProjectionCrud().isDisplayed();
+    }
+
+    public boolean checkIfRevenueIsDisplayed(){
+        return getWebRevenueCrud().isDisplayed();
+    }
+
+    public boolean checkIfEarnedValueIsDisplayed(){
+        return getWebEarnedValueCrud().isDisplayed();
+    }
+
     //Business logic
 
     public AssignmentsBreadCrumb gotoAssignmentsBreadCrumb(){
