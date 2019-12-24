@@ -6,8 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="planifi" />
+        <module name="PlanifiPr" />
         <module name="Vuukle" />
+        <module name="planifi" />
       </profile>
     </annotationProcessing>
   </component>
