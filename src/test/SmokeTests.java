@@ -1,14 +1,20 @@
+import io.qameta.allure.Epic;
+import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import planify.common.Planifi;
 import planify.common.popup.WarningUpdatePopup;
+import planify.tools.Listener;
 
+@Listeners(Listener.class)
 public class SmokeTests extends TestRunner {
     private Planifi planifi;
     private WarningUpdatePopup popup;
 
+    @Epic("The main smoke tests")
     @BeforeMethod
     public void setUp() {
 //        popup = new WarningUpdatePopup(driverWinium);
@@ -16,9 +22,7 @@ public class SmokeTests extends TestRunner {
         planifi = new Planifi(driverWinium);
     }
 
-    /**
-     * [Plan] Check if 'Plan' tab opens by clicking on its title
-     */
+    @Story("[Plan] Check if 'Plan' tab opens by clicking on its title")
     @Test
     public void testMPP1232() {
         planifi.gotoForecastPart()
@@ -27,9 +31,7 @@ public class SmokeTests extends TestRunner {
                 , "The Estimate breadcrumb is not displayed");
     }
 
-    /**
-     * [Manage/Project Staffing] Check if 'Project Staffing' tab opens by clicking on its title
-     */
+    @Story("[Manage/Project Staffing] Check if 'Project Staffing' tab opens by clicking on its title")
     @Test
     public void testMPP1211() {
         boolean flag = planifi.gotoManagePart()
@@ -38,10 +40,7 @@ public class SmokeTests extends TestRunner {
         Assert.assertTrue(flag, "The project Staffing tab is not displayed");
     }
 
-    /**
-     * [Manage/Assignments] Check if 'Assignments' tab opens by clicking on its title
-     */
-
+    @Story("[Manage/Assignments] Check if 'Assignments' tab opens by clicking on its title")
     @Test
     public void testMPP1336() {
         boolean flag = planifi
@@ -51,9 +50,8 @@ public class SmokeTests extends TestRunner {
         Assert.assertTrue(flag, "The Assignments tab is not displayed");
     }
 
-    /**
-     * [Manage/Billing Projection] Check if 'Billing Projection' tab opens by clicking on its title
-     */
+
+    @Story("[Manage/Billing Projection] Check if 'Billing Projection' tab opens by clicking on its title")
     @Test
     public void testMPP1474() {
         boolean flag = planifi
@@ -63,9 +61,7 @@ public class SmokeTests extends TestRunner {
         Assert.assertTrue(flag, "The Billing Projection is not displayed");
     }
 
-    /**
-     * [Manage/Revenue] Check if 'Revenue' tab opens by clicking on its title
-     */
+    @Story("[Manage/Revenue] Check if 'Revenue' tab opens by clicking on its title")
     @Test
     public void testMPP4058() {
         boolean flag = planifi
@@ -75,9 +71,8 @@ public class SmokeTests extends TestRunner {
         Assert.assertTrue(flag, "The Revenue tab is not displayed");
     }
 
-    /**
-     * [Manage/Earned Value] Check if 'Earned Value' tab opens by clicking on its title
-     */
+
+    @Story("[Manage/Earned Value] Check if 'Earned Value' tab opens by clicking on its title")
     @Test
     public void testMPP1691() {
         boolean flag = planifi
@@ -87,9 +82,7 @@ public class SmokeTests extends TestRunner {
         Assert.assertTrue(flag, "The Earned Value tab is not displayed");
     }
 
-    /**
-     * [Forecast/Projects] Check if 'Projects ' tab opens by clicking on its title
-     */
+    @Story("[Forecast/Projects] Check if 'Projects ' tab opens by clicking on its title")
     @Test
     public void testMPP1629() {
         boolean flag = planifi
@@ -99,9 +92,7 @@ public class SmokeTests extends TestRunner {
         Assert.assertTrue(flag, "The Projects tab is not displayed");
     }
 
-    /**
-     * [Forecast/Schedule] Check if 'Schedule' tab opens by clicking on its title
-     */
+    @Story("[Forecast/Schedule] Check if 'Schedule' tab opens by clicking on its title")
     @Test
     public void testMPP1963() {
         boolean flag = planifi
@@ -111,9 +102,7 @@ public class SmokeTests extends TestRunner {
         Assert.assertTrue(flag, "The Schedule tab is not displayed");
     }
 
-    /**
-     * [Forecast/Employee Schedule] Check if 'Schedule' tab opens by clicking on its title
-     */
+    @Story("[Forecast/Employee Schedule] Check if 'Schedule' tab opens by clicking on its title")
     @Test
     public void testMPP3084() {
         boolean flag = planifi
@@ -123,9 +112,7 @@ public class SmokeTests extends TestRunner {
         Assert.assertTrue(flag, "The Employee Schedule tab is not displayed");
     }
 
-    /**
-     * [Forecast/Capacity] Check if 'Capacity' tab opens by clicking on its title
-     */
+    @Story("[Forecast/Capacity] Check if 'Capacity' tab opens by clicking on its title")
     @Test
     public void testMPP1892() {
         boolean flag = planifi
@@ -139,37 +126,35 @@ public class SmokeTests extends TestRunner {
     public Object[][] projectProvider() {
         return new Object[][]{
                 {
-                "Gajahav Ijdihakt"
+                        "Gajahav Ijdihakt"
                 }
         };
     }
 
-    /**
-     * [Plan/Details] Check if 'Details' tab appears by selecting some project from 'Projects' tab
-     * @param projectName
-     */
+    @Story("[Plan/Details] Check if 'Details' tab appears by selecting some project from 'Projects' tab")
 //TODO check if all elements of details bar are visible
-    @Test(dataProvider = "projectProvider")
-    public void testMPP638(String projectName){
+    @Test(dataProvider = "projectProvider", expectedExceptions = java.lang.AssertionError.class)
+    public void testMPP638(String projectName) {
         boolean flag = planifi
                 .gotoPlanPart()
                 .clickPlanCrudGoToPlan()
                 .clickOnSomeProject(projectName)
                 .gotoDetailsBar()
                 .checkIfDetailsTitleIsDisplayed();
-        Assert.assertTrue(flag,  "The details title is not displayed");
+        Assert.assertTrue(flag, "The details title is not displayed");
     }
 
     @DataProvider
-    public Object[][] detailsProvider(){
+    public Object[][] detailsProvider() {
         return new Object[][]{
                 {"010101"}
         };
     }
     //(010101)
 
+    @Story("")
     @Test(dataProvider = "detailsProvider")
-    public void testMPP940(String projectName){
+    public void testMPP940(String projectName) {
         boolean flag = planifi
                 .gotoPlanPart()
                 .clickPlanCrudGoToEstimate()

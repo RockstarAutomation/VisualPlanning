@@ -1,5 +1,6 @@
 package planify.common.mainParts;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -80,21 +81,25 @@ public class Forecast extends Planifi {
 
     //Business logic
 
+    @Step("Open Capacity tab")
     public CapacityBreadCrumb gotoCapacityBreadCrumb(){
         clickOnCapacityBreadCrumb();
         return new CapacityBreadCrumb(driver);
     }
 
+    @Step("Open Projects tab")
     public ProjectsBreadCrumb gotoProjectsBreadCrumb(){
         clickOnProjectsBreadCrumb();
         return new ProjectsBreadCrumb(driver);
     }
 
+    @Step("Open Schedule tab")
     public ScheduleBreadCrumb gotoScheduleBreadCrumb(){
         clickOnScheduleBreadCrumb();
         return new ScheduleBreadCrumb(driver);
     }
 
+    @Step("Open Employee Schedule tab")
     public EmployeeScheduleBreadCrumb gotoEmployeeScheduleBreadCrumb(){
         clickOnEmployeeScheduleCrumb();
         return new EmployeeScheduleBreadCrumb(driver);

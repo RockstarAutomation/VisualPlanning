@@ -1,43 +1,48 @@
+import io.qameta.allure.Story;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import planify.common.Planifi;
 import planify.common.popup.WarningUpdatePopup;
-import planify.planPart.PlanBreadCrumb;
+import planify.tools.Listener;
 
 import java.io.IOException;
 
+@Listeners(Listener.class)
 public class PlanTest extends TestRunner {
 
     private Planifi planifi;
     private WarningUpdatePopup popup;
+    private SoftAssert softAssert;
 
     @BeforeMethod
     public void setUp() {
 //        popup = new WarningUpdatePopup(driverWinium);
 //        planifi = popup.cancelWarningPopup();
         planifi = new Planifi(driverWinium);
+        softAssert = new SoftAssert();
     }
 
     @DataProvider
     public Object[][] stringProvider() {
         return new Object[][]{
-                {"Name", "Gajahav Ijdihakt"}
+                {"Gajahav Ijdihakt"}
         };
     }
 
-    /**
-     * Check if searching works appropriately by typing into 'Search' field in 'Projects tab
-     *
-     * @param projectAttribute
-     * @param value
-     * @throws IOException
-     */
+    @Story("Check if searching works appropriately by typing into 'Search' field in 'Projects tab")
     @Test(dataProvider = "stringProvider")
-    public void testMPP534(String projectAttribute, String value) throws IOException {
-        PlanBreadCrumb planBreadCrumb = planifi.gotoPlanPart()
+    public void testMPP534(String value) throws IOException {
+        boolean flag = planifi.gotoPlanPart()
                 .clickPlanCrudGoToPlan()
-                .fillSearchField(value);
-        Assert.assertEquals(planBreadCrumb.listWithProjects().checkIfThereIsProjectByAttribute(projectAttribute), value,
+                .fillSearchField(value)
+                .clickPlanCrudGoToPlan()
+                .listWithProjects()
+                .checkIfThereIsProjectByAttribute(value);
+        Assert.assertTrue(flag,
                 "There is not any matches");
     }
 
@@ -49,13 +54,7 @@ public class PlanTest extends TestRunner {
     }
 
 
-//TODO In progress
-
-    /**
-     * Check if Project related information displays in 'Details' tab by clicking on 'Name' of some Project
-     *
-     * @param projectName
-     */
+    @Story("Check if Project related information displays in 'Details' tab by clicking on 'Name' of some Project")
     @Test(dataProvider = "intProvider")
     public void testMPP535(String projectName) {
         planifi.gotoPlanPart()
@@ -65,9 +64,8 @@ public class PlanTest extends TestRunner {
                 .clickOnSummaryExtendButton();
     }
 
-    /**
-     * Check if ‘My Project’ On/Off switches toggle exists and works appropriately in 'Filters' tab
-     */
+
+    @Story("Check if ‘My Project’ On/Off switches toggle exists and works appropriately in 'Filters' tab")
     @Test
     public void testMPP548() {
         planifi.gotoPlanPart()
@@ -75,13 +73,10 @@ public class PlanTest extends TestRunner {
                 .gotoSidebar()
                 .clickSettingsDropDown()
                 .clickOffFirstToggle()
-                .clickOnFirstToggle()
-                .clickOnFourthToggle();
+                .clickOnFirstToggle();
     }
 
-    /**
-     * Check if clicking on ‘Hide’ button in 'Filters', 'Projects', and 'Employee' tab cause them to collapse and expand
-     */
+    @Story("Check if clicking on ‘Hide’ button in 'Filters', 'Projects', and 'Employee' tab cause them to collapse and expand")
     @Test
     public void testMPP527() {
         planifi.gotoPlanPart()
@@ -93,15 +88,12 @@ public class PlanTest extends TestRunner {
                 .gotoPlanPart()
                 .clickPlanCrudGoToPlan()
                 .hideEmployeeRoleTab()
-                .openEmployeeRoleTab()
+                .openEmployeeRoleTabButton()
                 .hideProjectsTab()
                 .openProjectsTab();
-        //TODO assert
     }
 
-    /**
-     * Check if 'Settings’ pop up opens by clicking on 'Settings' icon in 'Project' tab
-     */
+    @Story("Check if 'Settings’ pop up opens by clicking on 'Settings' icon in 'Project' tab")
     @Test
     public void testMPP536() {
         planifi.gotoPlanPart()
@@ -111,27 +103,15 @@ public class PlanTest extends TestRunner {
     }
 
 
-    /**
-     * Verify if ‘Office/Organization’ checkboxes are checkabale in 'Filters' tab
-     */
+    @Story("Verify if ‘Office/Organization’ checkboxes are checkabale in 'Filters' tab")
     @Test
     public void testMPP552() throws Exception {
         planifi.gotoPlanPart()
                 .clickPlanCrudGoToPlan()
                 .gotoSidebar()
-                .selectAllOfficeOrganizationCheckBoxes();
-    }
-
-    /**
-     * Verify if dropdowns works appropriately in ‘Office/Organization’ block in 'Filters' tab
-     */
-    @Test
-    public void testMPP553() {
-        planifi.gotoPlanPart()
-                .clickPlanCrudGoToPlan()
-                .gotoSidebar()
-                .clickOfficeOrganizationDropDown()
-                .openAllDropdownsOfficeOrganization();
+                .selectAllOfficeOrganizationCheckBoxes()
+                //Post condition
+                .clearOptionsFilter();
     }
 
     @DataProvider
@@ -141,9 +121,7 @@ public class PlanTest extends TestRunner {
         };
     }
 
-    /**
-     * Check possibility to select an option from 'Default Method' drop down in 'Settings' pop up
-     */
+    @Story("Check possibility to select an option from 'Default Method' drop down in 'Settings' pop up")
     @Test(dataProvider = "methodProvider")
     public void testMPP562(String methodName, String weekly) {
         planifi.gotoPlanPart()
@@ -167,26 +145,26 @@ public class PlanTest extends TestRunner {
         };
     }
 
-    /**
-     * Check if ‘Projects with Milestones’ On/Off switches toggle exists and work appropriately in 'Filters' tab
-     *
-     * @param project
-     * @throws IOException
-     */
+    @Story("Check if ‘Projects with Milestones’ On/Off switches toggle exists and work appropriately in 'Filters' tab")
     @Test(dataProvider = "milestonesProjectsProvider")
     public void testMPP3310(String project) throws IOException {
-        planifi.gotoPlanPart()
+        boolean flag = planifi.gotoPlanPart()
                 .gotoSidebar()
                 .clickSettingsDropDown()
                 .clickOnFivthToggle()
-                .applyOptionsFilter();
-        Assert.assertTrue(planifi.gotoPlanPart().clickPlanCrudGoToPlan().listWithProjects().checkIfThereIsProjectByAttribute(project),
-                "This project is not includes milestones");
+                .applyOptionsFilter()
+                .gotoPlanPart()
+                .clickPlanCrudGoToPlan()
+                .listWithProjects()
+                .checkIfThereIsProjectByAttribute(project);
+        Assert.assertTrue(flag,"This project is not includes milestones");
+        planifi.gotoPlanPart()
+                .gotoSidebar()
+                .clickSettingsDropDown()
+                .clickOnFivthToggle();
     }
 
-    /**
-     * Verify if ‘Project Manager’ checkboxes are checkabale in 'Filters' tab
-     */
+    @Story("Verify if ‘Project Manager’ checkboxes are checkabale in 'Filters' tab")
     @Test
     public void testMPP555() {
         planifi.gotoPlanPart()
@@ -197,10 +175,8 @@ public class PlanTest extends TestRunner {
 
     }
 
-    /**
-     * Verify if 'Project Type’ checkboxes are checkabale in 'Filters' tab
-     */
 
+    @Story("Verify if 'Project Type’ checkboxes are checkabale in 'Filters' tab")
     @Test
     public void testMPP3311() {
         planifi.gotoPlanPart()
@@ -211,9 +187,7 @@ public class PlanTest extends TestRunner {
     }
 
 
-    /**
-     * Verify if ‘PIC’ checkboxes are checkabale in 'Filters' tab
-     */
+    @Story("Verify if ‘PIC’ checkboxes are checkabale in 'Filters' tab")
     @Test
     public void testMPP557() {
         planifi.gotoPlanPart()
@@ -230,24 +204,24 @@ public class PlanTest extends TestRunner {
         };
     }
 
-    /**
-     * Check if after clicking on 'Clear’ button in 'Filters' tab all previously settled filters are discarded
-     */
+    @Story("Check if after clicking on 'Clear’ button in 'Filters' tab all previously settled filters are discarded")
     @Test(dataProvider = "projectsProvider")
     public void testMPP528(String projectAfterFilter, String projectBeforeFilter) throws IOException {
-        //precondition
-        planifi.gotoPlanPart()
+        boolean flag = planifi.gotoPlanPart()
                 .gotoSidebar()
                 .clickSettingsDropDown()
                 .clickOnThirdToggle()
                 .clickOfficeOrganizationDropDown()
                 .selectAllOfficeOrganizationCheckBoxes()
-                .applyOptionsFilter();
-        Assert.assertTrue(planifi.gotoPlanPart().clickPlanCrudGoToPlan().listWithProjects().checkIfThereIsProjectByAttribute(projectAfterFilter),
-                "The filters do not work correct");
+                .applyOptionsFilter()
+                .gotoPlanPart()
+                .clickPlanCrudGoToPlan()
+                .listWithProjects()
+                .checkIfThereIsProjectByAttribute(projectAfterFilter);
+        softAssert.assertTrue(flag,"The filters do not work correct");
         planifi.clearOptionsFilter();
-        Assert.assertTrue(planifi.gotoPlanPart().clickPlanCrudGoToPlan().listWithProjects().checkIfThereIsProjectByAttribute(projectBeforeFilter),
-                "The \"Clear\" button does not work correct");
+        softAssert.assertTrue(planifi.gotoPlanPart().clickPlanCrudGoToPlan().listWithProjects().checkIfThereIsProjectByAttribute(projectBeforeFilter),
+                "The Clear button does not work correct");
     }
 
     @DataProvider
@@ -257,12 +231,7 @@ public class PlanTest extends TestRunner {
         };
     }
 
-    /**
-     * Check if searching works appropriately by typing into 'Search' field
-     *
-     * @param project
-     * @param employee
-     */
+    @Story("Check if searching works appropriately by typing into 'Search' field")
     @Test(dataProvider = "stuffProvider")
     public void testMPP627(String project, String employee, String employeePath) {
         Boolean employeeFlag = planifi.gotoPlanPart()
@@ -271,8 +240,18 @@ public class PlanTest extends TestRunner {
                 .searchEmployee(employee)
                 .getListOfEmployees()
                 .checkIfThereIsAnEmployeeByName(employeePath);
-//                .checkIfThereAnEmployeeByNameAndClick(employeePath);
-        Assert.assertTrue(employeeFlag,"There are not employee with this name" );
+        Assert.assertTrue(employeeFlag, "There are not employee with this name");
+    }
+
+
+    @Story(" Verify if dropdowns works appropriately in ‘Office/Organization’ block in 'Filters' tab")
+    @Test
+    public void testMPP553() {
+        planifi.gotoPlanPart()
+                .clickPlanCrudGoToPlan()
+                .gotoSidebar()
+                .clickOfficeOrganizationDropDown()
+                .openAllDropdownsOfficeOrganization();
     }
 
 }

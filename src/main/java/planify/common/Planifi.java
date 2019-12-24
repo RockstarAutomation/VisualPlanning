@@ -1,5 +1,6 @@
 package planify.common;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.winium.WiniumDriver;
@@ -37,16 +38,19 @@ public class Planifi extends CRUD {
     }
 
     //Business logic
+    @Step("Switch to Plan tab")
     public Plan gotoPlanPart() {
         getWebPlanPart().click();
         return new Plan(driver);
     }
 
+    @Step("Switch to Forecast tab")
     public Forecast gotoForecastPart() {
         getWebForecastPart().click();
         return new Forecast(driver);
     }
 
+    @Step("Switch to Manage tab")
     public Manage gotoManagePart() {
         getWebManagePart().click();
         return new Manage(driver);
@@ -56,18 +60,21 @@ public class Planifi extends CRUD {
         return new Sidebar(driver);
     }
 
+
+    @Step("Clear all filters")
     public Planifi clearOptionsFilter() {
         gotoSidebar().clickSettingsDropDown();
         try {
             clickRight().clickRight().clickEnter();
+            Thread.sleep(5000);
         } catch (Exception e) {
             e.printStackTrace();
         }
         return new Planifi(driver);
     }
 
+    @Step("Apply all filters")
     public Planifi applyOptionsFilter() {
-        //getWebApplySetting().click();
         gotoSidebar().clickSettingsDropDown();
         try {
             clickRight().clickRight().clickRight().clickEnter();

@@ -58,17 +58,13 @@ public class MainTest extends TestRunner {
                 .clickPlanCrudGoToPlan()
                 .gotoSidebar()
                 .clickOfficeOrganizationDropDown();
-        //setOptionSidebar(NAME_FOR_OFFICE_ORGANIZATION_LIST, "CSS LLC");
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         setFirstCheckBox();
-        //setOptionByName();
         planifi.applyOptionsFilter();
-//        planifi.clearOptionsFilter();
-        //driverWinium.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
@@ -95,14 +91,6 @@ public class MainTest extends TestRunner {
         }
     }
 
-        @Test
-         public void testBD() throws SQLException {
-            String preCondition = "UPDATE Pr\n" +
-                    "set status = 'I' \n" +
-                    "where wbs1 ='0000.011.00'";
-            ArrayList<String> list = (ArrayList<String>) databaseInit(preCondition);
-            Assert.assertEquals(list.size(), 4, "massage");
-        }
 
         @Test
     public void employeeTest(){
@@ -111,21 +99,13 @@ public class MainTest extends TestRunner {
                 .clickPlanCrudGoToPlan()
                 .clickOnSomeProject("Gajahav Ijdihakt");
         waitFiveSeconds();
-                //.getListOfEmployees()
-                //.getEmplyeeByName("Abbott, Susan");
         WebElement  element = driverWinium.findElement(By.name("EMPLOYEE / ROLE"));
             element = element.findElement(By.className("ListView"));
             element = element.findElement(By.className("ListBoxItem")).findElement(By.name("Abbott,  Susan"));
             WebElement moveTo = driverWinium.findElement(By.id("UserControl"));
             moveTo = moveTo.findElement(By.name("DISCIPLINE"));
-            //element.click();
             Actions mouseHover = new Actions(driverWinium);
-            //mouseHover.click(element).perform();
-           // mouseHover.moveToElement(moveTo).perform();
             mouseHover.dragAndDrop(element, moveTo).build().perform();
-            //mouseHover.clickAndHold(element).moveToElement(moveTo).perform();
-            //mouseHover.clickAndHold(element).release().moveToElement(moveTo).perform();
-//            mouseHover.moveToElement(moveTo).release().build().perform();
             waitFiveSeconds();
         }
     }

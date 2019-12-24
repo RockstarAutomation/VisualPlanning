@@ -1,33 +1,43 @@
 
-//import jdk.javadoc.internal.tool.Main;
-import org.openqa.selenium.By;
+
+import io.qameta.allure.Allure;
+import io.qameta.allure.Attachment;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.winium.DesktopOptions;
 import org.openqa.selenium.winium.WiniumDriver;
 import org.openqa.selenium.winium.WiniumDriverService;
-import org.testng.annotations.AfterTest;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import planify.common.Planifi;
-import planify.common.mainParts.Plan;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
+import java.util.Date;
 
 import static planify.common.CRUD.waitFiveSeconds;
 
 public abstract class TestRunner {
     //DB
     private List<String> listSQLResult;
+    private final String TIME_TEMPLATE = "yyyy-MM-dd_HH-mm-ss";
+    protected final Logger log = LoggerFactory.getLogger(this.getClass().getName());
 
     private String dbUser;
     private String dbPassword;
@@ -65,7 +75,6 @@ public abstract class TestRunner {
         }
     }
 
-//TODO driver path
 
     @BeforeMethod(alwaysRun = true)
     public void runWiniumDriver() {
@@ -87,18 +96,24 @@ public abstract class TestRunner {
         page = new Planifi(driverWinium);
         waitFiveSeconds();
 
-
     }
 
-    @AfterTest(alwaysRun = true)
-    public void tearDown() {
+    @AfterMethod(alwaysRun = true)
+    public void tearDown(ITestResult testResult) {
+        if (!testResult.isSuccess()) {
+            try {
+                String name = takeScreenShot();
+//                takePageSource(name);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         page.closeApplication();
         service.stop();
 
     }
 
     public List<String> databaseInit(String query) {
-        //https://stackoverflow.com/questions/13283991/how-to-access-the-remote-database-using-java
         listSQLResult = new ArrayList<>();
         Connection con = null;
         Statement stmt = null;
@@ -127,19 +142,30 @@ public abstract class TestRunner {
         }
         return listSQLResult;
     }
-
-//    public void planifiDownload(){
-//        System.setProperty("webdriver.chrome.driver",
-//                "C:\\Users\\User\\PlanifiPr\\driver\\chromedriver.exe");
-//        ChromeOptions options = new ChromeOptions();
-//        driver = new ChromeDriver(options);
-//        driver.manage().window().maximize();
-//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-//        driver.get(properties.getProperty("planifi.download.url"));
-//        driver.manage().timeouts().implicitlyWait(0, TimeUnit.MILLISECONDS);
-//        (new WebDriverWait(driver, 5)).until(ExpectedConditions.elementToBeClickable(By.xpath("//a[contains(text(),'Download')]")));
-//        driver.findElement(By.xpath("//a[contains(text(),'Download')]")).click();
-//        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    private String takeScreenShot() throws IOException {
+        String currentTime = new SimpleDateFormat(TIME_TEMPLATE).format(new Date());
+        File scrFile = ((TakesScreenshot) driverWinium).getScreenshotAs(OutputType.FILE);
+        FileUtils.copyFile(scrFile, new File("./img/" + currentTime + "_screenshot.png"));
+        log.info("Screenshot was taken");
+        Path content = Paths.get("./img/" + currentTime + "_screenshot.png");
+        try (InputStream is = Files.newInputStream(content)){
+            Allure.addAttachment("Screenshot", is);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "./img/" + currentTime + "_screenshot";
+    }
+//
+//    private void takePageSource(String fileName) {
+//        String pageSource = driverWinium.getPageSource();
+//        Path path = Paths.get(fileName + ".txt");
+//        byte[] strToBytes = pageSource.getBytes();
+//        try {
+////            Files.write(path, strToBytes, StandardOpenOption.CREATE);
+//            Files.write(path, strToBytes, StandardOpenOption.CREATE);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 //    }
 
 

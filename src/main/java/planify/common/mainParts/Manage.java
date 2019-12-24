@@ -1,5 +1,6 @@
 package planify.common.mainParts;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -39,46 +40,54 @@ public class Manage extends Planifi {
 
     //Functionality
 
-    public boolean checkIfProjectStaffingIsDisplayed(){
+    public boolean checkIfProjectStaffingIsDisplayed() {
         return getWebProjectStaffingCrud().isDisplayed();
     }
 
-    public boolean checkIfAssignmentsIsDisplayed(){
+    public boolean checkIfAssignmentsIsDisplayed() {
         return getWebAssignmentsCrud().isDisplayed();
     }
 
-    public boolean checkIfBillingProjectionIsDisplayed(){
+    public boolean checkIfBillingProjectionIsDisplayed() {
         return getWebBillingProjectionCrud().isDisplayed();
     }
 
-    public boolean checkIfRevenueIsDisplayed(){
+    public boolean checkIfRevenueIsDisplayed() {
         return getWebRevenueCrud().isDisplayed();
     }
 
-    public boolean checkIfEarnedValueIsDisplayed(){
+    public boolean checkIfEarnedValueIsDisplayed() {
         return getWebEarnedValueCrud().isDisplayed();
     }
 
     //Business logic
 
-    public AssignmentsBreadCrumb gotoAssignmentsBreadCrumb(){
+    @Step("Open Assignments tab")
+    public AssignmentsBreadCrumb gotoAssignmentsBreadCrumb() {
         getWebAssignmentsCrud().click();
         return new AssignmentsBreadCrumb(driver);
     }
 
-    public ProjectStaffingBreadCrumb gotoProjectStaffingBreadCrumb(){
+    @Step("Open Project Staffing tab")
+    public ProjectStaffingBreadCrumb gotoProjectStaffingBreadCrumb() {
         getWebProjectStaffingCrud().click();
         return new ProjectStaffingBreadCrumb(driver);
     }
-    public EarnedValueBreadCrumb gotoEarnedValueBreadCrumb(){
+
+    @Step("Open Earned value tab")
+    public EarnedValueBreadCrumb gotoEarnedValueBreadCrumb() {
         getWebEarnedValueCrud().click();
         return new EarnedValueBreadCrumb(driver);
     }
-    public RevenueBreadCrumb gotoRevenueBreadCrumb(){
+
+    @Step("Open Revenue tab")
+    public RevenueBreadCrumb gotoRevenueBreadCrumb() {
         getWebRevenueCrud().click();
         return new RevenueBreadCrumb(driver);
     }
-    public BillingProjectionBreadCrumb gotoBillingProjectionBreadCrumb(){
+
+    @Step("Open Billing Projection tab")
+    public BillingProjectionBreadCrumb gotoBillingProjectionBreadCrumb() {
         getWebBillingProjectionCrud().click();
         return new BillingProjectionBreadCrumb(driver);
     }

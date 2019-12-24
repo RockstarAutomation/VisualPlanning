@@ -22,7 +22,7 @@ public class PlanifiInstall extends InstallTestRunner {
     /**
      * The method prepare Winium driver and run the installer @BeforeTest
      */
-    @BeforeTest
+    @BeforeMethod
     public void runWinium(){
         waitFiveSeconds();
         installPlanifi = new InstallPlanifi(runWiniumDriver());

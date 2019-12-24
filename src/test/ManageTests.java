@@ -1,8 +1,13 @@
+import io.qameta.allure.Step;
+import io.qameta.allure.Story;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import planify.common.Planifi;
 import planify.common.popup.WarningUpdatePopup;
+import planify.tools.Listener;
 
+@Listeners(Listener.class)
 public class ManageTests extends TestRunner {
 
     private Planifi planifi;
@@ -10,29 +15,29 @@ public class ManageTests extends TestRunner {
 
     @BeforeMethod
     public void setUp() {
-        popup = new WarningUpdatePopup(driverWinium);
-        planifi = popup.cancelWarningPopup();
-        // planifi = new Planifi(driverWinium);
+//        popup = new WarningUpdatePopup(driverWinium);
+//        planifi = popup.cancelWarningPopup();
+        planifi = new Planifi(driverWinium);
     }
 
-    /**
-     * Check if ‘Billing Rates’ On/Off switches toggle exists in 'Filters' tab
-     */
+    @Story("Check if ‘Billing Rates’ On/Off switches toggle exists in 'Filters' tab")
     @Test
     public void testMPP551() {
-        planifi.gotoPlanPart()
-                .clickPlanCrudGoToPlan()
+        planifi.gotoManagePart()
+                .gotoProjectStaffingBreadCrumb()
                 .gotoSidebar()
                 .clickSettingsDropDown()
-                .clickOffFirstToggle()
-                .clickOnFirstToggle()
-                .clickOnThirdToggle()
-                .applyOptionsFilter();
+                .clickOnSixthToggleWithNumberOfWeeks()
+                .expandSideBar()
+                .gotoManagePart()
+                .gotoSidebar()
+                .clickSettingsDropDown()
+                .clickOnSixthToggleWithNumberOfWeeks();
+
+
     }
 
-    /**
-     * Check if ‘Show Unposted Time’ On/Off switches toggles in 'Settings' tab works appropriately.
-     */
+    @Story(" Check if ‘Show Unposted Time’ On/Off switches toggles in 'Settings' tab works appropriately.")
     @Test
     public void testMPP2686() {
         try {
@@ -40,11 +45,12 @@ public class ManageTests extends TestRunner {
                     .gotoProjectStaffingBreadCrumb()
                     .gotoSidebar()
                     .clickSettingsDropDown()
-                    .clickLeft()
-                    .clickLeft()
-                    .clickLeft();
-            planifi.gotoSidebar()
-                    .clickOnFourthToggle();
+                    .clickOnFivthToggleWithNumberOfWeeks()
+                    .gotoManagePart()
+                    .gotoSidebar()
+                    .expandSideBar()
+                    .clickSettingsDropDown()
+                    .clickOnFivthToggleWithNumberOfWeeks() ;
         } catch (Exception e) {
             e.printStackTrace();
         }

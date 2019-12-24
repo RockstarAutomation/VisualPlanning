@@ -1,5 +1,6 @@
 package planify.common.mainParts;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -31,19 +32,17 @@ public class Plan extends Planifi {
         return driver.findElement(By.xpath("/*[@AutomationId = 'VisualPlanningUnity']//*[@name='ESTIMATE']"));
     }
 
+    @Step("Go to Plan part")
     public PlanBreadCrumb clickPlanCrudGoToPlan() {
         getPlanWebElement().click();
         return new PlanBreadCrumb(driver);
     }
 
+    @Step("Go to Estimation part")
     public EstimateBreadCrumb clickPlanCrudGoToEstimate() {
         getEstimateWebElement() .click();
         return new EstimateBreadCrumb(driver);
     }
 
-    public EstimateBreadCrumb clickXpathPlanCrudGoToEstimate() {
-        getXpathEstimateWebElement() .click();
-        return new EstimateBreadCrumb(driver);
-    }
 
 }

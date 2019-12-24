@@ -2,8 +2,165 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="009a4be9-8a8e-4849-b457-5794b7b528ee" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Smoke.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/driver/chromedriver" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/driver/chromedriver.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/driver/selenium-server-standalone-3.141.59.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/output.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/planify/common/Planifi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/planify/common/Planifi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/planify/common/data/ProjectsContainerPlanPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/planify/common/data/ProjectsContainerPlanPart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/planify/common/mainParts/Forecast.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/planify/common/mainParts/Forecast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/planify/common/mainParts/Manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/planify/common/mainParts/Manage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/planify/common/mainParts/Plan.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/planify/common/mainParts/Plan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/planify/common/options/details/DetailsBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/planify/common/options/details/DetailsBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/planify/common/sidebar/Sidebar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/planify/common/sidebar/Sidebar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/planify/forecastPart/CapacityBreadCrumb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/planify/forecastPart/CapacityBreadCrumb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/planify/forecastPart/EmployeeScheduleBreadCrumb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/planify/forecastPart/EmployeeScheduleBreadCrumb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/planify/forecastPart/ProjectsBreadCrumb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/planify/forecastPart/ProjectsBreadCrumb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/planify/managePart/BillingProjectionBreadCrumb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/planify/managePart/BillingProjectionBreadCrumb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/planify/managePart/EarnedValueBreadCrumb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/planify/managePart/EarnedValueBreadCrumb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/planify/managePart/functionalityRevenue/RevenueProjectManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/planify/managePart/functionalityRevenue/RevenueProjectManipulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/planify/planPart/PlanBreadCrumb.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/planify/planPart/PlanBreadCrumb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/BrowserStackLocal.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/CHANGELOG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/ChromePerform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/NOTICE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/Tests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/client-combined-3.141.59-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/client-combined-3.141.59.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/libs/byte-buddy-1.8.15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/libs/commons-exec-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/libs/guava-25.0-jre.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/libs/okhttp-3.11.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/libs/okio-1.14.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/test/test.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/InstallTestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/InstallTestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/MainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/MainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/ManageTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/ManageTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/PlanTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/PlanTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/PlanifiInstall.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/PlanifiInstall.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/SmokeTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/SmokeTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/planifi.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/planify/common/Planifi.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/planify/common/Planifi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/planify/common/data/ProjectsContainerPlanPart.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/planify/common/data/ProjectsContainerPlanPart.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/planify/common/mainParts/Forecast.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/planify/common/mainParts/Forecast.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/planify/common/mainParts/Manage.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/planify/common/mainParts/Manage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/planify/common/mainParts/Plan.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/planify/common/mainParts/Plan.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/planify/common/options/details/DetailsBar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/planify/common/options/details/DetailsBar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/planify/common/sidebar/Sidebar.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/planify/common/sidebar/Sidebar.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/planify/forecastPart/CapacityBreadCrumb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/planify/forecastPart/CapacityBreadCrumb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/planify/forecastPart/EmployeeScheduleBreadCrumb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/planify/forecastPart/EmployeeScheduleBreadCrumb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/planify/forecastPart/ProjectsBreadCrumb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/planify/forecastPart/ProjectsBreadCrumb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/planify/managePart/BillingProjectionBreadCrumb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/planify/managePart/BillingProjectionBreadCrumb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/planify/managePart/EarnedValueBreadCrumb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/planify/managePart/EarnedValueBreadCrumb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/planify/managePart/functionalityRevenue/RevenueProjectManipulation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/planify/managePart/functionalityRevenue/RevenueProjectManipulation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/planify/planPart/PlanBreadCrumb.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/planify/planPart/PlanBreadCrumb.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/ChromePerform.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/TestController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/test/Tests.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Command line suite/Command line test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Command line suite/Command line test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/Command line suite/testng-failed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-TestSuite.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-test.JavaSample.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TestSuite.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/bullet_point.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/collapseall.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/emailable-report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/failed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/jquery-1.7.1.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-test.JavaSample.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-test.chromePerform.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-test.main.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/junitreports/TEST-test.tests.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/navigator-bullet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/Command line test.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/classes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/groups.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/methods-alphabetical.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/methods-not-run.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/methods.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/reporter-output.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/testng.xml.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/Command line suite/toc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/test.JavaSample/Command line test.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/test.JavaSample/classes.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/test.JavaSample/groups.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/test.JavaSample/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/test.JavaSample/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/test.JavaSample/methods-alphabetical.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/test.JavaSample/methods-not-run.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/test.JavaSample/methods.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/test.JavaSample/reporter-output.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/test.JavaSample/testng.xml.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/old/test.JavaSample/toc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/passed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/skipped.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/test.JavaSample.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/test.JavaSample/Command line test.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/test.JavaSample/Command line test.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/test.JavaSample/testng-failed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-failed.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-reports.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-reports.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng-results.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/testng.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire/surefirebooter3322967898272734700.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/InstallTestRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/InstallTestRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/META-INF/planifi.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/MainTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/MainTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ManageTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ManageTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PlanTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PlanTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/PlanifiInstall.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/PlanifiInstall.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/SmokeTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/SmokeTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/TestRunner.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/TestRunner.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/planify/common/Planifi.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/java/planify/common/Planifi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/planify/common/data/ProjectsContainerPlanPart.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/java/planify/common/data/ProjectsContainerPlanPart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/planify/common/mainParts/Forecast.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/java/planify/common/mainParts/Forecast.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/planify/common/mainParts/Manage.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/java/planify/common/mainParts/Manage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/planify/common/mainParts/Plan.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/java/planify/common/mainParts/Plan.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/planify/common/options/details/DetailsBar.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/java/planify/common/options/details/DetailsBar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/planify/common/sidebar/Sidebar.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/java/planify/common/sidebar/Sidebar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/planify/forecastPart/CapacityBreadCrumb.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/java/planify/forecastPart/CapacityBreadCrumb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/planify/forecastPart/EmployeeScheduleBreadCrumb.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/java/planify/forecastPart/EmployeeScheduleBreadCrumb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/planify/forecastPart/ProjectsBreadCrumb.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/java/planify/forecastPart/ProjectsBreadCrumb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/planify/managePart/BillingProjectionBreadCrumb.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/java/planify/managePart/BillingProjectionBreadCrumb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/planify/managePart/EarnedValueBreadCrumb.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/java/planify/managePart/EarnedValueBreadCrumb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/planify/managePart/functionalityRevenue/RevenueProjectManipulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/java/planify/managePart/functionalityRevenue/RevenueProjectManipulation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/planify/planPart/PlanBreadCrumb.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/java/planify/planPart/PlanBreadCrumb.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/test/BrowserStackLocal.exe" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/test/CHANGELOG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/test/ChromePerform.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/test/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/test/NOTICE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/test/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/test/Tests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/test/client-combined-3.141.59-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/test/client-combined-3.141.59.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/test/libs/byte-buddy-1.8.15.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/test/libs/commons-exec-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/test/libs/guava-25.0-jre.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/test/libs/okhttp-3.11.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/test/libs/okio-1.14.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/java/test/test.rar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/testng.xml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,17 +175,6 @@
       </list>
     </option>
   </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>java.uti</find>
-      <find>page.exitApp();</find>
-      <find>dropdownex`</find>
-      <find>clickTeamMan</find>
-      <find>clicktab();</find>
-      <find>clickTeamMana</find>
-      <find>wini</find>
-    </findStrings>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -38,12 +184,6 @@
         <option name="importAutomatically" value="true" />
       </MavenImportingSettings>
     </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
   </component>
   <component name="ProjectId" id="1VC9VbFItPzmRL5vMKtfMYmye3Q" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -64,14 +204,27 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Automation\PlanifiPr\target" />
+      <recent name="C:\Automation\PlanifiPr\src\main\resources" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Automation\PlanifiPr" />
       <recent name="C:\Users\User\PlanifiPr\src\main\java\planify\managePart" />
     </key>
   </component>
-  <component name="RunManager" selected="TestNG.SmokeTests.testMPP940">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean allure:serve" />
+      <command value="mvn clean test allure:serve" />
+      <command value="mvn clean" />
+      <command value="mvn allure:serve" />
+    </option>
+  </component>
+  <component name="RunManager" selected="TestNG.C:/Automation/PlanifiPr/Manage.xml">
     <configuration default="true" type="tests" factoryName="Nosetests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -130,59 +283,51 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="PlanTest.testMPP535" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="planifi" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PlanTest" />
-      <option name="METHOD_NAME" value="testMPP535" />
-      <option name="TEST_OBJECT" value="METHOD" />
+    <configuration name="C:/Automation/PlanifiPr/Demo.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="PlanifiPr" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/Demo.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SmokeTests.testMPP1892" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="planifi" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SmokeTests" />
-      <option name="METHOD_NAME" value="testMPP1892" />
-      <option name="TEST_OBJECT" value="METHOD" />
+    <configuration name="C:/Automation/PlanifiPr/Manage.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="PlanifiPr" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/Manage.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SmokeTests.testMPP3084" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="planifi" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SmokeTests" />
-      <option name="METHOD_NAME" value="testMPP3084" />
-      <option name="TEST_OBJECT" value="METHOD" />
+    <configuration name="C:/Automation/PlanifiPr/Plan.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="PlanifiPr" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/Plan.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SmokeTests.testMPP638" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="planifi" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SmokeTests" />
-      <option name="METHOD_NAME" value="testMPP638" />
-      <option name="TEST_OBJECT" value="METHOD" />
+    <configuration name="C:/Automation/PlanifiPr/Smoke.xml" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="PlanifiPr" />
+      <option name="SUITE_NAME" value="$PROJECT_DIR$/Smoke.xml" />
+      <option name="TEST_OBJECT" value="SUITE" />
       <properties />
       <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SmokeTests.testMPP940" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="planifi" />
+    <configuration name="ManageTests.testMPP551" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="PlanifiPr" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SmokeTests" />
-      <option name="METHOD_NAME" value="testMPP940" />
+      <option name="MAIN_CLASS_NAME" value="ManageTests" />
+      <option name="METHOD_NAME" value="testMPP551" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -192,11 +337,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.SmokeTests.testMPP940" />
-        <item itemvalue="TestNG.SmokeTests.testMPP638" />
-        <item itemvalue="TestNG.PlanTest.testMPP535" />
-        <item itemvalue="TestNG.SmokeTests.testMPP1892" />
-        <item itemvalue="TestNG.SmokeTests.testMPP3084" />
+        <item itemvalue="TestNG.C:/Automation/PlanifiPr/Manage.xml" />
+        <item itemvalue="TestNG.C:/Automation/PlanifiPr/Smoke.xml" />
+        <item itemvalue="TestNG.C:/Automation/PlanifiPr/Plan.xml" />
+        <item itemvalue="TestNG.C:/Automation/PlanifiPr/Demo.xml" />
+        <item itemvalue="TestNG.ManageTests.testMPP551" />
       </list>
     </recent_temporary>
   </component>
@@ -225,38 +370,6 @@
     </task>
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="SmokeTests_testMPP1691 - 2019.12.04 at 11h 53m 14s.xml">
-      <configuration name="SmokeTests.testMPP1691" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SmokeTests_testMPP1629 - 2019.12.04 at 12h 26m 11s.xml">
-      <configuration name="SmokeTests.testMPP1629" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SmokeTests_testMPP1963 - 2019.12.04 at 12h 29m 08s.xml">
-      <configuration name="SmokeTests.testMPP1963" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SmokeTests_testMPP3084 - 2019.12.04 at 12h 32m 52s.xml">
-      <configuration name="SmokeTests.testMPP3084" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SmokeTests_testMPP1892 - 2019.12.04 at 12h 45m 32s.xml">
-      <configuration name="SmokeTests.testMPP1892" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="PlanTest_testMPP535 - 2019.12.04 at 13h 41m 44s.xml">
-      <configuration name="PlanTest.testMPP535" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SmokeTests_testMPP638 - 2019.12.04 at 13h 43m 18s.xml">
-      <configuration name="SmokeTests.testMPP638" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SmokeTests_testMPP940 - 2019.12.04 at 17h 55m 37s.xml">
-      <configuration name="SmokeTests.testMPP940" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SmokeTests_testMPP940 - 2019.12.04 at 17h 56m 19s.xml">
-      <configuration name="SmokeTests.testMPP940" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="SmokeTests_testMPP940 - 2019.12.04 at 18h 00m 41s.xml">
-      <configuration name="SmokeTests.testMPP940" configurationId="TestNG" />
-    </history-entry>
-  </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
@@ -267,10 +380,83 @@
     </todo-panel>
   </component>
   <component name="WindowStateProjectService">
+    <state x="-1368" y="178" key="#Plugins" timestamp="1577082223811">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1368" y="178" key="#Plugins/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1577082223811" />
+    <state x="-1204" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1577117946903">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1204" y="322" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1577117946903" />
     <state x="808" y="408" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576746245261">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="808" y="408" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576746245261" />
+    <state x="1340" y="261" width="434" height="552" key="#xdebugger.evaluate" timestamp="1576748053119">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1340" y="261" width="434" height="552" key="#xdebugger.evaluate/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576748053119" />
+    <state x="-1180" y="274" key="FileChooserDialogImpl" timestamp="1576754583547">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1180" y="274" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1576754583547" />
+    <state width="1877" height="340" key="GridCell.Tab.0.bottom" timestamp="1577185533427">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="340" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1577185533427" />
+    <state width="1877" height="314" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576752111671" />
+    <state width="1877" height="340" key="GridCell.Tab.0.center" timestamp="1577185533427">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="340" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1577185533427" />
+    <state width="1877" height="314" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576752111671" />
+    <state width="1877" height="340" key="GridCell.Tab.0.left" timestamp="1577185533427">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="340" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1577185533427" />
+    <state width="1877" height="314" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576752111671" />
+    <state width="1877" height="340" key="GridCell.Tab.0.right" timestamp="1577185533427">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="340" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1577185533427" />
+    <state width="1877" height="314" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576752111671" />
+    <state width="1877" height="343" key="GridCell.Tab.1.bottom" timestamp="1577181572617">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="343" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1577181572617" />
+    <state width="1877" height="343" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576748262644" />
+    <state width="1877" height="343" key="GridCell.Tab.1.center" timestamp="1577181572617">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="343" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1577181572617" />
+    <state width="1877" height="343" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576748262644" />
+    <state width="1877" height="343" key="GridCell.Tab.1.left" timestamp="1577181572616">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="343" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1577181572616" />
+    <state width="1877" height="343" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576748262644" />
+    <state width="1877" height="343" key="GridCell.Tab.1.right" timestamp="1577181572617">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="343" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1577181572617" />
+    <state width="1877" height="343" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576748262644" />
+    <state x="-1430" y="174" key="Maven.ArtifactSearchDialog" timestamp="1577108615017">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1430" y="174" key="Maven.ArtifactSearchDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1577108615017" />
+    <state x="490" y="174" key="Maven.ArtifactSearchDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1576750457418" />
+    <state width="498" height="446" key="SwitcherDM" timestamp="1577109000290">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state width="498" height="446" key="SwitcherDM/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1577109000290" />
+    <state x="-1304" y="240" width="672" height="677" key="run.anything.popup" timestamp="1577185262836">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1304" y="240" width="672" height="677" key="run.anything.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1577185262836" />
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1577114375993">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1297" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1577114375993" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

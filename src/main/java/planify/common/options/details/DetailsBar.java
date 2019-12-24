@@ -1,5 +1,6 @@
 package planify.common.options.details;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.winium.WiniumDriver;
@@ -13,16 +14,16 @@ public class DetailsBar extends Planifi {
     }
 //    PageObjects
 
-    private WebElement getMainPathForDetailsElements() {
-        return driver.findElementByClassName("KanbanPlanning");
-    }
+//    private WebElement getMainPathForDetailsElements() {
+//        return driver.findElementByClassName("KanbanPlanning");
+//    }
 
     private WebElement getWebDetailsTitle() {
-        return getWebDetailsPart().findElement(By.name("DETAILS"));
+        return driver.findElement(By.name("DETAILS"));
     }
 
     private WebElement getWebDetailsPart() {
-        return getMainPathForDetailsElements().findElement(By.className("ScrollViewer"));
+        return driver.findElement(By.className("ScrollViewer"));
     }
 
     private WebElement getWebDetailsExtendButton() {
@@ -55,10 +56,12 @@ public class DetailsBar extends Planifi {
 
     //Functionality
 
+    @Step("Click on summary extend button")
     public void clickOnSummaryExtendButton() {
         getWebSummaryExpand().click();
     }
 
+    @Step("Click on Scale combo box")
     public void clickOnScaleComboBox() {
         getWebScaleComboBox().click();
     }

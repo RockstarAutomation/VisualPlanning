@@ -1,5 +1,6 @@
 package planify.common.sidebar;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.winium.WiniumDriver;
@@ -36,6 +37,9 @@ public class Sidebar extends Planifi {
     }
 
     //Get web elements
+    private  WebElement getWebOpenFiltersButton(){
+        return driver.findElement(By.name("FILTERS"));
+    }
     private WebElement getWebMainGroup() {
         return driver.findElementByClassName("Expander");
     }
@@ -118,6 +122,11 @@ public class Sidebar extends Planifi {
 
     //Click
 
+    public Sidebar expandSideBar(){
+        getWebOpenFiltersButton().click();
+        return new Sidebar(driver);
+    }
+
     public Sidebar openSidebar() {
         //getWebOpenSidebar().click();
         try {
@@ -154,6 +163,40 @@ public class Sidebar extends Planifi {
         return new Sidebar(driver);
 
     }
+    public Sidebar clickOnFivthToggleWithNumberOfWeeks(){
+        try {
+            clickDown()
+                    .clickDown()
+                    .clickTab()
+                    .clickTab()
+                    .clickTab()
+                    .clickTab()
+                    .clickTab()
+                    .clickEnter();
+            Thread.sleep(15000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new Sidebar(driver);
+    }
+
+    public Sidebar clickOnSixthToggleWithNumberOfWeeks(){
+        try {
+            clickDown()
+                    .clickDown()
+                    .clickTab()
+                    .clickTab()
+                    .clickTab()
+                    .clickTab()
+                    .clickTab()
+                    .clickTab()
+                    .clickEnter();
+            Thread.sleep(15000);
+      } catch (Exception e) {
+        e.printStackTrace();
+    }
+        return new Sidebar(driver);
+    }
 
     public Sidebar clickOnSecondToggle() {
         try {
@@ -168,10 +211,10 @@ public class Sidebar extends Planifi {
 
     public Sidebar clickOnThirdToggle() {
         try {
-            clickDown()
-                    .clickDown()
-                    .clickDown()
-                    .clickEnter();
+            clickTab()
+                    .clickDown();
+            Thread.sleep(2000);
+                    clickEnter();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -183,8 +226,9 @@ public class Sidebar extends Planifi {
             clickDown()
                     .clickDown()
                     .clickDown()
-                    .clickDown()
-                    .clickEnter();
+                    .clickDown();
+            Thread.sleep(2000);
+            clickEnter();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -197,8 +241,9 @@ public class Sidebar extends Planifi {
                     .clickDown()
                     .clickDown()
                     .clickDown()
-                    .clickDown()
-                    .clickEnter();
+                    .clickDown();
+            Thread.sleep(2000);
+                    clickEnter();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -276,16 +321,22 @@ public class Sidebar extends Planifi {
 
     public Sidebar clickOfficeOrganizationDropDown() {
         getWebOfficeOrganizationDropDown().click();
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return new Sidebar(driver);
     }
 
+    @Step("Open Setting drop down")
     public Sidebar clickSettingsDropDown() {
+        getWebSettingsDropDown().click();
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        getWebSettingsDropDown().click();
         return new Sidebar(driver);
     }
 
@@ -317,12 +368,14 @@ public class Sidebar extends Planifi {
         driver.findElementByClassName("CheckBox").click();
     }
 
+    @Step("Select first check box of Office & Organization")
     public Sidebar clickOnFirstCheckBoxOfficeOrganization() {
         clickOfficeOrganizationDropDown();
         getWebFirstOfficeOrganizationCheckBox().click();
         return new Sidebar(driver);
     }
 
+    @Step("Select all of the check box in Office & Organization")
     public Sidebar selectAllOfficeOrganizationCheckBoxes() {
         try {
             clickOnFirstCheckBoxOfficeOrganization();
@@ -342,7 +395,7 @@ public class Sidebar extends Planifi {
         getWebOfficeOrganizationFirstFilterDropdown().click();
         return new Sidebar(driver);
     }
-
+    @Step("Open all of the drop downs in Office & Organization")
     public Sidebar openAllDropdownsOfficeOrganization() {
         openFirstDropdownOfficeOrganization();
         try {

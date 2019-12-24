@@ -1,5 +1,6 @@
 package planify.planPart;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.winium.WiniumDriver;
@@ -10,7 +11,6 @@ import planify.common.data.ProjectsContainerPlanPart;
 import planify.common.mainParts.Plan;
 import planify.common.options.details.DetailsBar;
 import planify.common.popup.SettingsPopup;
-import planify.planPart.functionalityPlan.DetailsPlanOptionsBar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,6 +80,7 @@ public class PlanBreadCrumb extends Plan {
         return new DetailsBar(driver);
     }
 
+    @Step("Open settings pop up")
     public SettingsPopup clickSettingsPopupButton() {
         getWebSettingsPopupButton().click();
         return new SettingsPopup(driver);
@@ -90,6 +91,7 @@ public class PlanBreadCrumb extends Plan {
     }
 
 
+    @Step("Fill a project search field")
     public PlanBreadCrumb fillSearchField(String value) {
         clickSearchFieldProjectsPart();
         clearSearchFieldProjectsPart();
@@ -108,10 +110,11 @@ public class PlanBreadCrumb extends Plan {
     public Boolean checkIfThereIsAProjectByName(String name) {
         return getProjectByName(name).isDisplayed();
     }
+    @Step("Click on project")
     public PlanBreadCrumb clickOnSomeProject(String name) {
         getProjectByName(name).click();
         try {
-            Thread.sleep(5000);
+            Thread.sleep(10000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -120,6 +123,7 @@ public class PlanBreadCrumb extends Plan {
 
 
 
+    @Step("Hide tab with projects")
     public PlanBreadCrumb hideProjectsTab() {
         getWebHideProjectsTabButton().click();
         try {
@@ -130,6 +134,7 @@ public class PlanBreadCrumb extends Plan {
         return new PlanBreadCrumb(driver);
     }
 
+    @Step("open tab with projects")
     public PlanBreadCrumb openProjectsTab() {
         getWebOpenProjectsTabButton().click();
         return new PlanBreadCrumb(driver);
@@ -140,6 +145,14 @@ public class PlanBreadCrumb extends Plan {
     //PageObject
     private WebElement getWebEmployeeTab() {
         return driver.findElement(By.name("EMPLOYEE / ROLE"));
+    }
+
+    private WebElement getWebEmployeePart(){
+        return getWebEmployeeTab().findElement(By.id("EMPLOYEE"));
+    }
+
+    private WebElement getWebRolePart(){
+        return getWebEmployeeTab().findElement(By.id("ROLE"));
     }
 
     private WebElement getWebListOfEmployee() {
@@ -161,7 +174,7 @@ public class PlanBreadCrumb extends Plan {
     }
 
     private WebElement getWebEmployeeSearchField() {
-        return getWebEmployeeTab().findElement(By.className("TextBox")).findElement(By.className("ScrollViewer"));
+        return getWebEmployeeTab().findElement(By.className("TextBox")).findElement(By.className("TextBox"));//.findElement(By.className("ScrollViewer")
     }
 
     //Functionality
@@ -169,6 +182,14 @@ public class PlanBreadCrumb extends Plan {
     public Boolean checkIfThereAnEmployeeByNameAndClick(String name) {
         getWebEmployeeByName(name).click();
         return getWebEmployeeByName(name).isEnabled();
+    }
+
+    private void switchToEmployeePart(){
+        getWebEmployeePart().click();
+    }
+
+    private void switchToRolePart(){
+        getWebRolePart().click();
     }
 
     private void clickOnEmployeeSearchField() {
@@ -190,18 +211,24 @@ public class PlanBreadCrumb extends Plan {
 
     //Business Logic
 
+    @Step("Fill employee search field")
     public PlanBreadCrumb searchEmployee(String employee) {
-        clickOnEmployeeSearchField();
-        clearOnEmployeeSearchField();
-        setEmployeeSearchField(employee);
+        switchToRolePart();
+        switchToEmployeePart();
         try {
-            clickEnter();
+        clickTab();
+        clickTab();
+//        clickOnEmployeeSearchField();
+//        clearOnEmployeeSearchField();
+        setEmployeeSearchField(employee);
+            //clickEnter();
         } catch (Exception e) {
             e.printStackTrace();
         }
         return new PlanBreadCrumb(driver);
     }
 
+    @Step("Hide tab with employees")
     public PlanBreadCrumb hideEmployeeRoleTab() {
         getWebHideEmployeeRoleTabButton().click();
         try {
@@ -213,7 +240,8 @@ public class PlanBreadCrumb extends Plan {
     }
 
 
-    public PlanBreadCrumb openEmployeeRoleTab() {
+    @Step("Open tab with employees")
+    public PlanBreadCrumb openEmployeeRoleTabButton() {
         getWebOpenEmployeeRoleTabButton().click();
         return new PlanBreadCrumb(driver);
     }
